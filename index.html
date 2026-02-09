@@ -3,155 +3,531 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiss Public Inference Utility 𜷶 Apertus</title>
+  <title>Public AI Switzerland — Customer-Owned Cooperative for Affordable AI</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic@7/picnic.min.css">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css">
   <link href="assets/style.css" rel="stylesheet" type="text/css">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/public-ai-logo.png" type="image/png">
 </head>
-<body>
-  <nav>
+<body style="margin: 0; padding: 0;">
+  <nav class="transparent" style="background: transparent !important; background-color: transparent !important;">
     <div class="brand">
-      <a href="/" title="Swiss Public Inference Utility">
-        <img src="assets/header.png" alt="Logo" class="logo">
+      <a href="/" title="Public AI Switzerland">
+        <img src="assets/public-ai-logo.png" alt="Public AI Logo" class="logo">
       </a>
     </div>
     <div class="menu">
-      <a href="#about" class="pseudo button icon-ok"><span class="text">About</a>
-      <a href="#get-involved" class="pseudo button icon-ok"><span class="text">Get Involved</a>
-      <a href="#resources" class="pseudo button icon-ok"><span class="text">Resources</a>
+      <a href="#why" class="pseudo button icon-ok"><span class="text">Why</span></a>
+      <a href="#product" class="pseudo button icon-ok"><span class="text">Product</span></a>
+      <a href="#join" class="pseudo button icon-ok"><span class="text">Join</span></a>
+      <a href="#faq" class="pseudo button icon-ok"><span class="text">FAQ</span></a>
+      <a href="#resources" class="pseudo button icon-ok"><span class="text">Resources</span></a>
     </div>
   </nav>
   <main>
     <header class="hero">
       <div class="content">
-        <h1>AI built to Swiss standards</h1>
+        <h1>Own and control Swiss AI infrastructure</h1>
+        <p class="dynamic-numbers">
+          Join <span class="counter" data-target="35132">0</span> citizens,
+          <span class="counter" data-target="658">0</span> developers,
+          <span class="counter" data-target="5">0</span> supercomputing centers
+          using Apertus
+        </p>
+        <div class="hero-cta">
+          <a href="#join" class="button">Become A Founding Member</a>
+          <a href="https://chat.publicai.co" class="button" target="_blank">Try the Platform</a>
+        </div>
       </div>
     </header>
-    <small>&nbsp;
-      Photo credits: 
-      <a href="https://commons.wikimedia.org/wiki/File:View_of_Lake_Lugano_01.jpg" target="_blank">John Samuel</a> (CC BY 4.0)
-    </small>
-    <section class="flex one">
-      <div class="content" id="about">
+
+    <section class="flex one intro-section">
+      <div class="content">
+        <h2>Think Migros for AI</h2>
         <p class="larger">
-            Switzerland has a unique opportunity to lead in Artifical Intelligence, 
-            thanks in part to <b>Apertus</b>: 
-            a competitive large language model (LLM) 
-            developed by the 
-            <a href="https://www.swiss-ai.org/apertus" target="_blank">Swiss AI Initiative</a>
-            that is fully <b>open and reproducible</b>,
-            proving that advanced AI can be developed in an ethical and sovereign way.
+          Public AI Switzerland is a customer-owned cooperative that
+          provides affordable, Swiss-hosted AI inference to Swiss residents
+          and companies.
+        </p>
+      </div>
+    </section>
+
+    <section class="founding-member-cta">
+      <div class="content">
+        <h2>Introducing: Plan for Swiss AI Sovereignty</h2>
+        <p class="cta-intro">
+          Switzerland's AI infrastructure is consolidating around foreign
+          platforms. It's time for a new model—one we collectively own and
+          control.
+        </p>
+        <p class="cta-subtitle">
+          Our plan outlines how we'll turn our vision of a collectively owned
+          AI infrastructure into a reality. Get your copy today to join us as
+          a Founding Member.
+        </p>
+        <div class="cta-benefits">
+          <h3>JOIN AND RECEIVE:</h3>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-title">Limited Edition Physical Zine</div>
+              <div class="benefit-desc">
+                Receive a limited physical copy of this publication and a
+                membership certificate
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-title">Public AI Switzerland Co-op
+                Membership</div>
+              <div class="benefit-desc">
+                Public AI Switzerland is a cooperative, collectively owned by
+                its members
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-title">Founding Member Status</div>
+              <div class="benefit-desc">
+                Achieve a special status within the Public AI Switzerland
+                Co-op as a Founding Member
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cta-membership-tiers">
+          <h3>BECOME A FOUNDING MEMBER:</h3>
+          <div class="membership-tiers">
+            <div class="membership-card">
+              <h4>Supporters & Allies</h4>
+              <div class="membership-price">CHF 100</div>
+              <p>Founding Supporter Membership in the Public AI Switzerland
+                Co-op</p>
+              <a href="https://huggingface.co/datasets/spiu/coop/blob/main/join.md#how-to-join-as-a-member" 
+                 class="button" target="_blank">JOIN AND CLAIM MEMBERSHIP</a>
+            </div>
+            <div class="membership-card">
+              <h4>Developers & Institutions</h4>
+              <div class="membership-price">FREE</div>
+              <p>Founding Developer or Institution Membership in the Public
+                AI Switzerland Co-op</p>
+              <a href="https://huggingface.co/datasets/spiu/coop/blob/main/join.md#how-to-join-as-a-member" 
+                 class="button" target="_blank">JOIN AND CLAIM MEMBERSHIP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex one" id="why">
+      <div class="content">
+        <h3>The Problem</h3>
+        <p>
+          Switzerland increasingly relies on foreign AI platforms offering
+          global, one-size-fits-all services. These platforms are powerful
+          for many use cases, but they are governed from Silicon Valley or
+          Shenzhen and optimized for global scale rather than local norms,
+          industries, and communities. At the same time, our own open
+          model—<a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus</a>—exists,
+          but requires reliable hosting, tooling, and especially
+          distribution to be usable in practice.
+        </p>
+        <h3>The Solution</h3>
+        <p>
+          Public AI Switzerland makes Swiss-made AI affordable and easy to
+          use. We aggregate demand for Apertus and other open models through
+          a nation-wide cooperative; instead of paying CHF 240 a year for
+          ChatGPT, members pay CHF 100 to own a piece of their own AI.
+          Heavier API users pay transparent overages priced below commercial
+          APIs, and any surplus is reinvested into capacity, lower prices,
+          or community programs. And our distribution network is designed to
+          extend beyond inference, so that other Swiss-made technologies can
+          reach users without rebuilding infrastructure or distribution
+          from scratch.
         </p>
         <p class="highlight">
-            We are now starting the <b>Swiss Public Inference Utility</b> (SPIU) as a cooperative, 
-            to support and sustain the mission of Apertus in Switzerland for years to come
-            from the side of civic tech.
-            We are open to individuals and businesses that are learning, building, investing, 
-            and evolving institutions with public AI.
+          We are already the primary global deployer of Apertus, operating
+          servers, APIs, chat interfaces, and integrations. Since Apertus
+          launched, more than 35,000 users have registered on our platform,
+          with trillions of tokens served in just a few months—demonstrating
+          real demand for a stable, Swiss-run alternative that developers and
+          institutions can build on over time.
+        </p>
+        <h3>Why Now</h3>
+        <p>
+          Switzerland has a rich tradition of cooperative enterprises
+          (Migros, Coop, Raiffeisen, Mobility). These models emphasize
+          member ownership, democratic governance, and reinvestment of
+          profits for member benefit. They have repeatedly proven effective
+          at providing essential infrastructure at scale while maintaining
+          public trust and price discipline.
         </p>
         <p>
-            Our mission is to (1) create new opportunities in public AI in Switzerland; and 
-            (2) accelerate the adoption of Apertus and related projects. 
-            We aim to work in partnership with the Swiss AI Initiative, with universities, 
-            governments, and research centers. Our main focus areas are explored here.
+          AI has now become comparable critical infrastructure, but control
+          is consolidating around a small number of foreign platforms with
+          opaque governance and rising prices. Switzerland already has the
+          core ingredients for an alternative: a sovereign model (Apertus),
+          strong data protection law, and deep trust in cooperative
+          institutions.
         </p>
-        <img src="assets/noun-network-connection-5855999.svg">
-        <h3>Universal Access to Knowledge</h3>
         <p>
-            An LLM is a <b>neural network</b> technology trained in an ethical and 
-            compliant way on vast amounts of multilingual data 
-            within a scientific initiative. It is designed to offer insights, answers, and 
-            creative assistance on a wide range of topics.
-            <b>Apertus</b> is a powerful LLM component in a platform, on top of which a multitude of 
-            research and commercial entities can grow.
-        </p><p>
-          Large language technologies, when developed as public service tools, can revolutionize 
-            access to information. 
-            <b>Public AI</b> is the notion of a civic tech or government policy program 
-            that helps to ensure fair universal access to AI, and 
-            "assert the public’s role as a key stakeholder in AI technology" 
-            [<a href="https://law.vanderbilt.edu/vpa-releases-new-paper-on-the-global-rise-of-public-artificial-intelligence/" target="_blank">Vanderbilt 2025</a>].
-            As a civic tech movement, Public AI aims to reduce reliance on proprietary models. 
-            It prioritizes sovereignty and neutrality to ensure unbiased services where users 
-            understand data handling and governance transparently. To this end, we run benchmarks, 
-            develop literature, consult civil society organizations and governments,
-            and recommend open and sovereign tools.
-        </p>
-        <img src="assets/noun-ai-head-5856061.svg">
-        <h3>Building more Inclusive AI</h3>
-        <p>
-          To build social impact, we need to access the complete lifecycle of AI development: 
-            starting with diverse datasets (e.g., FineWeb2, Common Crawl, Wikipedia, ..) 
-            and open source hubs (e.g., OpenRouter, Hugging Face, ..). Explaining
-            the training and remixing of LLMs, development of user interfaces and agents
-            with a comprehensive foundation that supports diversity and accessibility, 
-            we aim to democratize AI by addressing gaps for underserved communities.
-            Fundamental to this is the offering free and inexpensive local
-            support for Apertus users and service providers.
-        </p><p>
-            An <b>Inference Utility</b> 
-            is such an accessible platform, helping to democratize AI for public benefit
-            through an easy to use online interface, as well as developer kit for technical users. 
-            Since the launch on September 2, 2025, Apertus has been available in this form:
-            thanks to donated compute credits, corporate investments, and volunteer efforts.
-            We intend to continue supporting and raising funds for this and other endpoints.
-        </p>
-        <img src="assets/noun-chat-bot-5855990.svg">
-        <h3>Join the Movement</h3>
-        <p>
-          Implementing a large language model as a public service tool can lead to significant societal impacts. 
-            It can become a trusted source of information, provide clear explanations, and ensure users can interact with AI safely and informedly. 
-            This approach seeks to shift the development landscape towards more inclusivity, responsibility, and community engagement. 
-            Here are a few good reasons to join the SPIU cooperative:
-            <ul>
-          <li>Lead the AI transformation in Switzerland: help us build an AI stack that aligns with local laws, values, culture, and jobs.
-          <li>Participate in creating a reliable, transparent AI tools that serve Swiss needs, reflect diverse regions and languages.
-          <li>Grow your business with Swiss-based, subsidized public AI infrastructure.
-          <li>Be part of a community shaping the future of AI in Switzerland. 
-            </ul>
-        </p>
-        <h3>Our focus today:</h3>
-        <ol>
-          <li>Starting a sustainable and transparent cooperative</li>
-          <li>Using community governance to keep momentum</li>
-          <li>Deliver on locally relevant social impact goals</li>
-        </ol>
+          The remaining bottleneck is no longer technical. It is
+          distribution, governance, and trust. That gap is now narrow enough
+          to close—but only if done before proprietary platforms become
+          entrenched.
         </p>
       </div>
     </section>
-    <section class="flex one">
-      <p class="larger highlight">
-        Together, let’s build Public AI!
-      </p>
-      <div class="content" id="get-involved">
-        <p class="larger">🟢 Try Apertus on the Inference Utility: <a href="https://publicai.co">publicai.co</a></p>
-        <p class="larger">🔵 Fill out the <a href="https://forms.gle/9TGSfTK1RfKj2b6X9">Apertus User Satisfaction Survey</a></p>
-        <p class="larger">🤗 Join the technical community on <a href="https://huggingface.co/spiu">Hugging Face</a></p>
-        <p class="larger">🇨🇭 Help us get started: <a href="https://huggingface.co/datasets/spiu/coop/blob/main/join.md#how-to-join-as-a-member">join the cooperative today</a>!</p>
-        <p class="larger">🔖 Further Resources:</p>
-        <ul>
-          <li><a href="https://www.swiss-ai.org/apertus">Apertus documentation</a></li>
-          <li><a href="https://publicai.co">Public AI homepage</a></li>
-          <li><a href="https://huggingface.co/blog/inference-providers-publicai">Hugging Face: Public AI</a></li>
+
+    <section class="flex one" id="achievements">
+      <div class="content">
+        <h2>Already Serving Switzerland</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">35,000+</div>
+            <div class="stat-label">Users Registered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Trillions</div>
+            <div class="stat-label">Tokens Served</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">#1</div>
+            <div class="stat-label">Global Deployer of Apertus</div>
+          </div>
+        </div>
+        <h3>Trusted by Major Institutions</h3>
+        <p>
+          Major institutions such as the <b>UN</b> and <b>ILO</b> are
+          already using our API. Many apps are deployed on top, including
+          <a href="https://github.com/forpublicai" target="_blank">OSS ZüriCityGPT</a>
+          and <a href="https://dribdat.ch" target="_blank">Dribdat</a>.
+          We have active usage from universities and research groups, and
+          existing integrations with Hugging Face, with inbound demand from
+          Hugging Face inference workloads.
+        </p>
+      </div>
+    </section>
+
+    <section class="flex one" id="product">
+      <div class="content">
+        <h2>Our Platform</h2>
+        <p class="larger">
+          We offer a secure, Swiss-hosted AI platform designed to serve both
+          technical and non-technical users across organizations. Our product
+          comes in two complementary forms:
+        </p>
+        <div class="product-comparison">
+          <div class="product-card">
+            <h3>API Access</h3>
+            <p class="product-link">
+              <a href="https://platform.publicai.co/docs" target="_blank">platform.publicai.co/docs</a>
+            </p>
+            <p class="product-source">
+              <a href="https://github.com/forpublicai/platform.publicai.co" target="_blank">Source Code</a>
+            </p>
+            <dl>
+              <dt>Primary User</dt>
+              <dd>Developers & Engineers. Used for building custom
+                software or automation.</dd>
+              <dt>Capabilities</dt>
+              <dd>Provides endpoint access to text generation, embeddings,
+                and retrieval for integration. Compatible with OpenAI API
+                and LiteLLM.</dd>
+              <dt>Customization</dt>
+              <dd>High. You can build your own AI-powered App or workflow
+                using all the functionalities provided by the chosen
+                model.</dd>
+              <dt>Access Control</dt>
+              <dd>Managed via API Keys and Role-Based Access Control
+                (RBAC).</dd>
+              <dt>Usage Metering</dt>
+              <dd>Tracked by token consumption or requests—ideal for billing
+                specific departments.</dd>
+              <dt>Data Residency</dt>
+              <dd>Swiss-hosted; data sent via API stays within Swiss
+                boundaries.</dd>
+            </dl>
+          </div>
+          <div class="product-card">
+            <h3>Web-based Chat UI</h3>
+            <p class="product-link">
+              <a href="https://chat.publicai.co/" target="_blank">chat.publicai.co</a>
+            </p>
+            <p class="product-source">
+              <a href="https://github.com/forpublicai/chat.publicai.co" target="_blank">Source Code</a>
+            </p>
+            <dl>
+              <dt>Primary User</dt>
+              <dd>Non-technical Users. Used by employees for daily tasks,
+                writing, and research.</dd>
+              <dt>Capabilities</dt>
+              <dd>A "ChatBot-like" interface for direct interaction with
+                models.</dd>
+              <dt>Customization</dt>
+              <dd>Users can customize the system prompt to best suit their
+                specific needs. Built-in memory allows the LLM to retrieve
+                past data, creating a more personalized experience.</dd>
+              <dt>Access Control</dt>
+              <dd>Managed via User Logins and Role-Based Access Control
+                (RBAC).</dd>
+              <dt>Usage Metering</dt>
+              <dd>Tracked by user seats or overall organizational usage
+                logs.</dd>
+              <dt>Data Residency</dt>
+              <dd>Swiss-hosted; all chat history and inputs reside in
+                Switzerland.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex one" id="join">
+      <div class="content">
+        <h2>Introducing: Plan for Swiss AI Sovereignty</h2>
+        <p class="larger">
+          Join Public AI Switzerland as a Founding Member and help shape
+          the future of Swiss AI infrastructure.
+        </p>
+        <h3>JOIN AND RECEIVE:</h3>
+        <ul class="benefits-list">
+          <li>Public AI Switzerland Co-op Membership</li>
+          <li>Founding Member Status</li>
+          <li>Access to Apertus 70B chatbot (8B model remains free)</li>
+          <li>Subsidized API access</li>
+          <li>Governance rights</li>
+          <li>Membership certificate</li>
+          <li>Unique member number</li>
+          <li>Ability to influence platform policies and features</li>
+          <li>Swiss data residency guarantee</li>
         </ul>
+        <div class="cta-section">
+          <p class="larger highlight">
+            🟢 Try Apertus: <a href="https://chat.publicai.co" target="_blank">chat.publicai.co</a>
+          </p>
+          <p class="larger highlight">
+            🔵 Developer Resources: <a href="https://platform.publicai.co/docs" target="_blank">platform.publicai.co/docs</a>
+          </p>
+          <p class="larger highlight">
+            🤗 Join the technical community: <a href="https://huggingface.co/spiu" target="_blank">Hugging Face</a>
+          </p>
+        </div>
       </div>
     </section>
-    <section class="flex one">
-      <div class="content" id="resources">
+
+    <section class="flex one" id="faq">
+      <div class="content">
+        <h2>LEARN:</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Why create a Swiss AI cooperative?</summary>
+            <p>
+              Switzerland increasingly relies on foreign AI platforms
+              governed from Silicon Valley or Shenzhen, optimized for
+              global scale rather than local norms, industries, and
+              communities. These platforms have opaque governance and rising
+              prices. It's time for a new model—one we collectively own and
+              control, built on Switzerland's rich tradition of cooperative
+              enterprises.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What's a co-op?</summary>
+            <p>
+              A cooperative, or co-op, is a business owned and democratically
+              controlled by its members. Public AI Switzerland is owned by
+              its membership base of developers, institutions, supporters,
+              and workers. Think Migros, Coop, Raiffeisen, or Mobility—the
+              same proven model applied to AI infrastructure.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>How does this compare to ChatGPT/OpenAI?</summary>
+            <p>
+              Instead of paying CHF 240 a year for ChatGPT, members pay CHF
+              100 to own a piece of their own AI. Heavier API users pay
+              transparent overages priced below commercial APIs. All data
+              stays in Switzerland, and any surplus is reinvested into
+              capacity, lower prices, or community programs—not shareholder
+              profits.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What are the membership fees and what do I get?</summary>
+            <p>
+              Supporters & Allies: CHF 100 per year for Founding Supporter
+              Membership. Developers & Institutions: FREE Founding
+              Membership. All members receive co-ownership, governance
+              rights, access to the platform (API + Chat UI), Founding Member
+              status, membership certificate, and ability to influence
+              platform policies. Supporters get access to Apertus 70B
+              chatbot (8B remains free for all).
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Is there financial liability?</summary>
+            <p>
+              No, there is no personal financial liability associated with
+              being a co-op member of Public AI Switzerland. Your liability
+              is limited to your membership contribution.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What personal information do I need to provide?</summary>
+            <p>
+              We require minimal information: your name, a valid email
+              address, and your mailing address. This is necessary for
+              maintaining membership records and communications.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Will joining affect my use of other AI platforms?</summary>
+            <p>
+              Not at all. Joining Public AI Switzerland doesn't limit your
+              ability to use other platforms.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this a crypto/blockchain thing?</summary>
+            <p>
+              No. Public AI Switzerland is a traditional cooperative
+              enterprise, following the proven Swiss cooperative model.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>When will the platform be ready?</summary>
+            <p>
+              The platform is already live! We are the primary global
+              deployer of Apertus, with 35,000+ users and trillions of
+              tokens served. You can try it today at
+              <a href="https://chat.publicai.co" target="_blank">chat.publicai.co</a>
+              or access the API at
+              <a href="https://platform.publicai.co/docs" target="_blank">platform.publicai.co/docs</a>.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Who can join?</summary>
+            <p>
+              Public AI Switzerland is open to Swiss residents and
+              companies. We welcome developers, institutions, researchers,
+              and supporters who want to collectively own and shape Swiss AI
+              infrastructure.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>How is data handled?</summary>
+            <p>
+              All data is Swiss-hosted and stays within Swiss boundaries.
+              Data sent via API stays in Switzerland, and all chat history
+              and inputs reside in Switzerland. We comply with Swiss data
+              protection law.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What models are available?</summary>
+            <p>
+              We primarily deploy Apertus, the open and reproducible LLM
+              developed by the Swiss AI Initiative. We also support other
+              open models. Check our
+              <a href="https://platform.publicai.co/docs" target="_blank">API documentation</a>
+              for current model availability.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use this for commercial purposes?</summary>
+            <p>
+              Yes! Many businesses and institutions are already using our
+              platform for commercial purposes. The API is designed for
+              building custom software and automation, and the Chat UI is
+              suitable for organizational use.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex one" id="resources">
+      <div class="content">
+        <h2>Further Resources</h2>
+        <ul>
+          <li><a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus documentation</a></li>
+          <li><a href="https://publicai.co" target="_blank">Public AI homepage</a></li>
+          <li><a href="https://huggingface.co/blog/inference-providers-publicai" target="_blank">Hugging Face: Public AI</a></li>
+          <li><a href="https://github.com/forpublicai/platform.publicai.co" target="_blank">Platform Source Code</a></li>
+          <li><a href="https://github.com/forpublicai/chat.publicai.co" target="_blank">Chat UI Source Code</a></li>
+        </ul>
         <h3>Credits</h3>
-            Icons by Icongeek26 from <a href="https://thenounproject.com/browse/collection-icon/ai-197389/" target="_blank"><span>Noun Project</span></a> (CC BY 3.0)
-        <p>Made with 
-            <b>Apertus</b>, 
-            <a href="https://picnicss.com/">Picnic</a>, 
-            <a href="https://inkscape.org">Inkscape</a>, 
-            <a href="https://neovim.io/">neovim</a>, 
-            <a href="https://opencode.ai/">opencode</a>.
-          Sources: 
-            <a href="https://github.com/forpublicai/spiu-website">GitHub</a> (Apache 2.0)
+        <p>
+          Photo credits:
+          <a href="https://commons.wikimedia.org/wiki/File:View_of_Lake_Lugano_01.jpg" target="_blank">John Samuel</a> (CC BY 4.0)
+        </p>
+        <p>
+          Icons by Icongeek26 from
+          <a href="https://thenounproject.com/browse/collection-icon/ai-197389/" target="_blank">Noun Project</a>
+          (CC BY 3.0)
+        </p>
+        <p>
+          Made with <b>Apertus</b>,
+          <a href="https://picnicss.com/">Picnic</a>,
+          <a href="https://inkscape.org">Inkscape</a>,
+          <a href="https://neovim.io/">neovim</a>,
+          <a href="https://opencode.ai/">opencode</a>.
+          Sources:
+          <a href="https://github.com/forpublicai/spiu-website">GitHub</a>
+          (Apache 2.0)
         </p>
       </div>
     </section>
   </main>
+  <script>
+    // Animated counter function with easing
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
+      let animationFrameId;
+
+      const easeOutCubic = (t) => {
+        return 1 - Math.pow(1 - t, 3);
+      };
+
+      const updateCounter = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutCubic(progress);
+        const current = Math.floor(target * easedProgress);
+
+        element.textContent = current.toLocaleString();
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toLocaleString();
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(updateCounter);
+    }
+
+    // Initialize all counters when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        // Set initial value to 0
+        counter.textContent = '0';
+        // Start observing for animation
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Small delay for better visual effect
+              setTimeout(() => {
+                animateCounter(entry.target);
+              }, 200);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(counter);
+      });
+    });
+  </script>
 </body>
 </html>
