@@ -15,9 +15,10 @@
       <a href="/" title="Public AI Switzerland" class="brand-text">Public AI Switzerland</a>
     </div>
     <div class="menu">
-      <a href="#why" class="pseudo button icon-ok"><span class="text">Why</span></a>
+      <a href="#compare" class="pseudo button icon-ok"><span class="text">Compare</span></a>
       <a href="#product" class="pseudo button icon-ok"><span class="text">Product</span></a>
       <a href="#join" class="pseudo button icon-ok"><span class="text">Join</span></a>
+      <a href="#timeline" class="pseudo button icon-ok"><span class="text">Timeline</span></a>
       <a href="#faq" class="pseudo button icon-ok"><span class="text">FAQ</span></a>
       <a href="#resources" class="pseudo button icon-ok"><span class="text">Resources</span></a>
     </div>
@@ -116,57 +117,165 @@
       </div>
     </section>
 
-    <section class="flex one" id="why">
+    <section class="flex one" id="timeline">
       <div class="content">
-        <div class="icon-row">
-          <img src="assets/noun-network-connection-5855999.svg"
-               alt="Network" class="icon-row__img">
-          <div class="icon-row__text">
-            <h3>Why does Switzerland need this?</h3>
+        <h2>A Swiss tradition, continued</h2>
+        <div class="timeline-layout">
+          <div class="timeline-sidebar">
             <p>
-              Switzerland increasingly relies on foreign AI platforms
-              governed from Silicon Valley or Shenzhen, optimized for
-              global scale rather than local norms. Our own open
-              model—<a href="https://apertus.ch" target="_blank">Apertus</a>—exists,
-              but needs reliable hosting and distribution to be usable in
-              practice.
+              Every era of industrial change, Switzerland has responded
+              the same way: with cooperatives. Hover over each era to
+              learn more.
             </p>
           </div>
-        </div>
-        <div class="icon-row">
-          <img src="assets/noun-ai-head-5856061.svg"
-               alt="AI" class="icon-row__img">
-          <div class="icon-row__text">
-            <h3>How do we solve it?</h3>
-            <p>
-              We aggregate demand through a nation-wide cooperative.
-              Instead of paying CHF 240/year for ChatGPT, members pay
-              CHF 100 to own a piece of their own AI. Surplus is
-              reinvested into capacity, lower prices, or community
-              programs—not shareholder profits.
-            </p>
+          <div class="timeline">
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">1899</span>
+              </div>
+              <div class="timeline__body">
+                <img src="assets/logo-raiffeisen.png"
+                     alt="Raiffeisen" class="timeline__logo">
+                <p class="timeline__era">Banking for the people</p>
+                <p class="timeline__detail">
+                  When banks served cities but not farmers, Swiss
+                  communities pooled their savings and governed their
+                  own credit.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">1925</span>
+              </div>
+              <div class="timeline__body">
+                <img src="assets/logo-migros.png"
+                     alt="Migros" class="timeline__logo">
+                <p class="timeline__era">Fair access to essentials</p>
+                <p class="timeline__detail">
+                  When middlemen inflated food prices, Gottlieb
+                  Duttweiler drove a truck to the people. Today Migros
+                  is Switzerland's largest retailer — still a
+                  cooperative.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">1941</span>
+              </div>
+              <div class="timeline__body">
+                <img src="assets/logo-coop.png"
+                     alt="Coop" class="timeline__logo">
+                <p class="timeline__era">Consumer solidarity</p>
+                <p class="timeline__detail">
+                  When wartime scarcity threatened households, consumer
+                  cooperatives merged into a national force, putting
+                  purchasing power back in members' hands.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__marker">
+                <span class="timeline__year">1997</span>
+              </div>
+              <div class="timeline__body">
+                <img src="assets/logo-mobility.png"
+                     alt="Mobility" class="timeline__logo">
+                <p class="timeline__era">Shared infrastructure</p>
+                <p class="timeline__detail">
+                  When private car ownership proved wasteful,
+                  Switzerland pioneered cooperative car-sharing — now
+                  230,000 members strong.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__item timeline__item--highlight">
+              <div class="timeline__marker">
+                <span class="timeline__year">2025</span>
+              </div>
+              <div class="timeline__body">
+                <h3 class="timeline__name">Public AI Switzerland</h3>
+                <p class="timeline__era">Collective intelligence</p>
+                <p class="timeline__detail">
+                  When AI became critical infrastructure controlled by
+                  a handful of foreign corporations, Switzerland did
+                  what it has always done: built a cooperative.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="icon-row">
-          <img src="assets/noun-chat-bot-5855990.svg"
-               alt="Chat" class="icon-row__img">
-          <div class="icon-row__text">
-            <h3>Why now?</h3>
-            <p>
-              Switzerland has a rich tradition of cooperatives—Migros,
-              Coop, Raiffeisen, Mobility. AI is now critical
-              infrastructure, but control is consolidating around foreign
-              platforms. Switzerland already has the ingredients: a
-              sovereign model, strong data protection law, and deep trust
-              in cooperative institutions. The window to act is now.
-            </p>
+      </div>
+    </section>
+
+    <section class="flex one" id="compare">
+      <div class="content">
+        <h2>How we compare</h2>
+        <div class="compare-grid">
+          <div class="compare-card compare-card--ours">
+            <h3>Public AI Switzerland</h3>
+            <div class="compare-row">
+              <span class="compare-label">Cost</span>
+              <span class="compare-value">CHF 100 / year</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Data residency</span>
+              <span class="compare-value">Switzerland</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Ownership</span>
+              <span class="compare-value">Cooperative — you co-own it</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Governance</span>
+              <span class="compare-value">One member, one vote</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Surplus</span>
+              <span class="compare-value">Reinvested for members</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Source code</span>
+              <span class="compare-value">Open source</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Model</span>
+              <span class="compare-value">Apertus (Swiss-made, open)</span>
+            </div>
+          </div>
+          <div class="compare-card compare-card--theirs">
+            <h3>ChatGPT (OpenAI)</h3>
+            <div class="compare-row">
+              <span class="compare-label">Cost</span>
+              <span class="compare-value">CHF 240 / year</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Data residency</span>
+              <span class="compare-value">United States</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Ownership</span>
+              <span class="compare-value">Corporate — shareholders own it</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Governance</span>
+              <span class="compare-value">Board of directors</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Surplus</span>
+              <span class="compare-value">Shareholder dividends</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Source code</span>
+              <span class="compare-value">Closed</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Model</span>
+              <span class="compare-value">GPT (proprietary)</span>
+            </div>
           </div>
         </div>
-        <p class="highlight">
-          We are already the primary global deployer of Apertus, with
-          35,000+ users and trillions of tokens served—demonstrating real
-          demand for a stable, Swiss-run alternative.
-        </p>
       </div>
     </section>
 

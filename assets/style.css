@@ -651,34 +651,215 @@ main section + section:not(.founding-member-cta)::before {
 }
 
 /* ========================================================
-   Icon-Row component (Why section)
+   Timeline Section
    ======================================================== */
-.icon-row {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+.timeline-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacing-lg);
+  align-items: start;
 }
 
-.icon-row__img {
-  width: 64px;
-  height: 64px;
+.timeline-sidebar {
+  position: sticky;
+  top: 6rem;
+}
+
+.timeline-sidebar p {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: var(--text-medium);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.55rem;
+  width: 2px;
+  background: rgba(255, 87, 51, 0.2);
+}
+
+.timeline__item {
+  position: relative;
+  display: flex;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(-2rem + 0.55rem - 5px);
+  top: 0.35em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background: var(--white);
+  z-index: 1;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__marker {
   flex-shrink: 0;
+  min-width: 4em;
+}
+
+.timeline__year {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.3;
+}
+
+.timeline__body {
+  flex: 1;
+}
+
+.timeline__logo {
+  max-height: 36px;
+  width: auto;
+  margin-bottom: 0.5em;
+  display: block;
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
-.icon-row:hover .icon-row__img {
+.timeline__item:hover .timeline__logo {
   opacity: 1;
 }
 
-.icon-row__text h3 {
-  margin-top: 0;
-  margin-bottom: 0.4em;
+.timeline__name {
+  margin: 0 0 0.2em;
+  font-size: 1.25em;
+  line-height: 1.3;
 }
 
-.icon-row__text p {
-  margin-bottom: 0;
+.timeline__era {
+  font-style: italic;
+  font-size: 0.95em;
+  color: var(--gray-medium);
+  margin-bottom: 0.3em;
+}
+
+.timeline__detail {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.timeline__item:hover .timeline__detail {
+  opacity: 1;
+  max-height: 6em;
+}
+
+.timeline__item--highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 87, 51, 0.06) 0%,
+    rgba(255, 87, 51, 0.1) 100%
+  );
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  margin-left: calc(-1 * var(--spacing-sm));
+}
+
+.timeline__item--highlight::before {
+  left: calc(-2rem + 0.55rem - 5px + var(--spacing-sm));
+  border-color: var(--primary-dark);
+  background: var(--primary-color);
+}
+
+.timeline__item--highlight .timeline__year {
+  font-size: 1.5em;
+}
+
+.timeline__item--highlight .timeline__name {
+  color: var(--primary-color);
+  font-size: 1.4em;
+}
+
+
+/* ========================================================
+   Comparison Section (Public AI vs. ChatGPT)
+   ======================================================== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.compare-card {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-card h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3em;
+}
+
+.compare-card--ours {
+  border-top: 4px solid var(--primary-color);
+}
+
+.compare-card--ours h3 {
+  color: var(--primary-color);
+}
+
+.compare-card--theirs {
+  border-top: 4px solid var(--gray-medium);
+  opacity: 0.85;
+}
+
+.compare-card--theirs h3 {
+  color: var(--gray-medium);
+}
+
+.compare-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75em 0;
+}
+
+.compare-row + .compare-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.compare-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-medium);
+  font-weight: 600;
+  margin-bottom: 0.2em;
+}
+
+.compare-value {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
 }
 
 /* ========================================================
@@ -1098,14 +1279,34 @@ main section + section:not(.founding-member-cta)::before {
   }
 
 
-  .icon-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .compare-grid {
+    grid-template-columns: 1fr;
   }
 
   .involve-grid {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .timeline-sidebar {
+    position: static;
+  }
+
+  .timeline__detail {
+    opacity: 1;
+    max-height: 6em;
+  }
+
+  .timeline__item--highlight {
+    margin-left: 0;
+  }
+
+  .timeline__item--highlight::before {
+    left: calc(-2rem + 0.55rem - 5px);
   }
 }
 
