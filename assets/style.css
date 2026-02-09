@@ -180,21 +180,16 @@ nav .brand {
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
 
-.brand-text {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 800;
-  font-size: 1.15em;
-  color: var(--primary-color) !important;
-  text-decoration: none !important;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+.logo {
+  max-height: 40px;
+  height: auto;
+  width: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
 
-.brand-text:hover {
-  color: var(--primary-light) !important;
-  text-decoration: none !important;
+.logo:hover {
+  transform: scale(1.05);
 }
 
 nav .menu {
@@ -767,7 +762,7 @@ main section + section:not(.founding-member-cta)::before {
   max-height: 6em;
 }
 
-.timeline__item--highlight {
+.timeline__item--highlight .timeline__body {
   background: linear-gradient(
     135deg,
     rgba(255, 87, 51, 0.06) 0%,
@@ -775,23 +770,11 @@ main section + section:not(.founding-member-cta)::before {
   );
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
-  margin-left: calc(-1 * var(--spacing-sm));
 }
 
 .timeline__item--highlight::before {
-  left: calc(-2rem + 0.55rem - 5px + var(--spacing-sm));
   border-color: var(--primary-dark);
   background: var(--primary-color);
-}
-
-.timeline__item--highlight .timeline__year {
-  font-size: 1.5em;
-}
-
-.timeline__item--highlight .timeline__name {
-  color: var(--primary-color);
-  font-size: 1.4em;
 }
 
 
@@ -825,6 +808,12 @@ main section + section:not(.founding-member-cta)::before {
 
 .compare-card--ours h3 {
   color: var(--primary-color);
+}
+
+.compare-logo {
+  max-height: 32px;
+  width: auto;
+  display: block;
 }
 
 .compare-card--theirs {
@@ -1167,6 +1156,9 @@ main section + section:not(.founding-member-cta)::before {
   nav .menu a {
     font-size: 0.9em;
   }
+  nav .logo {
+    max-height: 45px;
+  }
 }
 
 @media (max-width: 60em) {
@@ -1278,6 +1270,9 @@ main section + section:not(.founding-member-cta)::before {
     font-size: 0.8em;
   }
 
+  nav .logo {
+    max-height: 35px;
+  }
 
   .compare-grid {
     grid-template-columns: 1fr;
@@ -1301,13 +1296,6 @@ main section + section:not(.founding-member-cta)::before {
     max-height: 6em;
   }
 
-  .timeline__item--highlight {
-    margin-left: 0;
-  }
-
-  .timeline__item--highlight::before {
-    left: calc(-2rem + 0.55rem - 5px);
-  }
 }
 
 @media (max-width: 38em) {
