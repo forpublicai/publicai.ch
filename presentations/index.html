@@ -286,12 +286,132 @@
       });
     }
 
-    async function loadDeckManifest() {
+    function titleFromFilename(filename) {
+      return filename
+        .replace(/\.md$/i, "")
+        .split(/[-_]/g)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(" ");
+    }
+
+    function normalizeDecks(decks) {
+      return decks
+        .filter((deck) => typeof deck.path === "string" && deck.path.endsWith(".md"))
+        .map((deck) => {
+          const path = deck.path.startsWith("./") ? deck.path : `./${deck.path}`;
+          const filename = path.split("/").pop();
+          return {
+            id: deck.id || filename.replace(/\.md$/i, ""),
+            title: deck.title || titleFromFilename(filename),
+            path
+          };
+        });
+    }
+
+    function uniqueDecks(decks) {
+      const seen = new Set();
+      return decks.filter((deck) => {
+        const key = `${deck.id}::${deck.path}`;
+        if (seen.has(key)) {
+          return false;
+        }
+        seen.add(key);
+        return true;
+      });
+    }
+
+    function detectGitHubRepoContext() {
+      const host = window.location.hostname;
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+      const url = new URL(window.location.href);
+      const ref = url.searchParams.get("ref") || "main";
+
+      if (!host.endsWith(".github.io")) {
+        return null;
+      }
+      if (!pathParts.length) {
+        return null;
+      }
+
+      const owner = host.replace(".github.io", "");
+      const repo = pathParts[0];
+      return { owner, repo, ref };
+    }
+
+    async function loadDecksFromGithubApi(repoContext) {
+      if (!repoContext) {
+        throw new Error("Not running on GitHub Pages.");
+      }
+      const response = await fetch(
+        `https://api.github.com/repos/${repoContext.owner}/${repoContext.repo}/contents/presentations?ref=${repoContext.ref}`
+      );
+      if (!response.ok) {
+        throw new Error("Could not discover deck files via GitHub API.");
+      }
+      const files = await response.json();
+      const decks = files
+        .filter((file) => file.type === "file" && /\.md$/i.test(file.name))
+        .map((file) => ({
+          id: file.name.replace(/\.md$/i, ""),
+          title: titleFromFilename(file.name),
+          path: `./${file.name}`
+        }))
+        .sort((a, b) => a.title.localeCompare(b.title));
+      if (!decks.length) {
+        throw new Error("No markdown decks found in /presentations.");
+      }
+      return decks;
+    }
+
+    async function loadDecksFromManifest() {
       const response = await fetch("./manifest.json");
       if (!response.ok) {
         throw new Error("Could not load presentations manifest.");
       }
-      return response.json();
+      const data = await response.json();
+      const decks = normalizeDecks(data.decks || []);
+      if (!decks.length) {
+        throw new Error("No decks found in manifest.");
+      }
+      return decks;
+    }
+
+    async function discoverDecks() {
+      const repoContext = detectGitHubRepoContext();
+      const sources = await Promise.allSettled([
+        loadDecksFromManifest(),
+        loadDecksFromGithubApi(repoContext)
+      ]);
+
+      const manifestDecks = sources[0].status === "fulfilled"
+        ? sources[0].value
+        : [];
+      const githubDecks = sources[1].status === "fulfilled"
+        ? sources[1].value
+        : [];
+
+      const merged = uniqueDecks([...githubDecks, ...manifestDecks]).sort(
+        (a, b) => a.title.localeCompare(b.title)
+      );
+      if (!merged.length) {
+        throw new Error("No decks found from manifest or repository scan.");
+      }
+      return merged;
+    }
+
+    async function filterExistingDecks(decks) {
+      const checks = await Promise.all(
+        decks.map(async (deck) => {
+          try {
+            const response = await fetch(deck.path, { cache: "no-store" });
+            return response.ok ? deck : null;
+          } catch (error) {
+            return null;
+          }
+        })
+      );
+      return checks.filter(Boolean);
     }
 
     async function loadDeckContent(path) {
@@ -313,17 +433,29 @@
       return url.searchParams.get("deck");
     }
 
-    async function mountDeckFromId(manifest, deckId) {
+    async function mountDeckFromId(decks, deckId) {
       clearError();
-      const chosen = manifest.decks.find((d) => d.id === deckId) || manifest.decks[0];
+      const chosen = decks.find((d) => d.id === deckId) || decks[0];
       if (!chosen) {
-        showError("No decks found in manifest.");
+        showError("No presentation decks are available.");
         return;
       }
       deckSelect.value = chosen.id;
       setQueryDeck(chosen.id);
 
-      const markdown = await loadDeckContent(chosen.path);
+      let markdown = "";
+      try {
+        markdown = await loadDeckContent(chosen.path);
+      } catch (error) {
+        const remainingDecks = decks.filter((deck) => deck.id !== chosen.id);
+        if (!remainingDecks.length) {
+          showError("No readable markdown deck files were found.");
+          return;
+        }
+        showError(`Skipping missing deck: ${chosen.path}`);
+        await mountDeckFromId(remainingDecks, remainingDecks[0].id);
+        return;
+      }
       markdownPane.textContent = markdown;
       renderSlides(markdown);
 
@@ -343,21 +475,25 @@
 
     async function init() {
       try {
-        const manifest = await loadDeckManifest();
-        manifest.decks.forEach((deck) => {
+        const discoveredDecks = await discoverDecks();
+        const decks = await filterExistingDecks(discoveredDecks);
+        if (!decks.length) {
+          throw new Error("No markdown files found in /presentations.");
+        }
+        decks.forEach((deck) => {
           const opt = document.createElement("option");
           opt.value = deck.id;
           opt.textContent = deck.title;
           deckSelect.appendChild(opt);
         });
         const requested = getQueryDeck();
-        const initial = manifest.decks.some((d) => d.id === requested)
+        const initial = decks.some((d) => d.id === requested)
           ? requested
-          : manifest.decks[0]?.id;
-        await mountDeckFromId(manifest, initial);
+          : decks[0]?.id;
+        await mountDeckFromId(decks, initial);
         deckSelect.addEventListener("change", async (event) => {
           try {
-            await mountDeckFromId(manifest, event.target.value);
+            await mountDeckFromId(decks, event.target.value);
           } catch (error) {
             showError(error.message);
           }

@@ -7,20 +7,23 @@ Launch event in Zurich, February 27, 2026.
 # Basics
 **Public AI Switzerland** is the world's first co-op dedicated to offering AI products and services. It is also the Swiss chapter of the movement for public AI (a.k.a. Public AI).
 
-Our mission is to provide affordable AI products and services to Switzerland.
 
-Our vision is to be the access and distribution layer for AI to all of Switzerland.
+---
+
+**Our mission** is to provide high-quality, affordable AI products and services, especially those made in Switzerland.
+
+**Our vision** is to be the access and distribution layer for AI to all of Switzerland.
 
 ---
 
 # How we work
-We meet!
-We make decisions! (Lazy consensus: we assume silence means assent.)
-We get stuff done!
-We vote!
-We benefit.
+We talk.
 
-(Some notes about co-ops, from one of the world's leading experts.)
+We make decisions mostly through [lazy consensus](https://community.apache.org/committers/decisionMaking.html) and sometimes through voting.
+
+We get stuff done!
+
+We make life better for ourselves and each other.
 
 ---
 

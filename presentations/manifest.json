@@ -1,9 +1,9 @@
 {
   "decks": [
     {
-      "id": "cooperative-overview",
-      "title": "Cooperative Overview",
-      "path": "./cooperative-overview.md"
+      "id": "launch-event",
+      "title": "Launch Event",
+      "path": "./launch-event.md"
     },
     {
       "id": "go-to-market",
@@ -14,6 +14,11 @@
       "id": "institutional-pitch",
       "title": "Institutional Pitch",
       "path": "./institutional-pitch.md"
+    },
+    {
+      "id": "launch-event",
+      "title": "Launch Event",
+      "path": "./launch-event.md"
     }
   ]
 }
