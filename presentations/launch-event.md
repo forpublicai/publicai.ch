@@ -9,10 +9,6 @@ This is something WE have to answer.
 
 Here's one version that some of us have arrived at: **Public AI Switzerland** is the world's first co-op dedicated to offering AI products and services. It is also the Swiss chapter of the movement for public AI (a.k.a. Public AI).
 
-**Our mission** is to provide high-quality, affordable AI products and services, especially those made in Switzerland.
-
-**Our vision** is to be the access and distribution layer for AI to all of Switzerland.
-
 ---
 
 # How a cooperative works
