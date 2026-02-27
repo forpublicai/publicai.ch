@@ -1148,6 +1148,76 @@ main section + section:not(.founding-member-cta)::before {
 }
 
 /* ========================================================
+   Distribution CTA Section
+   ======================================================== */
+.distribution-cta .content {
+  text-align: center;
+}
+
+.distribution-cta p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.distribution-cta__actions {
+  margin-top: var(--spacing-md);
+}
+
+.distribution-cta__actions .button {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+  border-color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.distribution-cta__actions .button:hover {
+  background: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* ========================================================
+   Site Footer
+   ======================================================== */
+.site-footer {
+  background: var(--gray-dark);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.2rem 0 1.4rem;
+}
+
+.site-footer__content {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.site-footer__content p {
+  margin: 0.45rem 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.site-footer a:hover {
+  color: var(--white);
+}
+
+.site-footer__links,
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin: 0.35rem 0 0.4rem;
+}
+
+/* ========================================================
    Responsive
    ======================================================== */
 @media (min-width: 926px) {
@@ -1295,6 +1365,11 @@ main section + section:not(.founding-member-cta)::before {
   .timeline__detail {
     opacity: 1;
     max-height: 6em;
+  }
+
+  .site-footer__links,
+  .site-footer__legal {
+    gap: 0.35rem 0.7rem;
   }
 
 }

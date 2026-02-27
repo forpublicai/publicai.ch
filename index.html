@@ -17,12 +17,13 @@
       </a>
     </div>
     <div class="menu">
-      <a href="#compare" class="pseudo button icon-ok"><span class="text">Compare</span></a>
-      <a href="#product" class="pseudo button icon-ok"><span class="text">Product</span></a>
+      <a href="about.html" class="pseudo button icon-ok"><span class="text">About</span></a>
       <a href="#join" class="pseudo button icon-ok"><span class="text">Join</span></a>
-      <a href="#timeline" class="pseudo button icon-ok"><span class="text">Timeline</span></a>
-      <a href="#faq" class="pseudo button icon-ok"><span class="text">FAQ</span></a>
-      <a href="#resources" class="pseudo button icon-ok"><span class="text">Resources</span></a>
+      <a href="#"
+         class="pseudo button"
+         style="opacity: 0.55; pointer-events: none; cursor: not-allowed;">
+        <span class="text">Login</span>
+      </a>
     </div>
   </nav>
   <main>
@@ -53,14 +54,13 @@
       </div>
     </section>
 
-    <section class="founding-member-cta">
+    <section class="founding-member-cta" id="join">
       <div class="content">
         <h2>AI owned by the people</h2>
         <p class="cta-subtitle">
           Big Tech's control over AI threatens our jobs and our society.
           It's time for a new model — one we collectively own and control.
-        </p>
-        <p class="cta-subtitle">
+          <br><br>
           We have a plan for organizing AI around local control, democratic governance, and shared benefit. 
           Join us today as a Founding Member to get your free copy.
         </p>
@@ -337,28 +337,25 @@
       </div>
     </section>
 
-    <section class="flex one" id="join">
+    <section class="flex one distribution-cta" id="distribution">
       <div class="content">
-        <h2>Get Involved</h2>
-        <div class="involve-grid">
-          <a href="https://chat.publicai.co" class="involve-card"
-             target="_blank">
-            <div class="involve-icon">&#x1F7E2;</div>
-            <h3>Try Apertus</h3>
-            <p>Start chatting with Swiss AI at chat.publicai.co</p>
+        <h2>Distribute your AI through Public AI</h2>
+        <p class="larger">
+          Startups and companies can distribute their AI tools, systems,
+          and agents through our Swiss-hosted cooperative network.
+        </p>
+        <p>
+          We provide the distribution layer so you can reach users and
+          institutions without rebuilding infrastructure from scratch.
+        </p>
+        <p class="distribution-cta__actions">
+          <a
+            href="mailto:hello@publicai.co?subject=Distribution%20Partnership%20Inquiry"
+            class="button"
+          >
+            Talk To Us About Distribution
           </a>
-          <a href="https://platform.publicai.co/docs"
-             class="involve-card" target="_blank">
-            <div class="involve-icon">&#x1F4D8;</div>
-            <h3>Developer Resources</h3>
-            <p>API docs, integrations, and code samples</p>
-          </a>
-          <a href="#" class="involve-card js-join-link">
-            <div class="involve-icon">&#x1F917;</div>
-            <h3>Join as Founding Member</h3>
-            <p>Complete the cooperative checkout on Open Collective</p>
-          </a>
-        </div>
+        </p>
       </div>
     </section>
 
@@ -431,39 +428,31 @@
       </div>
     </section>
 
-    <section class="flex one" id="resources">
-      <div class="content">
-        <h2>Further Resources</h2>
-        <ul>
-          <li><a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus documentation</a></li>
-          <li><a href="https://publicai.co" target="_blank">Public AI homepage</a></li>
-          <li><a href="https://huggingface.co/blog/inference-providers-publicai" target="_blank">Hugging Face: Public AI</a></li>
-          <li><a href="https://github.com/forpublicai/platform.publicai.co" target="_blank">Platform Source Code</a></li>
-          <li><a href="https://github.com/forpublicai/chat.publicai.co" target="_blank">Chat UI Source Code</a></li>
-        </ul>
-        <h3>Credits</h3>
-        <p>
-          Photo credits:
-          <a href="https://commons.wikimedia.org/wiki/File:View_of_Lake_Lugano_01.jpg" target="_blank">John Samuel</a> (CC BY 4.0)
-        </p>
-        <p>
-          Icons by Icongeek26 from
-          <a href="https://thenounproject.com/browse/collection-icon/ai-197389/" target="_blank">Noun Project</a>
-          (CC BY 3.0)
-        </p>
-        <p>
-          Made with <b>Apertus</b>,
-          <a href="https://picnicss.com/">Picnic</a>,
-          <a href="https://inkscape.org">Inkscape</a>,
-          <a href="https://neovim.io/">neovim</a>,
-          <a href="https://opencode.ai/">opencode</a>.
-          Sources:
-          <a href="https://github.com/forpublicai/spiu-website">GitHub</a>
-          (Apache 2.0)
-        </p>
-      </div>
-    </section>
   </main>
+  <footer class="site-footer" id="resources">
+    <div class="site-footer__content">
+      <div class="site-footer__links">
+        <a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus Docs</a>
+        <a href="https://publicai.co" target="_blank">Public AI Homepage</a>
+        <a href="https://huggingface.co/blog/inference-providers-publicai" target="_blank">Hugging Face: Public AI</a>
+        <a href="https://github.com/forpublicai/platform.publicai.co" target="_blank">Platform Source</a>
+        <a href="https://github.com/forpublicai/chat.publicai.co" target="_blank">Chat UI Source</a>
+      </div>
+      <p>
+        Photo:
+        <a href="https://commons.wikimedia.org/wiki/File:View_of_Lake_Lugano_01.jpg" target="_blank">John Samuel</a>
+        (CC BY 4.0) · Icons:
+        <a href="https://thenounproject.com/browse/collection-icon/ai-197389/" target="_blank">Noun Project</a>
+        (CC BY 3.0)
+      </p>
+      <div class="site-footer__legal">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Notice</a>
+        <a href="about.html">About</a>
+      </div>
+      <p>Copyright &copy; Public AI Switzerland 2026. All rights reserved.</p>
+    </div>
+  </footer>
   <script>
     // Animated counter function with easing
     function animateCounter(element) {
