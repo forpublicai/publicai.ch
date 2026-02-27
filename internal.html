@@ -61,6 +61,7 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 1.5rem;
+      gap: 1rem;
     }
     .board-header h2 {
       font-size: 1.5rem;
@@ -70,6 +71,24 @@
     .board-header .count {
       font-size: 0.9rem;
       color: var(--gray);
+    }
+    .board-header .actions {
+      margin-left: auto;
+    }
+    .board-header .actions a {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--primary);
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+    }
+    .board-header .actions a:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
     }
     .task-list {
       list-style: none;
@@ -164,6 +183,9 @@
     <div class="board-header">
       <h2>Launch Tasks</h2>
       <span class="count">10 items</span>
+      <div class="actions">
+        <a href="/presentations/">Open presentations</a>
+      </div>
     </div>
 
     <ul class="task-list">

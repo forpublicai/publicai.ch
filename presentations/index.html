@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public AI Switzerland — Presentations</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../assets/public-ai-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+  <style>
+    :root {
+      --primary: #ff5733;
+      --border: #e2e2e2;
+      --bg: #f8f9fa;
+      --text: #1a1a1a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .topbar {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+    .topbar h1 {
+      font-size: 1rem;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .topbar img {
+      height: 24px;
+      width: auto;
+    }
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    select, a.button {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    a.button:hover {
+      border-color: var(--primary);
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      height: calc(100vh - 64px);
+    }
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .panel-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      color: #555;
+    }
+    .slide-host {
+      height: calc(100% - 37px);
+      background: #111;
+      position: relative;
+    }
+    .slide-toolbar {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      z-index: 30;
+    }
+    .slide-mode-btn {
+      border: 1px solid #cfcfcf;
+      background: rgba(255, 255, 255, 0.92);
+      color: #1a1a1a;
+      border-radius: 8px;
+      padding: 0.35rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .slide-mode-btn:hover {
+      border-color: var(--primary);
+    }
+    .slide-brand {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.75rem;
+      height: 24px;
+      width: auto;
+      z-index: 28;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    .reveal {
+      height: 100%;
+    }
+    .reveal .slides section {
+      text-align: left;
+      font-size: 0.9em;
+      line-height: 1.35;
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      text-align: left;
+      color: #1a1a1a;
+      margin-bottom: 0.5em;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .reveal .slides ul,
+    .reveal .slides ol {
+      display: block;
+      margin-left: 1.2em;
+    }
+    .md-pane {
+      height: calc(100% - 37px);
+      overflow: auto;
+      margin: 0;
+      padding: 1rem;
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .error {
+      color: #b00020;
+      padding: 0.75rem;
+      margin: 0;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      background: #fff5f5;
+      display: none;
+    }
+    body.presentation-mode .topbar {
+      display: none;
+    }
+    body.presentation-mode .layout {
+      grid-template-columns: 1fr;
+      padding: 0;
+      gap: 0;
+      height: 100vh;
+    }
+    body.presentation-mode .panel {
+      border: 0;
+      border-radius: 0;
+      height: 100vh;
+    }
+    body.presentation-mode .panel-title {
+      display: none;
+    }
+    body.presentation-mode .panel:last-child {
+      display: none;
+    }
+    body.presentation-mode .slide-host {
+      height: 100vh;
+    }
+    body.presentation-mode .slide-brand {
+      top: 0.9rem;
+      right: 1rem;
+      height: 28px;
+    }
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .panel {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="../assets/public-ai-logo.png" alt="Public AI logo">
+      <h1>Presentations</h1>
+    </div>
+    <div class="controls">
+      <label for="deckSelect">Deck</label>
+      <select id="deckSelect" aria-label="Select presentation"></select>
+      <a class="button" href="../internal.html">Back to internal</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel-title">Slides</div>
+      <div class="slide-host">
+        <div class="slide-toolbar">
+          <button id="presentationModeBtn" class="slide-mode-btn" type="button">
+            Presentation mode
+          </button>
+        </div>
+        <img
+          src="../assets/public-ai-logo.png"
+          alt="Public AI"
+          class="slide-brand"
+        >
+        <div class="reveal">
+          <div class="slides" id="slidesRoot"></div>
+        </div>
+      </div>
+      <p class="error" id="slidesError"></p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Markdown source</div>
+      <pre class="md-pane" id="markdownPane"></pre>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script>
+    const deckSelect = document.getElementById("deckSelect");
+    const slidesRoot = document.getElementById("slidesRoot");
+    const markdownPane = document.getElementById("markdownPane");
+    const slidesError = document.getElementById("slidesError");
+    const presentationModeBtn = document.getElementById("presentationModeBtn");
+    let revealDeck = null;
+
+    function showError(message) {
+      slidesError.textContent = message;
+      slidesError.style.display = "block";
+    }
+
+    function clearError() {
+      slidesError.style.display = "none";
+      slidesError.textContent = "";
+    }
+
+    function splitSlides(markdown) {
+      return markdown
+        .split(/\n---\n/g)
+        .map((chunk) => chunk.trim())
+        .filter(Boolean);
+    }
+
+    function renderSlides(markdown) {
+      const chunks = splitSlides(markdown);
+      slidesRoot.innerHTML = "";
+      chunks.forEach((chunk) => {
+        const section = document.createElement("section");
+        section.setAttribute("data-markdown", "");
+        const textarea = document.createElement("textarea");
+        textarea.setAttribute("data-template", "");
+        textarea.textContent = chunk;
+        section.appendChild(textarea);
+        slidesRoot.appendChild(section);
+      });
+    }
+
+    async function loadDeckManifest() {
+      const response = await fetch("./manifest.json");
+      if (!response.ok) {
+        throw new Error("Could not load presentations manifest.");
+      }
+      return response.json();
+    }
+
+    async function loadDeckContent(path) {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error("Could not load deck markdown file.");
+      }
+      return response.text();
+    }
+
+    function setQueryDeck(deckId) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("deck", deckId);
+      history.replaceState({}, "", url);
+    }
+
+    function getQueryDeck() {
+      const url = new URL(window.location.href);
+      return url.searchParams.get("deck");
+    }
+
+    async function mountDeckFromId(manifest, deckId) {
+      clearError();
+      const chosen = manifest.decks.find((d) => d.id === deckId) || manifest.decks[0];
+      if (!chosen) {
+        showError("No decks found in manifest.");
+        return;
+      }
+      deckSelect.value = chosen.id;
+      setQueryDeck(chosen.id);
+
+      const markdown = await loadDeckContent(chosen.path);
+      markdownPane.textContent = markdown;
+      renderSlides(markdown);
+
+      if (revealDeck) {
+        revealDeck.destroy();
+      }
+      revealDeck = new Reveal({
+        embedded: true,
+        hash: false,
+        controls: true,
+        progress: true,
+        center: true,
+        plugins: [RevealMarkdown]
+      });
+      await revealDeck.initialize();
+    }
+
+    async function init() {
+      try {
+        const manifest = await loadDeckManifest();
+        manifest.decks.forEach((deck) => {
+          const opt = document.createElement("option");
+          opt.value = deck.id;
+          opt.textContent = deck.title;
+          deckSelect.appendChild(opt);
+        });
+        const requested = getQueryDeck();
+        const initial = manifest.decks.some((d) => d.id === requested)
+          ? requested
+          : manifest.decks[0]?.id;
+        await mountDeckFromId(manifest, initial);
+        deckSelect.addEventListener("change", async (event) => {
+          try {
+            await mountDeckFromId(manifest, event.target.value);
+          } catch (error) {
+            showError(error.message);
+          }
+        });
+      } catch (error) {
+        showError(error.message);
+      }
+    }
+
+    presentationModeBtn.addEventListener("click", () => {
+      const isEnabled = document.body.classList.toggle("presentation-mode");
+      presentationModeBtn.textContent = isEnabled
+        ? "Exit presentation mode"
+        : "Presentation mode";
+      if (revealDeck) {
+        setTimeout(() => revealDeck.layout(), 100);
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>
+

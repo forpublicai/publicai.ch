@@ -1,0 +1,20 @@
+{
+  "decks": [
+    {
+      "id": "cooperative-overview",
+      "title": "Cooperative Overview",
+      "path": "./cooperative-overview.md"
+    },
+    {
+      "id": "go-to-market",
+      "title": "Go-to-Market Strategy",
+      "path": "./go-to-market.md"
+    },
+    {
+      "id": "institutional-pitch",
+      "title": "Institutional Pitch",
+      "path": "./institutional-pitch.md"
+    }
+  ]
+}
+
