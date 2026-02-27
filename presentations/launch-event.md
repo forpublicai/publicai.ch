@@ -31,19 +31,18 @@ We make life better for ourselves and each other.
 
 If you're not a member yet, join here.
 
-<img src="../assets/qrcode_opencollective.com.png" alt="OpenCollective QR Code" style="display: block; margin: 2em auto; max-width: 220px; width: 100%; height: auto;" />
+![OpenCollective QR Code](/assets/qrcode_opencollective.com.png)
 
 Membership is just CHF 100 / year.
 
 ---
 
-# Some ground rules:
+# Some ground rules
 1. If it's your first time speaking up, introduce yourself.
 2. Raise your hand to speak.
 3. The chair will politely move to the next topic if you talk too long.
 
 ---
-
 
 
 Would you like to be paid? ask!
