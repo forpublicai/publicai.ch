@@ -28,18 +28,23 @@ We make life better for ourselves and each other.
 ---
 
 # Let's vote!
+
 If you're not a member yet, join here.
+
+
+
 Membership is just CHF 100 / year.
-(QR code)
 
 ---
 
 # Some ground rules:
 1. If it's your first time speaking up, introduce yourself.
-2. Raise your hand.
+2. Raise your hand to speak.
 3. The chair will politely move to the next topic if you talk too long.
 
 ---
+
+
 
 Would you like to be paid? ask!
 
