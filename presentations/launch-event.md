@@ -31,7 +31,7 @@ We make life better for ourselves and each other.
 
 If you're not a member yet, join here.
 
-![OpenCollective QR Code](/assets/qrcode_opencollective.com.png)
+![OpenCollective QR Code](/assets/qrcode_opencollective.com.png){width=220px}
 
 Membership is just CHF 100 / year.
 
