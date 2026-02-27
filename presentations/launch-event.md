@@ -9,6 +9,10 @@ This is something WE have to answer.
 
 Here's one version that some of us have arrived at: **Public AI Switzerland** is the world's first co-op dedicated to offering AI products and services. It is also the Swiss chapter of the movement for public AI (a.k.a. Public AI).
 
+**Our mission** is to provide high-quality, affordable AI products and services, especially those made in Switzerland.
+
+**Our vision** is to be the access and distribution layer for AI to all of Switzerland.
+
 ---
 
 # How a cooperative works
@@ -36,16 +40,17 @@ Membership is just CHF 100 / year.
 
 Our very first vote: what should be our mascot?
 
+#### Some ground rules
+1. If it's your first time speaking up, introduce yourself.
+2. Raise your hand to speak.
+3. The chair will politely move to the next topic if you talk too long.
+
+
 ---
 
 # Let's talk, for real
 
 What is Public AI Switzerland?
-
-### Some ground rules
-1. If it's your first time speaking up, introduce yourself.
-2. Raise your hand to speak.
-3. The chair will politely move to the next topic if you talk too long.
 
 ---
 
@@ -58,7 +63,7 @@ Some example roles:
 2. Legal lead
 3. Marketing lead
 
-Want to get paid to do something? Just ask and we'll vote on it.
+Also: we have a budget!!! (I think?)
 
 ---
 

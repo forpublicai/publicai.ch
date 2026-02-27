@@ -132,6 +132,8 @@
       text-align: left;
       font-size: 0.9em;
       line-height: 1.35;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
     }
     .reveal .slides h1,
     .reveal .slides h2,
@@ -146,6 +148,10 @@
     .reveal .slides ol {
       display: block;
       margin-left: 1.2em;
+    }
+    .reveal .slides section.slide-overflow {
+      overflow-y: auto;
+      padding-right: 0.4em;
     }
     .md-pane {
       height: calc(100% - 37px);
@@ -254,6 +260,7 @@
     const slidesError = document.getElementById("slidesError");
     const presentationModeBtn = document.getElementById("presentationModeBtn");
     let revealDeck = null;
+    let hasResizeListener = false;
 
     function showError(message) {
       slidesError.textContent = message;
@@ -284,6 +291,34 @@
         section.appendChild(textarea);
         slidesRoot.appendChild(section);
       });
+    }
+
+    function fitSlideText(section) {
+      if (!section || !section.children.length) {
+        return;
+      }
+      section.classList.remove("slide-overflow");
+      section.style.fontSize = "";
+
+      const minScale = 0.62;
+      const step = 0.03;
+      let scale = 1.0;
+
+      const overflows = () => section.scrollHeight > (section.clientHeight - 6);
+      while (overflows() && scale > minScale) {
+        scale -= step;
+        section.style.fontSize = `${scale}em`;
+      }
+
+      // Last-resort fallback for very dense slides.
+      if (overflows()) {
+        section.classList.add("slide-overflow");
+      }
+    }
+
+    function fitAllSlides() {
+      const sections = document.querySelectorAll(".reveal .slides section");
+      sections.forEach((section) => fitSlideText(section));
     }
 
     function titleFromFilename(filename) {
@@ -471,6 +506,13 @@
         plugins: [RevealMarkdown]
       });
       await revealDeck.initialize();
+      fitAllSlides();
+      revealDeck.on("ready", fitAllSlides);
+      revealDeck.on("slidechanged", fitAllSlides);
+      if (!hasResizeListener) {
+        window.addEventListener("resize", fitAllSlides);
+        hasResizeListener = true;
+      }
     }
 
     async function init() {
