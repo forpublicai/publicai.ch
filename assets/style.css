@@ -272,13 +272,14 @@ header.hero {
 
 .hero .content {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  top: auto;
+  transform: none;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .hero h1 {
