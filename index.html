@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic@7/picnic.min.css">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css">
   <link href="assets/style.css" rel="stylesheet" type="text/css">
-  <link rel="icon" href="assets/public-ai-logo.png" type="image/png">
+  <link rel="icon" href="/favicon.ico">
 </head>
 <body style="margin: 0; padding: 0;">
   <nav class="transparent" style="background: transparent !important; background-color: transparent !important;">
@@ -36,7 +36,7 @@
           using <a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus</a>
         </p>
         <div class="hero-cta">
-          <a href="#join" class="button">Become A Founding Member</a>
+          <a href="#join" class="button js-join-link">Become A Founding Member</a>
           <a href="https://chat.publicai.co" class="button" target="_blank">Try the Platform</a>
         </div>
       </div>
@@ -44,29 +44,25 @@
 
     <section class="flex one intro-section">
       <div class="content">
-        <h2>Public Library meets AI</h2>
+        <h2>The world's first cooperative for AI</h2>
         <p class="larger">
           Public AI Switzerland is a customer-owned cooperative that
-          provides affordable, Swiss-hosted AI inference to individuals
-          and companies. We are a group of developers, researchers, and
-          citizens who believe AI infrastructure should belong to the
-          people who use it.
+          distributes Swiss-made AI, especially Apertus, to Swiss
+          residents and companies. Think Migros for AI.
         </p>
       </div>
     </section>
 
     <section class="founding-member-cta">
       <div class="content">
-        <h2>Introducing: Plan for Swiss AI Sovereignty</h2>
-        <p class="cta-intro">
-          In our countries, AI infrastructure is consolidating around foreign
-          platforms. It is time for a new model—one we collectively own and
-          control.
+        <h2>AI owned by the people</h2>
+        <p class="cta-subtitle">
+          Big Tech's control over AI threatens our jobs and our society.
+          It's time for a new model — one we collectively own and control.
         </p>
         <p class="cta-subtitle">
-          Our plan outlines how we can turn our vision of a collectively
-          owned AI infrastructure into a reality. Get your copy today to
-          join us as a Founding Member.
+          We have a plan for organizing AI around local control, democratic governance, and shared benefit. 
+          Join us today as a Founding Member to get your free copy.
         </p>
         <div class="cta-benefits">
           <h3>JOIN AND RECEIVE:</h3>
@@ -89,7 +85,7 @@
             <div class="benefit-item">
               <div class="benefit-title">Founding Member Status</div>
               <div class="benefit-desc">
-                Achieve a special status within the Public AI Switzerland
+                Join the Public AI Switzerland
                 Co-op as a Founding Member
               </div>
             </div>
@@ -103,16 +99,8 @@
               <div class="membership-price">CHF 100</div>
               <p>Founding Supporter Membership in the Public AI
                 Switzerland Co-op</p>
-              <a href="https://huggingface.co/datasets/spiu/coop/blob/main/join.md#how-to-join-as-a-member"
-                 class="button" target="_blank">JOIN AND CLAIM MEMBERSHIP</a>
-            </div>
-            <div class="membership-card">
-              <h4>Developers & Institutions</h4>
-              <div class="membership-price">FREE</div>
-              <p>Founding Developer or Institution Membership in the
-                Public AI Switzerland Co-op</p>
-              <a href="https://huggingface.co/datasets/spiu/coop/blob/main/join.md#how-to-join-as-a-member"
-                 class="button" target="_blank">JOIN AND CLAIM MEMBERSHIP</a>
+              <a href="#"
+                 class="button js-join-link">JOIN AND CLAIM MEMBERSHIP</a>
             </div>
           </div>
         </div>
@@ -365,11 +353,10 @@
             <h3>Developer Resources</h3>
             <p>API docs, integrations, and code samples</p>
           </a>
-          <a href="https://huggingface.co/spiu" class="involve-card"
-             target="_blank">
+          <a href="#" class="involve-card js-join-link">
             <div class="involve-icon">&#x1F917;</div>
-            <h3>Join the Community</h3>
-            <p>Connect with other builders on Hugging Face</p>
+            <h3>Join as Founding Member</h3>
+            <p>Complete the cooperative checkout on Open Collective</p>
           </a>
         </div>
       </div>
@@ -507,8 +494,16 @@
       animationFrameId = requestAnimationFrame(updateCounter);
     }
 
-    // Initialize all counters when page loads
     document.addEventListener('DOMContentLoaded', () => {
+      const OPEN_COLLECTIVE_CHECKOUT_URL = 'https://opencollective.com/datalets/projects/public-ai-switzerland/contribute/founding-membership-99202/checkout?interval=year&amount=100&contributeAs=me';
+
+      document.querySelectorAll('.js-join-link').forEach((link) => {
+        link.setAttribute('href', OPEN_COLLECTIVE_CHECKOUT_URL);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      });
+
+      // Initialize all counters when page loads
       const counters = document.querySelectorAll('.counter');
       counters.forEach(counter => {
         counter.textContent = '0';
