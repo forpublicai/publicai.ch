@@ -158,7 +158,7 @@ nav:after {
 }
 
 nav {
-  padding: 1em calc(50% - 480px);
+  padding: 1em 1.25rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -195,6 +195,7 @@ nav .brand {
 nav .menu {
   display: flex;
   gap: 0.5em;
+  margin-left: auto;
 }
 
 nav .menu a {
@@ -1134,6 +1135,37 @@ main section + section:not(.founding-member-cta)::before {
   text-align: center;
 }
 
+.distribution-cta {
+  background: linear-gradient(
+    135deg, var(--primary-color) 0%, var(--primary-dark) 100%
+  ) !important;
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.distribution-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    circle at 70% 35%,
+    rgba(255, 255, 255, 0.1) 0%, transparent 50%
+  );
+  pointer-events: none;
+}
+
+.distribution-cta .content {
+  position: relative;
+  z-index: 1;
+}
+
+.distribution-cta h2,
+.distribution-cta p {
+  color: var(--white);
+}
+
 .distribution-cta p {
   max-width: 760px;
   margin-left: auto;
@@ -1145,15 +1177,16 @@ main section + section:not(.founding-member-cta)::before {
 }
 
 .distribution-cta__actions .button {
-  background: var(--primary-color) !important;
-  color: var(--white) !important;
-  border-color: var(--primary-color) !important;
+  background: var(--white) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--white) !important;
   font-weight: 600;
 }
 
 .distribution-cta__actions .button:hover {
-  background: var(--primary-dark) !important;
-  border-color: var(--primary-dark) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: var(--primary-dark) !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* ========================================================
@@ -1202,7 +1235,7 @@ main section + section:not(.founding-member-cta)::before {
    ======================================================== */
 @media (min-width: 926px) {
   nav {
-    padding: 1.25em calc(50% - 480px);
+    padding: 1.25em 1.5rem;
   }
   nav .menu a {
     font-size: 0.9em;

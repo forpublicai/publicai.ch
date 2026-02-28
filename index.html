@@ -31,10 +31,8 @@
       <div class="content">
         <h1>AI made to Swiss standards</h1>
         <p class="dynamic-numbers">
-          Join <span class="counter" data-target="35132">0</span> citizens,
-          <span class="counter" data-target="1439">0</span> developers<br>and 
-          <span class="counter" data-target="23">0</span> institutions
-          using <a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus</a>
+          Join 35,132 citizens and 1,439 developers using
+          <a href="https://www.swiss-ai.org/apertus" target="_blank">Apertus</a>
         </p>
       </div>
       <a href="#intro" class="hero-scroll-cue" aria-label="Scroll down">
@@ -330,22 +328,15 @@
             </p>
           </div>
         </div>
-        <p class="product-tagline">
-          Swiss-hosted. OpenAI-compatible. Your data stays in Switzerland.
-        </p>
       </div>
     </section>
 
     <section class="flex one distribution-cta" id="distribution">
       <div class="content">
-        <h2>Distribute your AI through Public AI</h2>
+        <h2>Building AI tools?</h2>
         <p class="larger">
           Startups and companies can distribute their AI tools, systems,
           and agents through our Swiss-hosted cooperative network.
-        </p>
-        <p>
-          We provide the distribution layer so you can reach users and
-          institutions without rebuilding infrastructure from scratch.
         </p>
         <p class="distribution-cta__actions">
           <a
@@ -453,35 +444,6 @@
     </div>
   </footer>
   <script>
-    // Animated counter function with easing
-    function animateCounter(element) {
-      const target = parseInt(element.getAttribute('data-target'));
-      const duration = 2000;
-      const startTime = performance.now();
-      let animationFrameId;
-
-      const easeOutCubic = (t) => {
-        return 1 - Math.pow(1 - t, 3);
-      };
-
-      const updateCounter = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeOutCubic(progress);
-        const current = Math.floor(target * easedProgress);
-
-        element.textContent = current.toLocaleString();
-
-        if (progress < 1) {
-          animationFrameId = requestAnimationFrame(updateCounter);
-        } else {
-          element.textContent = target.toLocaleString();
-        }
-      };
-
-      animationFrameId = requestAnimationFrame(updateCounter);
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
       const OPEN_COLLECTIVE_CHECKOUT_URL = 'https://opencollective.com/datalets/projects/public-ai-switzerland/contribute/founding-membership-99202/checkout?interval=year&amount=100&contributeAs=me';
 
@@ -489,23 +451,6 @@
         link.setAttribute('href', OPEN_COLLECTIVE_CHECKOUT_URL);
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
-      });
-
-      // Initialize all counters when page loads
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
-        counter.textContent = '0';
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                animateCounter(entry.target);
-              }, 200);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-        observer.observe(counter);
       });
     });
   </script>
