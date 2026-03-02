@@ -16,7 +16,18 @@
         <img src="assets/public-ai-logo.png" alt="Public AI Logo" class="logo">
       </a>
     </div>
-    <div class="menu">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="menu" id="site-menu">
       <a href="#"
          class="pseudo button"
          style="opacity: 0.55; pointer-events: none; cursor: not-allowed;">
@@ -449,12 +460,21 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const OPEN_COLLECTIVE_CHECKOUT_URL = 'https://opencollective.com/datalets/projects/public-ai-switzerland/contribute/founding-membership-99202/checkout?interval=year&amount=100&contributeAs=me';
+      const nav = document.querySelector('nav');
+      const navToggle = document.querySelector('.nav-toggle');
 
       document.querySelectorAll('.js-join-link').forEach((link) => {
         link.setAttribute('href', OPEN_COLLECTIVE_CHECKOUT_URL);
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
       });
+
+      if (nav && navToggle) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
     });
   </script>
 </body>
