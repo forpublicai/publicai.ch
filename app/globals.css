@@ -1,0 +1,54 @@
+:root {
+  --color-primary: #ff5733;
+  --color-primary-dark: #e63946;
+  --color-bg-deep: #0a1c24;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+@keyframes heroChevronBob {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(7px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.timeline-card {
+  position: relative;
+  margin-top: -0.5rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-card {
+    cursor: pointer;
+  }
+
+  .timeline-detail {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 1.4rem;
+    transition: max-height 220ms ease;
+  }
+
+  .timeline-card:hover .timeline-detail,
+  .timeline-card:focus-within .timeline-detail {
+    -webkit-line-clamp: unset;
+    max-height: 100vh;
+  }
+}
+

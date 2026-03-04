@@ -1,3 +1,49 @@
+## Public AI Switzerland website
+
+This repo contains the marketing and membership site for **Public AI Switzerland**, implemented as a **Next.js 14 app router** project.
+
+### Running the site locally
+
+- **Install dependencies**:
+
+  ```bash
+  npm install
+  ```
+
+- **Start the dev server**:
+
+  ```bash
+  npm run dev
+  ```
+
+  Then open `http://localhost:3000` in your browser.
+
+- **Build for production**:
+
+  ```bash
+  npm run build
+  npm start
+  ```
+
+- **Lint**:
+
+  ```bash
+  npm run lint
+  ```
+
+### Structure
+
+- `app/layout.tsx` – global layout, navbar, footer, chat widget.
+- `app/page.tsx` – main landing page with hero, timeline, CTAs, FAQ, etc.
+- `app/about/page.tsx`, `app/privacy/page.tsx`, `app/terms/page.tsx` – static content pages.
+- `app/presentations/page.tsx` – presentations index, backed by markdown files in `public/presentations`.
+- `components/` – shared UI (navbar, footer, chat widget).
+- `public/assets/` – images and legacy static assets.
+
+### Legacy SPIU content
+
+The original SPIU static site content is preserved below for historical context and copy reference, but is no longer the live implementation.
+
 [![Logo](https://spiu.ch/assets/header.png)](https://spiu.ch/ "Swiss Public Inference Utility")
 
 AI built to Swiss standards
