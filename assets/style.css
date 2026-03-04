@@ -160,15 +160,14 @@ nav:after {
 }
 
 nav {
-  padding: 1.2em 1.25rem;
+  padding: 1em 1.25rem;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 nav .brand {
@@ -184,7 +183,7 @@ nav .brand {
 }
 
 .logo {
-  max-height: 34px;
+  max-height: 40px;
   height: auto;
   width: auto;
   transition: transform 0.3s ease;
@@ -192,7 +191,7 @@ nav .brand {
 }
 
 .logo:hover {
-  transform: none;
+  transform: scale(1.05);
 }
 
 nav .menu {
@@ -203,33 +202,32 @@ nav .menu {
 
 .nav-toggle {
   display: none;
+  margin-left: auto;
   width: 40px;
-  height: 30px;
-  border: none;
-  background: transparent;
-  padding: 0;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 0.35rem 0.4rem;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.22rem;
+  gap: 0.26rem;
 }
 
 .nav-toggle span {
   display: block;
-  width: 70%;
+  width: 100%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-}
-
-.nav-toggle:hover span {
   background: var(--white);
+  border-radius: 999px;
 }
 
 nav .menu a {
   color: var(--white) !important;
   padding: 0.5em 1em !important;
+  border-radius: 8px;
   transition: all 0.2s ease;
   font-weight: 500;
   font-size: 0.85em;
@@ -238,15 +236,9 @@ nav .menu a {
 
 nav .menu a:hover {
   color: var(--white) !important;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.nav-meta {
-  margin-top: 0.75rem;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -1269,7 +1261,7 @@ main section + section:not(.founding-member-cta)::before {
    ======================================================== */
 @media (min-width: 926px) {
   nav {
-    padding: 1.35em 1.5rem;
+    padding: 1.25em 1.5rem;
   }
   nav .menu a {
     font-size: 0.9em;
@@ -1282,36 +1274,27 @@ main section + section:not(.founding-member-cta)::before {
 @media (max-width: 60em) {
   .nav-toggle {
     display: inline-flex;
-    position: absolute;
-    top: 0.55rem;
-    right: 1.1rem;
   }
 
   nav {
-    padding: 0.85em 0.9rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1100;
+    padding: 0.75em 1rem;
+    position: absolute;
   }
 
   nav .menu {
     display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 80vw;
-    max-width: 360px;
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 1rem;
     margin-left: 0;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 4.2rem 1.2rem 1.2rem;
-    background: rgba(12, 23, 30, 0.96);
-    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.55);
-    z-index: 1200;
-    overflow-y: auto;
+    align-items: stretch;
+    min-width: 170px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: rgba(12, 23, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: var(--shadow-md);
   }
 
   nav.nav-open .menu {
@@ -1319,12 +1302,12 @@ main section + section:not(.founding-member-cta)::before {
   }
 
   nav .menu a {
-    padding: 0.6em 0.2em !important;
-    font-size: 0.9em;
+    padding: 0.52em 0.7em !important;
+    font-size: 0.86em;
   }
 
   nav .logo {
-    max-height: 30px;
+    max-height: 35px;
   }
 
   .hero {
