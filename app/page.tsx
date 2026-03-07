@@ -8,7 +8,7 @@ function Hero() {
       id="top"
     >
       <img
-        src="/assets/hero-lugano.jpg"
+        src="/assets/IMG_2517.jpg"
         alt="View of Lake Lugano"
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -96,20 +96,51 @@ function FoundingMemberCta() {
                       sm:text-base">
           Big Tech&apos;s control over AI threatens our jobs and our
           society. It&apos;s time for a new model — one we collectively own
-          and control.
-          <br />
-          <br />
-          We have a plan for organizing AI around local control, democratic
-          governance, and shared benefit. Join us today as a Founding Member
-          to get your free copy.
+          and control.{" "}
+          <strong>
+            We have a plan for organizing AI around local control, democratic
+            governance, and shared benefit. Join us today as a Founding Member
+            to get involved.
+          </strong>
         </p>
+
+        <div className="mt-8 border-t border-white/30 pt-8">
+          <h3
+            className="mb-3 text-center text-[0.7rem] font-semibold
+                       tracking-[0.2em]"
+          >
+            BECOME A FOUNDING MEMBER
+          </h3>
+          <div className="mx-auto flex max-w-md justify-center">
+            <div
+              className="flex flex-1 flex-col items-center rounded-2xl
+                         border-2 border-white/40 bg-white/10 p-5
+                         text-center shadow-md backdrop-blur"
+            >
+              <div className="mb-1 text-2xl font-extrabold">CHF 100</div>
+              <p className="mb-4 text-xs text-orange-50">
+                Founding Membership in Public AI Switzerland
+              </p>
+              <a
+                href="https://opencollective.com/datalets/projects/public-ai-switzerland/contribute/founding-membership-99202/checkout?interval=year&amount=100&contributeAs=me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full
+                           bg-white px-5 py-2 text-xs font-semibold
+                           text-orange-600 shadow-sm hover:bg-orange-50"
+              >
+                Join and claim membership
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div className="mt-8 border-t border-white/30 pt-8">
           <h3
             className="mb-4 text-center text-xs font-semibold
                        tracking-[0.2em]"
           >
-            JOIN AND RECEIVE
+            FOUNDING MEMBER BENEFITS
           </h3>
           <div className="grid gap-5 md:grid-cols-3">
             <div
@@ -148,37 +179,6 @@ function FoundingMemberCta() {
                 Receive a limited physical copy of the Own Our Own (O3)
                 Plan, plus a membership certificate.
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 border-t border-white/30 pt-8">
-          <h3
-            className="mb-3 text-center text-[0.7rem] font-semibold
-                       tracking-[0.2em]"
-          >
-            BECOME A FOUNDING MEMBER
-          </h3>
-          <div className="mx-auto flex max-w-md justify-center">
-            <div
-              className="flex flex-1 flex-col items-center rounded-2xl
-                         border-2 border-white/40 bg-white/10 p-5
-                         text-center shadow-md backdrop-blur"
-            >
-              <div className="mb-1 text-2xl font-extrabold">CHF 100</div>
-              <p className="mb-4 text-xs text-orange-50">
-                Founding Membership in Public AI Switzerland
-              </p>
-              <a
-                href="https://opencollective.com/datalets/projects/public-ai-switzerland/contribute/founding-membership-99202/checkout?interval=year&amount=100&contributeAs=me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full
-                           bg-white px-5 py-2 text-xs font-semibold
-                           text-orange-600 shadow-sm hover:bg-orange-50"
-              >
-                Join and claim membership
-              </a>
             </div>
           </div>
         </div>

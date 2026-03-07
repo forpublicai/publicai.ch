@@ -10,12 +10,12 @@ export default function Footer() {
       >
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           <a
-            href="https://www.swiss-ai.org/apertus"
+            href="https://apertvs.ai"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2"
           >
-            Apertus Docs
+            Apertus Documentation
           </a>
           <a
             href="https://publicai.co"
@@ -34,20 +34,12 @@ export default function Footer() {
             Hugging Face: Public AI
           </a>
           <a
-            href="https://github.com/forpublicai/platform.publicai.co"
+            href="https://github.com/forpublicai/publicai.ch"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2"
           >
-            Platform Source
-          </a>
-          <a
-            href="https://github.com/forpublicai/chat.publicai.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2"
-          >
-            Chat UI Source
+            Source of this web site
           </a>
         </div>
 

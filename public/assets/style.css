@@ -263,8 +263,7 @@ nav .menu a:hover {
   color: #333;
   padding: 0;
   margin: 0;
-  background: #B9DBFF
-    url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/View_of_Lake_Lugano_01.jpg/1280px-View_of_Lake_Lugano_01.jpg")
+  background: #B9DBFF url("IMG_2517.jpg")
     no-repeat 50% center scroll;
   background-attachment: fixed;
   background-size: cover;
@@ -524,11 +523,13 @@ main section + section:not(.founding-member-cta)::before {
   opacity: 0.9;
 }
 
+/*
 .founding-member-cta .cta-benefits {
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+*/
 
 .founding-member-cta .cta-benefits h3 {
   font-size: clamp(1.1em, 1.8vw, 1.3em);
