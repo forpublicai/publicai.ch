@@ -515,27 +515,36 @@ function AchievementsSection() {
           </div>
         </div>
         <p className="mt-6 text-sm text-slate-700">
-          Trusted by major institutions including the{" "}
-          <b>UN</b> and <b>ILO</b>. Apps like{" "}
+          Hundreds of apps, including{" "}
           <a
-            href="https://github.com/forpublicai"
+            href="https://www.liip.ch/en/blog/zuricitygpt-oss-version-using-only-open-source-models"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4"
           >
-            ZüriCityGPT
+            ZüriCityGPT OSS
           </a>{" "}
           and{" "}
           <a
-            href="https://dribdat.ch"
+            href="https://siliconlovefield.bb.dribdat.cc"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4"
           >
             Dribdat
           </a>{" "}
-          are built on top. Active usage from universities, research groups,
-          and Hugging Face integrations.
+          are being built with our API already. An official{" "}
+          <a
+            href="https://huggingface.co/blog/inference-providers-publicai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4"
+          >
+            Hugging Face
+          </a>{" "}
+          enabling all kinds of integrations is available. Active usage from
+          universities, commercial research groups, and a growing user community
+          attest to the appeal of the solution.
         </p>
       </div>
     </section>

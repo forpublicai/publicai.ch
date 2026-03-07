@@ -78,16 +78,9 @@ export default function Footer() {
       <div className="bg-slate-950">
         <div className="mx-auto max-w-5xl px-4 pb-4 text-[0.65rem] text-slate-400">
           <p>
-            Photo:{" "}
-            <a
-              href="https://commons.wikimedia.org/wiki/File:View_of_Lake_Lugano_01.jpg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2"
-            >
-              John Samuel
-            </a>{" "}
-            (CC BY 4.0) · Icons:{" "}
+            Photo: Joshua Tan (CC BY 4.0) ·{" "}
+            <br />
+            Icons:{" "}
             <a
               href="https://thenounproject.com/browse/collection-icon/ai-197389/"
               target="_blank"
