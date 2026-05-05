@@ -39,4 +39,5 @@ jobs:
           remote-host: ${{ secrets.DEPLOY_REMOTE_HOST }}
           remote-user: ${{ secrets.DEPLOY_REMOTE_USER }}
           remote-password: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          remote-port: 21
           remote-path: "/"
