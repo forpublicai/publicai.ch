@@ -37,7 +37,6 @@ html {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -249,17 +248,13 @@ nav .menu a:hover {
   position: relative;
   width: 100%;
   height: 100vh;
-  transition: height 999999s;
   text-align: center;
   min-height: 100vh;
   color: #333;
   padding: 0;
   margin: 0;
   background: #B9DBFF url("IMG_2517.jpg")
-    no-repeat 50% center scroll;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
+    no-repeat center top / cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1314,7 +1309,6 @@ main section + section:not(.founding-member-cta)::before {
   .hero {
     height: 100vh;
     min-height: 100vh;
-    background-attachment: scroll;
   }
 
   .stats-grid {
