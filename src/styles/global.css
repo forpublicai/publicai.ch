@@ -1,0 +1,1920 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+@import "tailwindcss";
+
+/*******************************************************************************
+ *
+ * publicai.ch — global.css
+ *
+ * The single home of the design system (model: jvargas_site/src/index.css):
+ *   1. Design tokens as plain CSS variables (:root)
+ *   2. Tokens mapped INTO Tailwind v4 via @theme inline
+ *   3. Base element styles (@layer base)
+ *   4. Semantic component classes (@layer components) — components MUST
+ * prefer these over ad-hoc Tailwind utilities (constraint)
+ *
+ * Brand follows the global site's conventions (publicai.co,):
+ * red #EF3C24 primary (logo colour), Public Sans, light editorial look, hairline
+ * borders, minimal shadows, rounded-full pills. NO glass, NO glow.
+ *
+ ******************************************************************************/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Brand + neutral tokens (global-site conventions). */
+:root {
+  --radius: 0.625rem;
+
+  --background: #ffffff;
+  --foreground: #141418;
+  --card: #ffffff;
+  --card-foreground: #141418;
+  --popover: #ffffff;
+  --popover-foreground: #141418;
+
+  --primary: #ef3c24;
+  /* Text-safe brand red, same hue as the logo red (WCAG AA: #ef3c24 on
+   * white = 3.9:1 < 4.5:1); #e42a11 = 4.5:1 for text and white-on-brand
+   * text surfaces. */
+  --primary-text: #e42a11;
+  --primary-foreground: #ffffff;
+  /* Light brand tint for solid-brand hover states (CTA + Become-a-Member
+   * pills): same brand hue, softened for comfort (user decision, 2026-09-30). */
+  --hover-tint: color-mix(in oklab, var(--primary) 82%, white);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: #55555f;
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+}
+
+@theme {
+  --font-sans: "Public Sans", "Helvetica", "Arial", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Viewport-sticky footer: full-height column, main grows to fill. */
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > main {
+    flex: 1 0 auto;
+  }
+
+  /* Reduced motion: disable transitions + animations globally. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ------------------------------------------------------------------
+   * Link treatment (user decision 2026-09-30, session 27): the fcl-style
+   * underline grow-in + brand hover colour are SCOPED to text links and
+   * menu links only — the base anchor is inert. Block-level action
+   * elements (MDX CTA, pills, embeds, figures) never inherit it, so new
+   * components are safe by default.
+   * ------------------------------------------------------------------*/
+  a {
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* In-text links (MDX content, excluding block CTAs). */
+  .mdx-body a:not(.cta) {
+    position: relative;
+  }
+  .mdx-body a:not(.cta)::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-text);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mdx-body a:not(.cta):hover {
+    color: var(--primary-text);
+  }
+  .mdx-body a:not(.cta):hover::after {
+    transform: scaleX(1);
+  }
+  /* Menu links: desktop main nav, desktop utility list, and both of
+   * their dropdown panels. Mobile panel links stay plain (block list). */
+  .site-header__nav-list a,
+  .site-header__utility-list a,
+  .site-header__submenu a {
+    position: relative;
+  }
+  .site-header__nav-list a::after,
+  .site-header__utility-list a::after,
+  .site-header__submenu a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-text);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .site-header__nav-list a:hover,
+  .site-header__utility-list a:hover,
+  .site-header__submenu a:hover {
+    color: var(--primary-text);
+  }
+  .site-header__nav-list a:hover::after,
+  .site-header__utility-list a:hover::after,
+  .site-header__submenu a:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@layer components {
+  /* Block heading: mixed case, normal letter-spacing, grey text (C6). */
+  .block-heading {
+    @apply text-sm font-normal text-muted-foreground;
+    letter-spacing: normal;
+    margin-bottom: 0.25rem; /* header spacing 0.25rem (C6) */
+  }
+
+  /* Page-level heading. */
+  .page-heading {
+    @apply text-4xl font-normal leading-tight text-foreground;
+  }
+
+  /* Card: hairline border, minimal shadow, soft radius (C7). */
+  .card {
+    @apply rounded-lg border border-border bg-card;
+  }
+
+  /* Pill button (rounded-full, global-site convention). */
+  .pill {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors;
+  }
+  .pill--primary {
+    background: var(--primary-text);
+    color: #fff;
+  }
+  /* Solid pills hover on the shared light brand tint, text stays white
+   * (user decision 2026-09-30: same hover language as the MDX CTA). */
+  .pill--primary:hover {
+    background: var(--hover-tint);
+    color: var(--primary-foreground);
+  }
+  .pill--outline {
+    @apply border border-border bg-card text-foreground hover:bg-muted;
+  }
+
+  /* Locale pills (header row 1): mockup's small button set. */
+  .pill-locale {
+    @apply inline-flex items-center justify-center rounded-md px-2.5 py-1 text-xs font-semibold text-muted-foreground transition-colors;
+  }
+  .pill-locale:hover {
+    @apply bg-primary/10 text-primary;
+  }
+  .pill-locale--active {
+    @apply bg-foreground text-background;
+  }
+
+  /* Align pages with the header/footer; individual prose blocks keep a
+   * readable line length inside this full-width content container. */
+  .page-column {
+    max-width: 72rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Section container: generous vertical rhythm (global-site look). */
+  .page-section {
+    @apply py-16;
+  }
+
+  /* ------------------------------------------------------------------
+   * Header — two-row model (mockup structure, global-site tone).
+   * Row 1 = utility (languages left, global/external links right).
+   * Row 2 = main (logo left, nav + pill right).
+   * ------------------------------------------------------------------*/
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__utilityrow {
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__utilityrow-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-width: 72rem; /* matches footer container width */
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+  }
+  .lang-switcher-row ul {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .site-header__utility {
+    display: none;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+  .site-header__utility-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header__utility-list a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .site-header__utility-list a:hover {
+    color: var(--primary-text);
+  }
+  .site-header__utility-item--mobile a {
+    display: block;
+    padding: 0.625rem 0;
+    color: var(--foreground);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__utility-item--mobile a:hover {
+    color: var(--primary);
+  }
+
+  .site-header__mainrow-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.5rem; /* 72px */
+    max-width: 72rem; /* matches footer container width */
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .site-header__logo {
+    display: block;
+    height: 2.1875rem; /* 35px */
+    width: auto;
+    max-width: min(340px, 52vw);
+    object-fit: contain;
+  }
+  .site-header__nav {
+    display: none;
+  }
+  .site-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--foreground);
+    /* Optical alignment: the boxes are centred, but the smaller nav text
+     * reads slightly high next to the large wordmark. */
+    position: relative;
+    top: 2px;
+  }
+  /* Main-menu dropdowns sit left-aligned to their trigger (they are well
+   * left of the viewport edge); the base.site-header__submenu rule
+   * right-anchors for the utility row — override back here. */
+  .site-header__nav-list .site-header__submenu {
+    left: 0;
+    right: auto;
+  }
+  .site-header__nav-list a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .site-header__nav-list a:hover {
+    color: var(--primary-text);
+  }
+  .site-header__menu-item {
+    position: relative;
+  }
+  .site-header__menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  .site-header__chevron {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+    margin-left: 0.125rem;
+  }
+  .site-header__submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    /* Anchor menu panels to the RIGHT edge of the trigger for items in
+     * the right-hand region (utility row, CTA-adjacent): a left-anchored
+     * panel overflows the viewport (clip bug, 2026-09-30). Main-menu
+     * items sit left of centre and keep left alignment. */
+    right: 0;
+    left: auto;
+    min-width: 12rem;
+    padding: 0.75rem 1rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    z-index: 60;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  .site-header__submenu a {
+    text-decoration: none;
+    color: var(--foreground);
+  }
+  .site-header__submenu a:hover {
+    color: var(--primary-text);
+  }
+  .site-header__submenu--mobile {
+    position: static;
+    border: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+  }
+  .site-header__cta {
+    display: none; /* mobile: CTA lives in the folded menu (mockup model) */
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  .site-header__toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--background);
+    cursor: pointer;
+  }
+  .site-header__toggle-bar {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: var(--foreground);
+  }
+  .site-header__mobile {
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+  }
+  .site-header__mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .site-header__mobile-list a {
+    display: block;
+    padding: 0.625rem 0;
+    color: var(--foreground);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__mobile-list a:hover {
+    color: var(--primary);
+  }
+  .site-header__mobile-sep {
+    height: 1px;
+    background: var(--border);
+    margin: 0.5rem 0;
+    list-style: none;
+  }
+  /* The group separator must not stack with the item divider above it:
+   * the last main-menu link before the separator drops its own
+   * border-bottom (fix for the doubled line, 2026-09-30). */
+  .site-header__mobile-list li:has(+ .site-header__mobile-sep) > a,
+  .site-header__mobile-list li:has(+ .site-header__mobile-sep) > .site-header__menu-btn {
+    border-bottom: none;
+  }
+  .site-header__mobile-cta a {
+    margin-top: 0.75rem;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  /* ------------------------------------------------------------------
+   * Footer — brand red block with white links.
+   * ------------------------------------------------------------------*/
+  .site-footer {
+    background: var(--primary-text);
+    color: #ffffff;
+  }
+  .site-footer__inner {
+    max-width: 72rem; /* shared chrome container width; header rows match */
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .site-footer__brand {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #fff;
+  }
+  .site-footer__tagline {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+    max-width: 24rem;
+    line-height: 1.5;
+  }
+  .site-footer__col-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: #ffffff;
+    margin: 0 0 0.75rem;
+  }
+  .site-footer__col-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0;
+  }
+  .site-footer__col-list li {
+    list-style: none;
+  }
+  /* Footer links: white-on-red, opacity-dim on hover (no underline
+   * animation — the red block has its own link language,). */
+  .site-footer a {
+    color: #fff;
+    font-weight: 500;
+    transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+  .site-footer a:hover {
+    color: #fff;
+    opacity: 0.75;
+  }
+  .site-footer__parent {
+    font-weight: 500;
+  }
+  .site-footer__sub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.4rem 0 0 0.75rem;
+    padding: 0;
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+  .site-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 0.8125rem;
+    color: #ffffff;
+  }
+  /* ------------------------------------------------------------------
+   * MDX components  — Accordion, Callout, CTA, Divider, Embed,
+   * Figure, LinkRow, StatGrid. Port styling from the global site's
+   * FAQSection (cards, hairline borders, rounded-lg) per constraint.
+   * ------------------------------------------------------------------*/
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .accordion__item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    overflow: hidden;
+  }
+  .accordion__trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font: inherit;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--foreground);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .accordion__trigger:hover {
+    background-color: var(--muted);
+  }
+  .accordion__chevron {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .accordion__chevron--open {
+    transform: rotate(180deg);
+  }
+  .accordion__panel {
+    padding: 0 1.5rem;
+  }
+  .accordion__panel-inner {
+    padding-top: 0.75rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .accordion__answer {
+    color: var(--muted-foreground);
+    line-height: 1.65;
+    white-space: pre-line;
+  }
+
+  /* Callout variants (brand tint for highlight, amber for warning). */
+  .callout {
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    line-height: 1.65;
+  }
+  .callout--info {
+    background: var(--muted);
+  }
+  .callout--warning {
+    background: oklch(0.97 0.05 85);
+    border-color: oklch(0.87 0.09 85);
+  }
+  .callout--highlight {
+    background: color-mix(in oklab, var(--primary) 8%, white);
+    border-color: color-mix(in oklab, var(--primary) 30%, white);
+  }
+  /* Legal notices use the section sign as a decorative marker; their text
+   * stays readable by itself and follows the same palette as page copy. */
+  .callout--legal {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .callout__legal-symbol {
+    display: grid;
+    place-items: center;
+    flex: 0 0 2.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--foreground);
+    color: var(--background);
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .callout__legal-content {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+  .callout__legal-content > * + * {
+    margin-top: 0.75rem;
+  }
+
+  /* Lead paragraph. */
+  .lead {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    color: var(--muted-foreground);
+    max-width: 44rem;
+  }
+
+  /* Long-form page structure: clearer section starts; prose paragraphs keep
+   * their own readable measure while blocks use the shared page width. */
+  .mdx-body {
+    width: 100%;
+  }
+  .mdx-body > h2 {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .mdx-body > .lead + h2 {
+    margin-top: 3rem;
+  }
+  .mdx-body > .lead {
+    max-width: 52rem;
+  }
+  .mdx-body .dialogue-flyer {
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+
+  /* Box: card container with
+   * semantic variants. Internal rhythm is EXPLICIT and uniform (one step
+   * between every child pair; the title's own margin is zeroed so it cannot
+   * double up). Inner blockquotes shed their.mdx-body treatment — the box
+   * IS the quote container; no nested-rule look. */
+  .box {
+    margin: 1.75rem 0 0;
+    padding: 1.375rem 1.625rem;
+    border-radius: var(--radius);
+    line-height: 1.65;
+  }
+  .box > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .box > * + * {
+    margin-top: 0.875rem;
+  }
+  .box .block-heading.box__title {
+    color: var(--muted-foreground);
+    margin-bottom: 0;
+  }
+  /* Inner quotes: strip the.mdx-body treatment inside every box, then
+   * give each context its own voice:
+   * quote box  → PROMINENT quote (larger, dark), quiet trailing notes;
+   * other boxes → classic nested quote (left rule, muted). */
+  .mdx-body .box blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+  }
+  .mdx-body .box blockquote > * + * {
+    margin-top: 0.75rem;
+  }
+  .mdx-body .box--quote blockquote {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--foreground);
+  }
+  .mdx-body .box--quote > p:not(.block-heading) {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+  }
+  .mdx-body .box:not(.box--quote) blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+    color: var(--muted-foreground);
+  }
+  .box--card {
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .box--info {
+    background: var(--muted);
+  }
+  .box--warning {
+    background: oklch(0.97 0.05 85);
+    border: 1px solid oklch(0.87 0.09 85);
+  }
+  .box--highlight {
+    background: color-mix(in oklab, var(--primary) 8%, white);
+    border: 1px solid color-mix(in oklab, var(--primary) 30%, white);
+  }
+  /* Quote box: thin FULL outline + light brand fill (user direction,
+   * 2026-10-01) — clearly a container, not a side-rule blockquote. */
+  .box--quote {
+    border: 1px solid color-mix(in oklab, var(--primary-text) 22%, white);
+    background: color-mix(in oklab, var(--primary-text) 5%, white);
+    border-radius: var(--radius);
+  }
+  .mdx-body > .box + h2 {
+    margin-top: 3rem;
+  }
+  .mdx-body .box--quote blockquote {
+    font-size: 1.0625rem;
+  }
+
+  /* TeamGrid: responsive grid of member cards
+   * with round portraits, names, optional roles. */
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 2.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .team-card {
+    display: flex;
+    flex: 0 1 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    overflow: hidden;
+    text-align: center;
+    min-width: 0;
+  }
+  .team-card .team-card__image,
+  .team-card .team-card__placeholder {
+    width: min(100%, 8rem);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    margin: 0;
+  }
+  /* Uniform look across differently shot portraits. */
+  .team-card .team-card__image {
+    filter: grayscale(1);
+  }
+  .team-card__placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    color: var(--muted-foreground);
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  .team-card__body {
+    padding: 1.25rem 0 0;
+    width: 100%;
+  }
+  .team-card__name {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  .team-card .team-card__role {
+    margin: 0.125rem 0 0;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  .team-card .team-card__link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .team-card .team-card__link:hover,
+  .team-card .team-card__link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* CTA action row. */
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+  }
+  .mdx-body .cta {
+    width: 100%;
+  }
+  /* CTA hover (revised, user decision 2026-09-30): solid variant keeps a
+   * BRANCH-COLOURED background but in a lighter tint, text stays white —
+   * the full-saturation flip to white/orange was harsh. The
+   * shared token `--hover-tint` is used by the "Become a Member" pills
+   * below so the hover language stays consistent site-wide. */
+  .cta--primary {
+    border: 1px solid var(--primary-text);
+    background: var(--primary-text);
+    color: #fff;
+  }
+  .cta--primary:hover {
+    border-color: var(--primary-text);
+    background: var(--hover-tint);
+    color: #fff;
+  }
+  .cta--outline {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+  }
+  .cta--outline:hover {
+    border-color: var(--primary);
+    background: var(--hover-tint);
+    color: #fff;
+  }
+  .cta__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .cta__title {
+    font-weight: 600;
+  }
+  .cta__description {
+    font-size: 0.875rem;
+    opacity: 1;
+  }
+  .cta__arrow {
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  .cta:hover .cta__arrow {
+    transform: translateX(4px);
+  }
+
+  /* LinkRow: horizontal CTA row (wraps on mobile). */
+  .link-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .link-row .cta {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  /* PosterGrid: equal-size poster previews with a PDF download each. */
+  .poster-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .poster-grid .poster-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .poster-card__preview {
+    display: block;
+    aspect-ratio: 1 / 1.414;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--muted);
+  }
+  .mdx-body .poster-card__preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    transition: transform 150ms ease;
+  }
+  .poster-card__preview:hover img {
+    transform: scale(1.02);
+  }
+  .poster-grid .poster-card__language {
+    margin: 0;
+    font-weight: 600;
+  }
+  .mdx-body .poster-grid .poster-card__download {
+    margin-top: auto;
+    padding: 0.625rem 0.875rem;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+  @media (min-width: 40rem) {
+    .poster-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+  }
+  @media (min-width: 64rem) {
+    .poster-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+
+  /* StatGrid number tiles. */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .stat-grid__tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 8rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+  }
+  .stat-grid__label {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+    line-height: 1.45;
+  }
+  .stat-grid__value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-top: 0.75rem;
+  }
+
+  /* Figure. */
+  .figure {
+    margin: 2rem 0;
+  }
+  .figure img {
+    display: block;
+    max-width: 28rem;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+  }
+  .figure figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+
+  /* Embed (sandboxed iframe). */
+  .embed {
+    margin: 2rem 0;
+  }
+  .embed iframe {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+  }
+
+  /* Divider. */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* ------------------------------------------------------------------
+   * News pipeline: teaser + index + article cards. Mockup model —
+   * category pill + date row, bold title, grey excerpt, brand read-more
+   * label — ported to the global-site card language (hairline border,
+   * soft radius, minimal hover, NO glass/glow).
+   * ------------------------------------------------------------------*/
+  .news-teaser__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .news-teaser__all {
+    font-size: 0.875rem;
+  }
+  .news-index-head {
+    max-width: none;
+  }
+  .news-index-head__lead {
+    margin: 1rem 0 0;
+    max-width: 46rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .news-featured .news-card--featured {
+    min-height: auto;
+  }
+  .news-featured .news-card--featured .news-card__body {
+    flex: 1;
+    padding: 2rem;
+  }
+  .news-featured .news-card--featured .news-card__title {
+    font-size: 1.625rem;
+  }
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    text-decoration: none;
+    overflow: hidden;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .news-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-article__hero {
+    display: block;
+    width: 100%;
+    max-height: 34rem;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    margin-top: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .news-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    flex: 1;
+  }
+  .news-card:hover {
+    border-color: var(--primary);
+    background: color-mix(in oklab, var(--primary) 4%, var(--card));
+  }
+  .news-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+  }
+  .news-card__category {
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.71875rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    background: color-mix(in oklab, var(--foreground) 5%, var(--card));
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+  }
+  .news-card__date {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+  .news-card__title {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--foreground);
+    margin: 0;
+  }
+  .news-card__excerpt {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+  .news-card__more {
+    margin-top: auto;
+    padding-top: 0.375rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+  .news-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    text-decoration: none;
+  }
+  .news-back:hover {
+    color: var(--primary-text);
+  }
+
+  /* Category filter row + pagination. */
+  .news-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+  }
+  .news-filter__label {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+    margin-right: 0.25rem;
+  }
+  .news-filter .pill-locale--active,
+  .news-filter .pill-locale[aria-current="page"] {
+    background: var(--foreground);
+    color: var(--background);
+  }
+  .news-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .news-pagination__status {
+    font-size: 0.8125rem;
+  }
+
+  /* Byline. */
+  .news-card__byline {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+    margin: 0;
+    text-decoration: none;
+  }
+  .news-card__language {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+  a.news-card__byline:hover {
+    color: var(--primary-text);
+  }
+
+  /* Article-end biographies share the page width and wrap on small screens. */
+  .news-author-bio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+  .news-author-bio__portrait {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+  .news-author-bio__content {
+    flex: 1 1 15rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+  .news-author-bio__name {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .news-author-bio__name a {
+    color: var(--foreground);
+    text-decoration: none;
+  }
+  .news-author-bio__name a:hover {
+    color: var(--primary-text);
+  }
+  .news-author-bio__affiliation {
+    margin-top: 0.25rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+  }
+  .news-author-bio .mdx-body {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .news-author-bio__profile {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+  }
+  .news-author-bio__profile:hover {
+    text-decoration: underline;
+  }
+
+  /* Author directory: card grid + single-author header. */
+  .author-articles {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .author-articles__heading {
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .author-articles__empty {
+    color: var(--muted-foreground);
+  }
+
+  .author-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .author-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 0 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    text-decoration: none;
+    overflow: hidden;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .author-card:hover {
+    border-color: var(--primary);
+  }
+  .author-card__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+  .author-card__body {
+    padding: 0.875rem 1.25rem 0;
+  }
+  .author-card__name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+  }
+  .author-card__affiliation {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin: 0.125rem 0 0;
+  }
+  .author-card__id {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    margin: 0.25rem 0 0;
+  }
+  .author-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .author-header__image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 999px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  /* ------------------------------------------------------------------
+   * Home page sections: hero, dialog highlight + steps,
+   * share-offer card, why-cooperative, apertus slim card, newsletter,
+   * FAQ wrapper. Mockup structure in the global-site language: clean
+   * lines, hairline borders, rounded-lg, brand red accents; NO glass,
+   * NO glow, NO wide-tracked uppercase.
+   * ------------------------------------------------------------------*/
+  .home-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .home-hero__text {
+    max-width: 40rem;
+  }
+  .home-hero__lead {
+    margin-top: 1.25rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+  }
+  .home-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+  .home-hero__image {
+    display: block;
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-left: auto;
+  }
+  .home-section {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .home-section-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--foreground);
+    margin: 0;
+  }
+  .home-dialog {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 1.75rem;
+  }
+  .home-dialog__lead {
+    margin-top: 0.875rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+  }
+  .home-dialog__body .pill {
+    margin-top: 1.25rem;
+  }
+  .home-dialog__image {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    height: auto;
+  }
+  .home-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .home-steps__item {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+  }
+  .home-steps__number {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+  .home-steps__title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 0.25rem 0 0.25rem;
+  }
+  .home-steps__body {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+  }
+  /* Home section panels: sections alternate between an outlined card and
+   * a tinted panel so each block reads as its own unit. */
+  .home-panel {
+    padding: 2rem 1.75rem;
+    border-radius: var(--radius);
+  }
+  .home-panel--tinted {
+    background: var(--muted);
+  }
+
+  /* Tinted panel so the offer reads as its own block between the
+   * dialogue cards above and the plain "why" text below. */
+  .home-offer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 2rem 1.75rem;
+    border-radius: var(--radius);
+    background: var(--muted);
+  }
+  .home-offer__lead {
+    margin-top: 0.875rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+    max-width: 40rem;
+  }
+  .home-offer__benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+  }
+  .home-offer__benefits li {
+    display: flex;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+  .home-offer__benefits li > span[aria-hidden] {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .home-offer__card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .home-offer__price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  .home-offer__price-note {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+  .home-offer__price-note--muted {
+    color: var(--muted-foreground);
+  }
+  .home-offer__twint {
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+  .home-why__lead {
+    margin-top: 0.875rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+    max-width: 40rem;
+  }
+  .home-why__body {
+    margin-top: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+    max-width: 40rem;
+  }
+  .home-why .pill {
+    margin-top: 1.25rem;
+  }
+  .home-apertus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.75rem;
+  }
+  .home-apertus__lead {
+    margin: 0.5rem 0 0;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    max-width: 36rem;
+  }
+  .home-apertus__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .home-newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.75rem;
+  }
+  .home-newsletter__lead {
+    margin: 0.5rem 0 0;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    max-width: 36rem;
+  }
+  .home-faq .accordion {
+    margin-top: 1.5rem;
+  }
+
+  /* ------------------------------------------------------------------
+   * MDX typography (user decision 2026-09-30): full markdown-element
+   * styling inside.mdx-body — headings with pleasing spacing, prose
+   * rhythm, lists, quotes, code, tables. Grey mixed-case headings (C6),
+   * hairline rules, brand accents kept to links/inline code.
+   * ------------------------------------------------------------------*/
+  .mdx-body {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--foreground);
+  }
+  .page-heading + .mdx-body {
+    margin-top: 1.5rem;
+  }
+  .mdx-body > .team-grid + .box {
+    margin-top: 3rem;
+    padding: 1.75rem 2rem;
+  }
+  .mdx-body > .team-grid + .box .box__title {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  /* "Coming soon" pills: greyed out so they don't read as clickable. */
+  .pill[aria-disabled="true"] {
+    cursor: default;
+    pointer-events: none;
+    background: var(--muted);
+    color: var(--muted-foreground);
+    border: 1px dashed var(--border);
+  }
+  .mdx-body > * + * {
+    margin-top: 1.25rem;
+  }
+  .mdx-body > .stat-grid + h2,
+  .mdx-body > .team-grid + h2,
+  .mdx-body > .link-row + h2 {
+    margin-top: 3rem;
+  }
+  .mdx-body h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 2.5rem 0 1rem;
+  }
+  .mdx-body h1:first-child {
+    margin-top: 0;
+  }
+  .mdx-body h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 2.75rem 0 0.875rem;
+  }
+  .mdx-body h3 {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 2rem 0 0.75rem;
+  }
+  .mdx-body h4 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.625rem;
+  }
+  .mdx-body p {
+    margin: 0;
+    max-width: 46rem;
+  }
+  .mdx-body strong {
+    font-weight: 600;
+  }
+  .mdx-body ul:not(.team-grid),
+  .mdx-body ol {
+    margin: 1.25rem 0 0;
+    padding-left: 1.5rem;
+    max-width: 44rem;
+  }
+  .mdx-body ul:not(.team-grid) {
+    list-style: disc;
+  }
+  .mdx-body ol {
+    list-style: decimal;
+  }
+  .mdx-body li:not(.team-card) {
+    margin-top: 0.375rem;
+    padding-left: 0.25rem;
+  }
+  .mdx-body li::marker {
+    color: var(--muted-foreground);
+  }
+  .mdx-body li > ul,
+  .mdx-body li > ol {
+    margin-top: 0.375rem;
+  }
+  .mdx-body blockquote {
+    margin: 1.75rem 0 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 3px solid var(--primary);
+    color: var(--muted-foreground);
+    font-style: normal;
+  }
+  .mdx-body blockquote > * + * {
+    margin-top: 0.75rem;
+  }
+  .mdx-body code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875em;
+    background: color-mix(in oklab, var(--foreground) 5%, var(--card));
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    padding: 0.125rem 0.375rem;
+  }
+  .mdx-body pre {
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.25rem;
+    background: color-mix(in oklab, var(--foreground) 4%, var(--card));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .mdx-body pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  /* Markdown tables retain their semantics and scroll inside the page on
+   * narrow screens. Borders and surfaces use the existing site palette. */
+  .mdx-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overscroll-behavior-x: contain;
+  }
+  .mdx-table-scroll:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+  .mdx-body > .mdx-table-scroll + p {
+    margin-top: 1.5rem;
+  }
+  .mdx-body table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+  .mdx-body thead {
+    background: color-mix(in oklab, var(--foreground) 4%, var(--card));
+  }
+  .mdx-body th,
+  .mdx-body td {
+    vertical-align: top;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    min-width: 7rem;
+    overflow-wrap: break-word;
+  }
+  .mdx-body th {
+    text-align: left;
+    font-weight: 600;
+  }
+  .mdx-body th[align="center"],
+  .mdx-body td[align="center"] {
+    text-align: center;
+  }
+  .mdx-body th[align="right"],
+  .mdx-body td[align="right"] {
+    text-align: right;
+  }
+  .mdx-body tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .mdx-body tbody tr:nth-child(even) {
+    background: color-mix(in oklab, var(--foreground) 2%, var(--card));
+  }
+  .mdx-body .contains-task-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .mdx-body .task-list-item > input[type="checkbox"] {
+    margin-right: 0.625rem;
+    accent-color: var(--primary);
+  }
+  .mdx-body del {
+    text-decoration-thickness: 1px;
+  }
+  .mdx-body .footnotes {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  .mdx-body .footnotes > h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+  .mdx-body a[data-footnote-ref]::after,
+  .mdx-body a[data-footnote-backref]::after {
+    content: none;
+  }
+  .mdx-body hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+  .mdx-body img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.75rem 0;
+  }
+  /* Screen-reader-only helper (component a11y labels). */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (min-width: 23rem) {
+    .team-card {
+      flex-basis: calc((100% - 1.25rem) / 2);
+    }
+  }
+  @media (min-width: 40rem) {
+    .team-card {
+      flex-basis: calc((100% - 2.5rem) / 3);
+    }
+    .news-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* Tablet and up: show desktop rows; hide mobile toggle; expand footer.
+   * Breakpoint 57rem (912px): the main row (wide per-locale logos + five
+   * DE/nav labels + CTA pill) measures ~910px at its widest; below that the
+   * desktop row overflowed and clipped the CTA, so the mobile
+   * panel owns the whole band under 912. */
+  @media (min-width: 57rem) {
+    .team-card {
+      flex-basis: calc((100% - 5rem) / 5);
+    }
+    .site-header__nav,
+    .site-header__utility {
+      display: flex;
+    }
+    .stat-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .stat-grid__tile {
+      padding: 1rem;
+      text-align: center;
+    }
+    .news-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .news-featured .news-card--featured:has(.news-card__image) {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    }
+    .news-featured .news-card--featured .news-card__image {
+      height: 100%;
+      min-height: 20rem;
+      aspect-ratio: auto;
+      border-bottom: 0;
+      border-right: 1px solid var(--border);
+    }
+    .news-featured .news-card--featured .news-card__body {
+      justify-content: center;
+      padding: 2rem;
+    }
+    .author-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .home-hero {
+      grid-template-columns: 3fr 2fr;
+    }
+    .home-dialog {
+      grid-template-columns: 3fr 2fr;
+    }
+    .home-steps {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .home-offer {
+      grid-template-columns: 3fr 2fr;
+    }
+    .site-header__cta {
+      display: inline-flex;
+    }
+    .site-header__toggle {
+      display: none;
+    }
+    .site-footer__grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+}
