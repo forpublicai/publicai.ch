@@ -1,0 +1,523 @@
+{
+  "site": {
+    "name": {
+      "en": "Public AI Switzerland",
+      "de": "Public AI Schweiz",
+      "fr": "Public AI Suisse",
+      "it": "Public AI Svizzera",
+      "rm": "Public AI Svizra"
+    },
+    "canonicalBase": "https://publicai.ch",
+    "defaultLocale": "en",
+    "locales": [
+      "en",
+      "de",
+      "fr",
+      "it",
+      "rm"
+    ]
+  },
+  "menus": {
+    "main": [
+      {
+        "label": {
+          "de": "KI-Dialog",
+          "en": "AI Dialogue",
+          "fr": "Dialogue IA",
+          "it": "Dialogo IA",
+          "rm": "Dialog IA"
+        },
+        "page": "ai-dialogue"
+      },
+      {
+        "label": {
+          "de": "Mission",
+          "en": "Mission",
+          "fr": "Mission",
+          "it": "Missione",
+          "rm": "Missiun"
+        },
+        "page": "mission"
+      },
+      {
+        "label": {
+          "de": "News",
+          "en": "News",
+          "fr": "News",
+          "it": "News",
+          "rm": "News"
+        },
+        "page": "news"
+      }
+    ],
+    "utility": [
+      {
+        "label": {
+          "de": "Public AI Global",
+          "en": "Public AI Global",
+          "fr": "Public AI Global",
+          "it": "Public AI Global",
+          "rm": "Public AI Global"
+        },
+        "url": "https://publicai.co"
+      },
+      {
+        "label": {
+          "en": "Apertus",
+          "de": "Apertus",
+          "fr": "Apertus",
+          "it": "Apertus",
+          "rm": "Apertus"
+        },
+        "page": "apertus"
+      },
+      {
+        "label": {
+          "en": "Hugging Face",
+          "de": "Hugging Face",
+          "fr": "Hugging Face",
+          "it": "Hugging Face",
+          "rm": "Hugging Face"
+        },
+        "url": "https://huggingface.co/blog/inference-providers-publicai"
+      },
+      {
+        "label": {
+          "en": "Team",
+          "de": "Team",
+          "fr": "Équipe",
+          "it": "Team",
+          "rm": "Team"
+        },
+        "page": "team"
+      },
+      {
+        "label": {
+          "de": "Kontakt",
+          "en": "Contact",
+          "fr": "Contact",
+          "it": "Contatto",
+          "rm": "Contact"
+        },
+        "page": "contact"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": {
+      "de": "Die weltweit erste Genossenschaft für KI, im Besitz ihrer Genossenschaftsmitglieder.",
+      "en": "The world's first cooperative for AI, owned by its cooperative members.",
+      "fr": "La première coopérative d'IA au monde, détenue par ses coopératrices et coopérateurs.",
+      "it": "La prima cooperativa al mondo per l'IA, di proprietà dei suoi soci cooperatori.",
+      "rm": "L'emprima cooperativa dal mund per l'IA, en possess da ses commembers da la cooperativa."
+    },
+    "columns": [
+      {
+        "title": {
+          "de": "Genossenschaft",
+          "en": "Cooperative",
+          "fr": "Coopérative",
+          "it": "Cooperativa",
+          "rm": "Cooperativa"
+        },
+        "items": [
+          {
+            "label": {
+              "de": "Über uns",
+              "en": "About",
+              "fr": "À propos",
+              "it": "Chi siamo",
+              "rm": "Davart nus"
+            },
+            "page": "mission"
+          },
+          {
+            "label": {
+              "de": "Public AI Worldwide",
+              "en": "Public AI Worldwide",
+              "fr": "Public AI Worldwide",
+              "it": "Public AI Worldwide",
+              "rm": "Public AI Worldwide"
+            },
+            "page": "worldwide"
+          },
+          {
+            "label": {
+              "de": "News",
+              "en": "News",
+              "fr": "News",
+              "it": "News",
+              "rm": "News"
+            },
+            "page": "news"
+          },
+          {
+            "label": {
+              "de": "Kontakt",
+              "en": "Contact",
+              "fr": "Contact",
+              "it": "Contatto",
+              "rm": "Contact"
+            },
+            "page": "contact"
+          }
+        ]
+      },
+      {
+        "title": {
+          "de": "Angebot",
+          "en": "Offering",
+          "fr": "Offre",
+          "it": "Offerta",
+          "rm": "Purschida"
+        },
+        "items": [
+          {
+            "label": {
+              "de": "Chat (Basic)",
+              "en": "Chat (Basic)",
+              "fr": "Chat (Basic)",
+              "it": "Chat (Basic)",
+              "rm": "Chat (Basic)"
+            },
+            "url": "https://chat.publicai.co"
+          },
+          {
+            "label": {
+              "de": "API-Dokumentation",
+              "en": "API documentation",
+              "fr": "Documentation API",
+              "it": "Documentazione API",
+              "rm": "Documentaziun API"
+            },
+            "url": "https://platform.publicai.co/docs"
+          },
+          {
+            "label": {
+              "de": "Apertus",
+              "en": "Apertus",
+              "fr": "Apertus",
+              "it": "Apertus",
+              "rm": "Apertus"
+            },
+            "page": "apertus"
+          },
+          {
+            "label": {
+              "de": "Nationaler KI-Dialog",
+              "en": "National AI Dialogue",
+              "fr": "Dialogue national sur l'IA",
+              "it": "Dialogo nazionale sull'IA",
+              "rm": "Dialog naziunal davart l'IA"
+            },
+            "page": "ai-dialogue"
+          }
+        ]
+      },
+      {
+        "title": {
+          "de": "Rechtliches",
+          "en": "Legal",
+          "fr": "Mentions légales",
+          "it": "Note legali",
+          "rm": "Chaussas giuridicas"
+        },
+        "items": [
+          {
+            "label": {
+              "de": "Statuten",
+              "en": "Statutes",
+              "fr": "Statuts",
+              "it": "Statuti",
+              "rm": "Statuts"
+            },
+            "page": "statutes"
+          },
+          {
+            "label": {
+              "de": "Datenschutz",
+              "en": "Privacy Policy",
+              "fr": "politique de confidentialité",
+              "it": "informativa sulla privacy",
+              "rm": "decleraziun da protecziun da datas"
+            },
+            "page": "privacy-policy"
+          },
+          {
+            "label": {
+              "de": "Impressum",
+              "en": "Legal Notice",
+              "fr": "Impressum",
+              "it": "Impressum",
+              "rm": "Impressum"
+            },
+            "page": "legal-notice"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "de": "© Public AI Switzerland 2026. Alle Rechte vorbehalten.",
+      "en": "© Public AI Switzerland 2026. All rights reserved.",
+      "fr": "© Public AI Switzerland 2026. Tous droits réservés.",
+      "it": "© Public AI Switzerland 2026. Tutti i diritti riservati.",
+      "rm": "© Public AI Switzerland 2026. Tuts drets reservads."
+    }
+  },
+  "pages": {
+    "excluded": [
+      "sandbox"
+    ],
+    "redirects": [
+      {
+        "from": "/gruendung/",
+        "to": "/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/news/businessclass-ost/",
+        "to": "/news/2026-09-17-businessclass-ost/"
+      },
+      {
+        "from": "/de/news/businessclass-ost/",
+        "to": "/de/news/2026-09-17-businessclass-ost/"
+      },
+      {
+        "from": "/fr/news/businessclass-ost/",
+        "to": "/fr/news/2026-09-17-businessclass-ost/"
+      },
+      {
+        "from": "/it/news/businessclass-ost/",
+        "to": "/it/news/2026-09-17-businessclass-ost/"
+      },
+      {
+        "from": "/rm/news/businessclass-ost/",
+        "to": "/rm/news/2026-09-17-businessclass-ost/"
+      },
+      {
+        "from": "/news/gruendung/",
+        "to": "/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/de/news/gruendung/",
+        "to": "/de/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/fr/news/gruendung/",
+        "to": "/fr/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/it/news/gruendung/",
+        "to": "/it/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/rm/news/gruendung/",
+        "to": "/rm/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/news/unsere-stimme-im-ki-dialog/",
+        "to": "/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/de/news/unsere-stimme-im-ki-dialog/",
+        "to": "/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/fr/news/unsere-stimme-im-ki-dialog/",
+        "to": "/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/it/news/unsere-stimme-im-ki-dialog/",
+        "to": "/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/rm/news/unsere-stimme-im-ki-dialog/",
+        "to": "/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/news/zurich-hackathon/",
+        "to": "/news/2026-09-24-zurich-hackathon/"
+      },
+      {
+        "from": "/de/news/zurich-hackathon/",
+        "to": "/de/news/2026-09-24-zurich-hackathon/"
+      },
+      {
+        "from": "/fr/news/zurich-hackathon/",
+        "to": "/fr/news/2026-09-24-zurich-hackathon/"
+      },
+      {
+        "from": "/it/news/zurich-hackathon/",
+        "to": "/it/news/2026-09-24-zurich-hackathon/"
+      },
+      {
+        "from": "/rm/news/zurich-hackathon/",
+        "to": "/rm/news/2026-09-24-zurich-hackathon/"
+      },
+      {
+        "from": "/ki-dialog/",
+        "to": "/ai-dialogue/"
+      },
+      {
+        "from": "/de/ki-dialog/",
+        "to": "/de/ai-dialogue/"
+      },
+      {
+        "from": "/fr/ki-dialog/",
+        "to": "/fr/ai-dialogue/"
+      },
+      {
+        "from": "/it/ki-dialog/",
+        "to": "/it/ai-dialogue/"
+      },
+      {
+        "from": "/rm/ki-dialog/",
+        "to": "/rm/ai-dialogue/"
+      },
+      {
+        "from": "/kontakt/",
+        "to": "/contact/"
+      },
+      {
+        "from": "/de/kontakt/",
+        "to": "/de/contact/"
+      },
+      {
+        "from": "/fr/kontakt/",
+        "to": "/fr/contact/"
+      },
+      {
+        "from": "/it/kontakt/",
+        "to": "/it/contact/"
+      },
+      {
+        "from": "/rm/kontakt/",
+        "to": "/rm/contact/"
+      },
+      {
+        "from": "/statuten/",
+        "to": "/statutes/"
+      },
+      {
+        "from": "/de/statuten/",
+        "to": "/de/statutes/"
+      },
+      {
+        "from": "/fr/statuten/",
+        "to": "/fr/statutes/"
+      },
+      {
+        "from": "/it/statuten/",
+        "to": "/it/statutes/"
+      },
+      {
+        "from": "/rm/statuten/",
+        "to": "/rm/statutes/"
+      },
+      {
+        "from": "/impressum/",
+        "to": "/legal-notice/"
+      },
+      {
+        "from": "/de/impressum/",
+        "to": "/de/legal-notice/"
+      },
+      {
+        "from": "/fr/impressum/",
+        "to": "/fr/legal-notice/"
+      },
+      {
+        "from": "/it/impressum/",
+        "to": "/it/legal-notice/"
+      },
+      {
+        "from": "/rm/impressum/",
+        "to": "/rm/legal-notice/"
+      },
+      {
+        "from": "/datenschutz/",
+        "to": "/privacy-policy/"
+      },
+      {
+        "from": "/de/datenschutz/",
+        "to": "/de/privacy-policy/"
+      },
+      {
+        "from": "/fr/datenschutz/",
+        "to": "/fr/privacy-policy/"
+      },
+      {
+        "from": "/it/datenschutz/",
+        "to": "/it/privacy-policy/"
+      },
+      {
+        "from": "/rm/datenschutz/",
+        "to": "/rm/privacy-policy/"
+      },
+      {
+        "from": "/news/2026-08-25-unsere-stimme-im-ki-dialog/",
+        "to": "/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/de/news/2026-08-25-unsere-stimme-im-ki-dialog/",
+        "to": "/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/fr/news/2026-08-25-unsere-stimme-im-ki-dialog/",
+        "to": "/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/it/news/2026-08-25-unsere-stimme-im-ki-dialog/",
+        "to": "/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/rm/news/2026-08-25-unsere-stimme-im-ki-dialog/",
+        "to": "/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"
+      },
+      {
+        "from": "/news/2026-08-28-gruendung/",
+        "to": "/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/de/news/2026-08-28-gruendung/",
+        "to": "/de/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/fr/news/2026-08-28-gruendung/",
+        "to": "/fr/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/it/news/2026-08-28-gruendung/",
+        "to": "/it/news/2026-08-28-cooperative-founding/"
+      },
+      {
+        "from": "/rm/news/2026-08-28-gruendung/",
+        "to": "/rm/news/2026-08-28-cooperative-founding/"
+      }
+    ]
+  },
+  "home": {
+    "sections": {
+      "apertusPrompt": false
+    }
+  },
+  "embeds": {
+    "allowlist": [
+      "www.youtube-nocookie.com",
+      "player.vimeo.com",
+      "www.openstreetmap.org"
+    ]
+  },
+  "contact": {
+    "email": "hello@publicai.ch"
+  },
+  "news": {
+    "categories": [
+      "Dialog",
+      "Genossenschaft",
+      "Community",
+      "Medien",
+      "Technik"
+    ],
+    "authorsEnabled": false
+  }
+}

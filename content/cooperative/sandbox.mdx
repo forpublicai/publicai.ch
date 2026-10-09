@@ -1,0 +1,37 @@
+---
+title: Komponenten
+description: Diese Seite demonstrates alle MDX-Komponenten.
+draft: false
+---
+
+<!-- locale: en -->
+
+In-text links look like [this one to the mission](/mission).
+
+<Callout variant="info">Info callout text.</Callout>
+
+<CTA title="Mission" to="mission" description="Read our mission" />
+
+<StatGrid items={[{ value: "45%", label: "Fonds" }, { value: "30%", label: "Kern" }]} />
+
+<Figure src="/assets/logos/logo-switzerland.svg" alt="Logo" />
+
+<Divider />
+
+<!-- locale: de -->
+
+<Lead>Die Sandbox demonstriert alle MDX-Komponenten — inklusive Lead, Box und TeamGrid.</Lead>
+
+<Box variant="card" title="Box (Karten-Variante)">
+
+Inhalt in einer Box mit optionalem `title`.
+
+</Box>
+
+Textlinks sehen aus [wie dieser zur Mission](/mission).
+
+<Callout variant="warning">Warnung Text.</Callout>
+
+<Accordion items={[{ question: "Wie?", answer: "So." }, { question: "Was?", answer: "Das." }]} />
+
+<LinkRow links={[{ title: "Apertus", href: "https://publicai.co" }, { title: "Mission", to: "mission" }]} />
