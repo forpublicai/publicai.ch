@@ -12,6 +12,6 @@ Each reference entry should:
 
 - [config.json reference](config-json.md): the full site configuration schema, covering sections, LocalizedString and MenuItem rules, and validation errors.
 - [Frontmatter reference](frontmatter.md): the standard page, news article and author record frontmatter schemas, with parsing rules and build derivations.
-- [MDX component reference](components.md): the eleven MDX-callable components with their props and usage examples.
+- [MDX component reference](components.md): the twelve MDX-callable components with their props and usage examples.
 - [URL scheme reference](url-scheme.md): every URL shape, slug rules, the fallback chain, hreflang truthfulness and generated addresses.
 - [Build gates reference](build-gates.md): the full gate chain from lint to accessibility, the post-build checks and the report files.

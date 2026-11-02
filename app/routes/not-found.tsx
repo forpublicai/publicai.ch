@@ -22,7 +22,6 @@ export default function NotFound() {
 
   return (
     <div className="page-column page-section">
-      <p className="block-heading">{copy.kicker[locale]}</p>
       <h1 className="page-heading">{copy.title[locale]}</h1>
       <p className="mt-4 text-muted-foreground">{copy.body[locale]}</p>
       <div className="mt-6">

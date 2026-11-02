@@ -1,7 +1,8 @@
 // Embed (MDX-callable, / constraint): the single embed component.
 // Sandboxed, lazy, no-referrer iframe; host MUST be in config.embeds
 //.allowlist — enforced at build time by the renderer (un-allowlisted hosts
-// fail loudly,). height optional (default 9:16-friendly 400px).
+// fail loudly,). height optional (default 9:16-friendly 400px);
+// `ratio` (e.g. "16/9") makes the frame responsive instead, for videos.
 "use client";
 
 import { getConfig } from "~/lib/get-config";
@@ -16,7 +17,17 @@ function parseEmbedHost(url: string): string {
   }
 }
 
-export function Embed({ url, title, height = 400 }: { url: string; title: string; height?: number }) {
+export function Embed({
+  url,
+  title,
+  height = 400,
+  ratio,
+}: {
+  url: string;
+  title: string;
+  height?: number;
+  ratio?: string;
+}) {
   const allowedHosts = getConfig().embeds.allowlist;
   const host = parseEmbedHost(url);
   if (!host || !allowedHosts.includes(host)) {
@@ -29,7 +40,10 @@ export function Embed({ url, title, height = 400 }: { url: string; title: string
       <iframe
         src={url}
         title={title}
-        height={height}
+        height={ratio ? undefined : height}
+        style={ratio ? { aspectRatio: ratio, height: "auto" } : undefined}
+        allow="fullscreen; picture-in-picture"
+        allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer"
         sandbox="allow-scripts allow-same-origin allow-popups"

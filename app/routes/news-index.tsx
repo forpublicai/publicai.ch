@@ -75,7 +75,6 @@ export default function NewsFeed() {
   return (
     <div className="page-column page-section">
       <header className="news-index-head">
-        <p className="block-heading">{localizedLabel(strings.kicker, locale)}</p>
         <h1 className="page-heading">{localizedLabel(strings.indexTitle, locale)}</h1>
         <p className="news-index-head__lead">
           {localizedLabel(strings.indexLead, locale)}
@@ -87,7 +86,7 @@ export default function NewsFeed() {
         <nav className="news-filter mt-8" aria-label={localizedLabel(strings.filterHeading, locale)}>
           <button
             type="button"
-            className="pill-locale"
+            className="news-filter__pill"
             aria-pressed={activeCategory === null}
             onClick={() => selectCategory(null)}
           >
@@ -97,7 +96,7 @@ export default function NewsFeed() {
             <button
               key={category}
               type="button"
-              className="pill-locale"
+              className="news-filter__pill"
               aria-pressed={activeCategory === category}
               onClick={() => selectCategory(category)}
             >

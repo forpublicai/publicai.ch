@@ -98,7 +98,7 @@ Primary action row: a title, an optional description and an arrow, rendered as a
 
 ```mdx
 <CTA title="Mission" to="mission" description="Read our mission" />
-<CTA title="Anteil zeichnen" href="mailto:info@example.org?subject=Anteil zeichnen" />
+<CTA title="Contact us" href="mailto:hello@publicai.ch?subject=Enquiry" />
 ```
 
 ## Divider
@@ -118,8 +118,9 @@ The single embed component: a sandboxed, lazy-loaded iframe.
 | `url`    | string  | yes                 | The embed URL; its host must be in `config.json` `embeds.allowlist` or the build fails naming the URL |
 | `title`  | string  | yes                 | Accessible name of the iframe                                  |
 | `height` | number  | no (default `400`)  | Pixel height of the iframe                                     |
+| `ratio`  | string  | no                  | Aspect ratio (e.g. `"16/9"`) for a responsive frame instead of a fixed height; intended for videos |
 
-The iframe is sandboxed, loads lazily and sends no referrer. Allowlisted hosts in the seed config: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`.
+The iframe is sandboxed, loads lazily, sends no referrer, and allows fullscreen. Allowlisted hosts in the seed config: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`, `player.vod2.infomaniak.com`.
 
 ```mdx
 <Embed url="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Erklärvideo" />
@@ -207,12 +208,24 @@ express). Variants: `card` (default), `info`, `warning`, `highlight`,
 
 ## TeamGrid
 
-Portrait cards for people. `members` is a list of `{ name, image?, role? }`;
-images are site-absolute paths.
+Portrait cards for people. `members` is a list of `{ name, image?, role?, linkedin? }`;
+images are site-absolute paths; `linkedin` makes the name a link out.
 
 ```mdx
 <TeamGrid members={[
-  { name: "Dr. Joshua Tan", image: "/assets/team/joshua.jpg", role: "Board president" },
+  { name: "Dr. Anna Sotnikova", image: "/assets/team/anna-portrait.jpg", linkedin: "https://www.linkedin.com/in/anna-sotnikova-251bb719a/" },
   { name: "Oleg Lavrovsky", image: "/assets/team/oleg.jpg" },
+]} />
+```
+
+## PosterGrid
+
+Equal-size preview cards for printable posters with a PDF download link each.
+`downloadLabel` is the link text; each poster is `{ language, image, pdf, alt }`
+with site-absolute paths.
+
+```mdx
+<PosterGrid downloadLabel="PDF herunterladen" posters={[
+  { language: "Deutsch", image: "/assets/ai-dialog/poster-de-preview.jpg", pdf: "/assets/ai-dialog/SNAD_German%20Version.pdf", alt: "Plakat zum nationalen KI-Dialog auf Deutsch" },
 ]} />
 ```

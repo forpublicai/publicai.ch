@@ -58,7 +58,7 @@ The reserved slug `news` links to the generated news index. Theme folders never 
 ### 2. Link to an external address
 
 ```json
-{ "label": { "...five languages..." }, "url": "https://community.publicai.ch" }
+{ "label": { "...five languages..." }, "url": "https://publicai.co" }
 ```
 
 Any absolute URL works, including `mailto:` addresses. Web addresses open in a new tab with `rel="noopener noreferrer"`; `mailto:` links open the visitor's mail program.
@@ -92,9 +92,9 @@ A `children` item renders as an accessible dropdown in the header (keyboard and 
 
 Reordering is the same operation: menu entries render in array order, so moving an object in the array moves the link on screen. Removing an item is just deleting its object; if that item was the only link to a page, remember the reachability crawl may then flag the page as unreachable.
 
-## Newsletter
+## Newsletter in the footer
 
-The current footer schema and renderer do not support `footer.newsletter`. The home-page newsletter section is implemented in `src/sections/home/newsletter.tsx`; changing that section requires a code edit.
+The footer always shows a compact newsletter sign-up form below the tagline, rendered by the shared form component in `src/components/newsletter-form.tsx` (the home page uses the same component in full size). There is no `footer.newsletter` config switch — the form is part of the footer layout, so changing it is a code edit, not a config edit.
 
 ## Where errors surface
 

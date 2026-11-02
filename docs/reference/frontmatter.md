@@ -18,7 +18,7 @@ description: Why we are building a cooperative for public AI in Switzerland.
 
 ## Standard page
 
-Source of truth: the page model in `src/lib/mdx-page-model.ts` (specification § 6.3).
+Source of truth: the page model in `src/lib/mdx-page-model.ts`.
 
 | Field        | Type               | Required | Purpose                                                                        |
 | ------------ | ------------------ | -------- | -------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ A page is a standard page when `date` and `category` are both absent.
 
 ## News article
 
-Source of truth: § 6.4. An article is any page whose frontmatter has both `date` and `category`, regardless of which theme folder it lives in; the repository convention is `content/news/YYYY-MM-DD-<slug>.mdx`, with the filename date matching `date` in frontmatter.
+Source of truth: the news pipeline in `src/lib/news.ts`. An article is any page whose frontmatter has both `date` and `category`, regardless of which theme folder it lives in; the repository convention is `content/news/YYYY-MM-DD-<slug>.mdx`, with the filename date matching `date` in frontmatter.
 
 | Field         | Type                  | Required | Purpose                                                                        |
 | ------------- | --------------------- | -------- | -------------------------------------------------------------------------------- |
@@ -47,19 +47,18 @@ Source of truth: § 6.4. An article is any page whose frontmatter has both `date
 
 Notes:
 
-- `authorId` appears in older drafts of the specification as an alias of `author`. It is deprecated and not read by the build; use `author`.
-- Articles with `externalUrl` are identified as news like any other (they carry `date` and `category`), but produce no local page.
+- `authorId` appears in older drafts of the specification as an alias of `author`. It is deprecated and not read by the build; use `author`.- Articles with `externalUrl` are identified as news like any other (they carry `date` and `category`), but produce no local page.
 - The generated index and in-place category filters are described in [how to publish news](../how-to/news-and-authors.md).
 
 ## Author record
 
-Source of truth: § 6.4a. Author records live in the reserved folder `content/authors/`; the file name without `.mdx` is the author ID referenced by articles' `author` field. The body is per-language bio sections in the usual `<!-- locale: xx -->` format.
+Source of truth: the author manifest in `src/lib/content-discovery.ts`. Author records live in the reserved folder `content/authors/`; the file name without `.mdx` is the author ID referenced by articles' `author` field. The body is per-language bio sections in the usual `<!-- locale: xx -->` format.
 
 | Field         | Type              | Required | Purpose                                                   |
 | ------------- | ----------------- | -------- | ----------------------------------------------------------- |
 | `name`        | string, non-empty | yes      | Display name (locale-neutral).                              |
 | `affiliation` | string, non-empty | no       | Role or organisation shown under the byline.                |
-| `image`       | string, non-empty | no       | Site-absolute portrait path, for example `/assets/team/joshua.jpg`. |
+| `image`       | string, non-empty | no       | Site-absolute portrait path, for example `/assets/team/daria.jpg`. |
 
 Notes:
 

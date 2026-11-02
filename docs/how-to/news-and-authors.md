@@ -106,7 +106,7 @@ Dr. Daria Höhener gehört zum Gründungsteam von Public AI Switzerland.
 
 ```text
 news frontmatter references failed validation:
-- content/news/2026-01-01-example.mdx: author id "jane-doe" has no record — create content/authors/jane-doe.mdx (§ 6.4a)
+- content/news/2026-01-01-example.mdx: author id "jane-doe" has no record — create content/authors/jane-doe.mdx
 ```
 
 When authors are enabled, author records are routed pages (in the sitemap unless excluded) but are never treated as news, because they carry no `date`/`category`.

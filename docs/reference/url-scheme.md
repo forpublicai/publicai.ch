@@ -39,7 +39,7 @@ Two mechanisms work together; they are subtle and worth separating.
 
 ### Routes exist only for carried languages
 
-A page gets routes only for the locales its file actually contains. A German-only article has `/de/news/<slug>/` and nothing else; opening `/news/<slug>/` directly is a harmless 404. This is deliberate hreflang truthfulness (§ 7.3): the site never advertises, to browsers or search engines, an address whose content would not really be that language. It also means the sitemap and hreflang sets list only real, non-fallback addresses, with `x-default` pointing at the English URL.
+A page gets routes only for the locales its file actually contains. A German-only article has `/de/news/<slug>/` and nothing else; opening `/news/<slug>/` directly is a harmless 404. This is deliberate hreflang truthfulness: the site never advertises, to browsers or search engines, an address whose content would not really be that language. It also means the sitemap and hreflang sets list only real, non-fallback addresses, with `x-default` pointing at the English URL.
 
 ### The fallback chain fills the visible gaps
 

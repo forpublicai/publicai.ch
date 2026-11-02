@@ -3,6 +3,7 @@
 // translations co-located. Fully self-contained: removing the file +
 // its import + JSX line in HomePage removes the section.
 import type { Locale } from "~/lib/config";
+import { localeHref } from "~/lib/locale";
 
 const KICKER: Record<Locale, string> = {
   de: "Die weltweit erste Genossenschaft für KI",
@@ -21,11 +22,11 @@ const HEADING: Record<Locale, string> = {
 };
 
 const LEAD: Record<Locale, string> = {
-  de: "Public AI Switzerland ist eine Genossenschaft. Wir tragen den nationalen Dialog über künstliche Intelligenz in alle Landesteile und sorgen dafür, dass KI in der Schweiz den Menschen gehört, die sie nutzen.",
-  en: "Public AI Switzerland is a cooperative. We carry the national dialogue on artificial intelligence into every part of the country and make sure that AI in Switzerland belongs to the people who use it.",
-  fr: "Public AI Switzerland est une coopérative. Nous portons le dialogue national sur l'intelligence artificielle dans toutes les régions du pays et veillons à ce que l'IA en Suisse appartienne aux personnes qui l'utilisent.",
-  it: "Public AI Switzerland è una cooperativa. Portiamo il dialogo nazionale sull'intelligenza artificiale in tutte le regioni del Paese e facciamo in modo che l'IA in Svizzera appartenga alle persone che la usano.",
-  rm: "Public AI Switzerland è ina cooperativa. Nus purtain il dialog naziunal davart l'intelligenza artifiziala en tut las regiuns dal pajais e procurain che l'IA en Svizra appartegnia a las persunas che la dovran.",
+  de: "Public AI Switzerland ist eine Genossenschaft. Wir tragen den nationalen Dialog über künstliche Intelligenz in alle Landesteile und setzen uns für eine Welt ein, in der künstliche Intelligenz den Menschen gehört, deren Wissen sie möglich gemacht hat, und in ihrem Sinne handelt.",
+  en: "Public AI Switzerland is a cooperative. We carry the national dialogue on artificial intelligence into every part of the country, and we envision a world in which artificial intelligence belongs to and is aligned with the people whose knowledge made it possible.",
+  fr: "Public AI Switzerland est une coopérative. Nous portons le dialogue national sur l'intelligence artificielle dans toutes les régions du pays et nous imaginons un monde où l'intelligence artificielle appartient aux personnes dont le savoir l'a rendue possible, et sert leurs intérêts.",
+  it: "Public AI Switzerland è una cooperativa. Portiamo il dialogo nazionale sull'intelligenza artificiale in tutte le regioni del Paese e immaginiamo un mondo in cui l'intelligenza artificiale appartiene alle persone il cui sapere l'ha resa possibile, ed è al loro servizio.",
+  rm: "Public AI Switzerland è ina cooperativa. Nus purtain il dialog naziunal davart l'intelligenza artifiziala en tut las regiuns dal pajais e mirain sin in mund, en il qual l'intelligenza artifiziala appartegna a las persunas che han rendì ella pussaivla cun lur savida, e serva a lur interess.",
 };
 
 const CTA_DIALOG: Record<Locale, string> = {
@@ -36,12 +37,12 @@ const CTA_DIALOG: Record<Locale, string> = {
   rm: "Participar al dialog davart l'IA",
 };
 
-const CTA_SHARE: Record<Locale, string> = {
-  de: "Community-Bereich folgt bald",
-  en: "Community area coming soon",
-  fr: "Espace communautaire bientôt disponible",
-  it: "Area community in arrivo",
-  rm: "Secziun da la communitad vegn prest",
+const CTA_MEMBER: Record<Locale, string> = {
+  de: "Mitglied werden",
+  en: "Become a member",
+  fr: "Devenir membre",
+  it: "Diventa socio",
+  rm: "Daventar commember",
 };
 
 export default function Hero({ locale }: { locale: Locale }) {
@@ -52,12 +53,12 @@ export default function Hero({ locale }: { locale: Locale }) {
         <h1 className="page-heading">{HEADING[locale]}</h1>
         <p className="home-hero__lead">{LEAD[locale]}</p>
         <div className="home-hero__actions">
-          <a className="pill pill--primary" href="https://dialogue.publicai.ch" target="_blank" rel="noopener noreferrer">
+          <a className="pill pill--primary" href={localeHref("/members", locale)}>
+            {CTA_MEMBER[locale]} →
+          </a>
+          <a className="pill pill--outline" href="https://dialogue.publicai.ch" target="_blank" rel="noopener noreferrer">
             {CTA_DIALOG[locale]} →
           </a>
-          <span className="pill pill--outline" aria-disabled="true">
-            {CTA_SHARE[locale]}
-          </span>
         </div>
       </div>
       <img

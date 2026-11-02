@@ -68,7 +68,7 @@ The repository's own `config.json` is the live example of everything in this ref
 
 | Key         | Type                | Notes                                                                                                                                                    |
 | ----------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `excluded`  | Array of slugs      | Pages hidden from the sitemap and exempt from the reachability crawl. They keep their routes. Seed example: `["sandbox"]`. See [hide or redirect pages](../how-to/exclude-or-redirect-pages.md). |
+| `excluded`  | Array of slugs      | Pages hidden from the sitemap and exempt from the reachability crawl. They keep their routes. Seed example: `["sandbox", "newsletter-confirmation", "newsletter-validation"]`. See [hide or redirect pages](../how-to/exclude-or-redirect-pages.md). |
 | `redirects` | Array of `from`/`to` | Old URL to new route; each emits a meta-refresh HTML stub (noindex, canonical to the target) at the old address. Seed example: `/gruendung/` to `/news/2026-08-28-cooperative-founding/`. |
 
 ### `home`
@@ -81,7 +81,7 @@ The repository's own `config.json` is the live example of everything in this ref
 
 | Key         | Type            | Notes                                                                                              |
 | ----------- | ---------------- | ----------------------------------------------------------------------------------------------------- |
-| `allowlist` | Array of hosts   | The only hosts the `Embed` component may embed (seeded: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`). An unlisted host fails the build naming the URL. |
+| `allowlist` | Array of hosts   | The only hosts the `Embed` component may embed (seeded: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`, `player.vod2.infomaniak.com`). An unlisted host fails the build naming the URL. |
 
 ### `contact`
 

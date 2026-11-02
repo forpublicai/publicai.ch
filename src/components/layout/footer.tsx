@@ -6,6 +6,7 @@ import { useLocation } from "react-router";
 import { getConfig, menuItemTarget } from "~/lib/get-config";
 import { localizedLabel, localeFromPath } from "~/lib/locale";
 import type { MenuItemValue } from "~/lib/config";
+import { NEWSLETTER_STRINGS, NewsletterForm } from "~/components/newsletter-form";
 
 export function Footer() {
   const config = getConfig();
@@ -21,6 +22,10 @@ export function Footer() {
             {footer.tagline ? (
               <p className="site-footer__tagline">{localizedLabel(footer.tagline, locale)}</p>
             ) : null}
+            <div className="site-footer__newsletter">
+              <p className="site-footer__col-title">{NEWSLETTER_STRINGS[locale].footerTitle}</p>
+              <NewsletterForm locale={locale} compact />
+            </div>
           </div>
           {footer.columns.map((col) => (
             <nav key={col.title.en} aria-label={localizedLabel(col.title, locale)} className="site-footer__col">
@@ -34,7 +39,15 @@ export function Footer() {
           ))}
         </div>
         <div className="site-footer__legal">
-          <p>{localizedLabel(footer.copyright, locale)}</p>
+          <p>
+            {localizedLabel(footer.copyright, locale)}{" "}
+            <a href="https://github.com/forpublicai/publicai.ch" target="_blank" rel="noopener noreferrer">
+              {locale === "de" ? "Quellcode" : locale === "fr" ? "Code source" : locale === "it" ? "Codice sorgente" : locale === "rm" ? "Codi da funtauna" : "Source code"}
+            </a>{" · "}
+            <a href="https://github.com/forpublicai/publicai.ch/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+              {locale === "de" ? "Lizenz (Apache 2.0)" : locale === "fr" ? "Licence (Apache 2.0)" : locale === "it" ? "Licenza (Apache 2.0)" : locale === "rm" ? "Licenza (Apache 2.0)" : "License (Apache 2.0)"}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -136,7 +136,6 @@ function AuthorIndex({ requested }: { requested: Locale }) {
   const authors = sortedAuthors();
   return (
     <div className="page-column page-section">
-      <p className="block-heading">{localizedLabel(strings.kicker, locale)}</p>
       <h1 className="page-heading">{localizedLabel(strings.indexTitle, locale)}</h1>
       <p className="mt-4 max-w-prose text-muted-foreground">
         {localizedLabel(strings.indexLead, locale)}
@@ -196,8 +195,7 @@ function SingleAuthor({ authorId, requested }: { authorId: string; requested: Lo
     .filter((entry) => entry.author?.authorId === authorId);
   return (
     <div className="page-column page-section">
-      <p className="block-heading">{localizedLabel(strings.kicker, locale)}</p>
-      <div className="author-header mt-2">
+      <div className="author-header">
         {author.frontmatter.image ? (
           <img src={author.frontmatter.image} alt="" className="author-header__image" loading="lazy" />
         ) : null}

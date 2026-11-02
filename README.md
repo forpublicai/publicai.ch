@@ -1,9 +1,11 @@
 # Public AI Switzerland website
 
-The new multilingual website for Public AI Switzerland,
-built with React Router, React, TypeScript, Vite, and MDX.
+This repository contains the source code for the website of Public AI Switzerland. This site is built with React and Vite, with TypeScript as the main programming language and MDX as the markup language for pages.
 
-Designed for easy maintenance and content updates, so that members of the Public AI Switzerland community can collectively contribute to the upkeep of the cooperative's online presence.
+The site was designed for easy maintenance and content updates. Pages are defined through MDX files, which are human-editable and human-addable. Contributing a new page only requires adding a new .mdx file, while changing menu items requires only changing a config.json. Each mdx file is also self contained, with all language versions for a post in a single file instead of relying on the i18n JS.
+
+This way, members of the Public AI Switzerland community can collectively contribute to the upkeep of the cooperative's online presence, without spinning up an AI agent (and potentially increasing codebase complexity). In addition, the separation of app logic and content makes it possible to move the website content to another design also based on MDX files.
+
 
 ## Quickstart
 
@@ -63,6 +65,9 @@ menus in `config.json`, read the
 - Menus, footer links, news categories, redirects, and release switches are
   configured in `config.json`.
 - Images and download files belong in `public/assets/`.
+- The LaTeX source for the printable handbook lives in `docs/user-guide/`
+  (build with `tectonic docs/user-guide/main.tex`); the rendered PDF guide is
+  in `docs/pdf/`.
 
 Start with [adding a page](docs/how-to/add-or-edit-a-page.md),
 [news articles](docs/how-to/news-and-authors.md), or the
@@ -78,6 +83,7 @@ yarn typecheck
 yarn test
 yarn build
 yarn preview
+yarn test:e2e    # browser smoke + accessibility checks (Playwright)
 ```
 
 ## Deploy
@@ -102,7 +108,9 @@ for the first replacement deploy, legacy URLs, and rollback.
 | `docs/` | Contributor and deployment documentation |
 | `tools/` | Reusable MDX authoring skill |
 
-Release placeholders and restoration steps are recorded in [AI_NOTES.md](AI_NOTES.md).
 Contribution guidance is in [CONTRIBUTING.md](CONTRIBUTING.md).
-The existing repository licence is retained in [LICENSE](LICENSE); the MIT
-notice for the replacement implementation is retained in [LICENSE-MIT](LICENSE-MIT).
+The repository is licensed under the [Apache License 2.0](LICENSE).
+
+## AI Declaration
+
+This site was architected by the Public AI Switzerland team, and implemented with the assistance of AI coding agents. The following open-weight models were used by the technical maintainers: Apertus 1.5 70B, DeepSeek V4.1 Flash, GLM 5.3 Flash, Mistral Medium 3.5, Mistral Large 4. These models were running on a mix of EU and Switzerland-based inference providers with Zero Data Retention (ZDR) policies using the Opencode harness.

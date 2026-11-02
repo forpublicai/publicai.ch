@@ -16,7 +16,7 @@ When any page lacks a language section, the build writes `build/client/untransla
 
 ```text
 # Untranslated sections report
-# Locales a page does NOT carry (fallback chain § 7.2 applies in the
+# Locales a page does NOT carry (the fallback chain applies in the
 # requested locale). EN-first ordering; complete pages are omitted.
 
 - content/news/2026-08-28-cooperative-founding.mdx: missing fr, it, rm
@@ -27,11 +27,12 @@ The report is written only when gaps exist, so a build without it means every pa
 ## Add the missing section
 
 1. Open the page's MDX file.
-2. Add a marker line for the missing language, for example `<!-- locale: fr -->`, on its own line. Marker position within the file does not matter, but keeping the canonical order (`en`, `de`, `fr`, `it`, `rm`) makes files easier to compare.
-3. Under the marker, translate the content. Keep the same structure as the reference section (usually the English or German one): same headings, same paragraphs, and the same MDX components such as `<Callout>` or `<CTA>`, with their visible text translated.
-4. Save the file.
+2. Add a marker line for the missing language, for example `<!-- locale: fr -->`, on its own line. Templates start with German (`de`, `en`, `fr`, `it`, `rm`), but marker order is flexible — keep whatever order the file already uses.
+3. Under the marker, translate the content. Keep the same structure as the reference section (usually the German or English one): same headings, same paragraphs, and the same MDX components such as `<Callout>` or `<CTA>`, with their visible text translated.
+4. If the page's `title_<locale>` / `description_<locale>` overrides exist for other languages, add the matching ones for yours too, so headings and summaries are translated rather than falling back.
+5. Save the file.
 
-For news articles, also translate the `description` if you are creating a new article; for existing articles the frontmatter is locale-neutral and shared by all languages, so a translation usually touches only the section body. Author bios under `content/authors/` follow the same section format as any other page.
+For news articles, also translate the `description` fields (`description_en`, `description_de`, …) and add a `title_<locale>` where the heading differs, since article teasers appear in the News listing and home teaser. Author bios under `content/authors/` follow the same section format as any other page.
 
 ## What visitors see in the meantime
 
@@ -48,7 +49,7 @@ This is why partial translations are safe to merge: each language lights up as s
 - English should be present on every page. It is the root locale and the first fallback for every other language.
 - One marker per language, markers on their own lines. A duplicated or misspelled marker is a build error naming the file and line.
 - Translate component text as content. An `<Accordion>` exists only in the sections you write it in.
-- Do not change frontmatter when translating an existing page; `title` and `description` apply to all languages by design.
+- Translated `title_<locale>` / `description_<locale>` fields are optional per language; without them the English, then German, then base value is used.
 
 ## Verify
 

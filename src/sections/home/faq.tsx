@@ -132,7 +132,7 @@ const ITEMS: Record<Locale, { question: string; answer: string }[]> = {
 export default function Faq({ locale }: { locale: Locale }) {
   return (
     <section className="home-section home-faq">
-      <div className="home-panel home-panel--tinted">
+      <div className="home-panel home-panel--outline card">
         <p className="block-heading">{KICKER[locale].trimStart()}</p>
         <h2 className="home-section-heading">{HEADING[locale]}</h2>
         <Accordion items={ITEMS[locale]} />

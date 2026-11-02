@@ -1,8 +1,8 @@
 // Home page: the ONLY hand-coded page, composed of independent
 // sections in src/sections/home/ — mockup order: Hero → NationalDialog →
-// ShareOffer → WhyCooperative → NewsTeaser → ApertusSection → Faq.
-// Newsletter section removed until sign-up exists. Removing a section =
-// removing its import + JSX line; nothing else changes.
+// ShareOffer → WhyCooperative → NewsTeaser → ApertusSection → Newsletter →
+// Faq. Removing a section = removing its import + JSX line; nothing else
+// changes.
 // Locale derives from the URL.
 import { useLocation } from "react-router";
 import type { MetaFunction } from "react-router";
@@ -13,6 +13,7 @@ import ShareOffer from "~/sections/home/share-offer";
 import WhyCooperative from "~/sections/home/why-cooperative";
 import NewsTeaser from "~/sections/home/news-teaser";
 import ApertusSection from "~/sections/home/apertus-section";
+import Newsletter from "~/sections/home/newsletter";
 import Faq from "~/sections/home/faq";
 
 export const meta: MetaFunction = () => [
@@ -29,6 +30,7 @@ export default function Home() {
       <WhyCooperative locale={locale} />
       <NewsTeaser locale={locale} />
       <ApertusSection locale={locale} />
+      <Newsletter locale={locale} />
       <Faq locale={locale} />
     </>
   );

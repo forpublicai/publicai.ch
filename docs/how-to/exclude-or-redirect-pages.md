@@ -17,7 +17,7 @@ Add the slug to `pages.excluded`:
 
 ```json
 "pages": {
-  "excluded": ["sandbox"]
+  "excluded": ["sandbox", "newsletter-confirmation", "newsletter-validation"]
 }
 ```
 

@@ -55,6 +55,13 @@ The full field reference, including the news and author variants, lives in [the 
 
 Under each `<!-- locale: xx -->` marker you write that language's content as Markdown. Keep one marker per language, keep markers on their own lines, and make sure the file has at least one section. English should be present on every page; the build tracks gaps for the other languages in the untranslated report (see [translate a page](translate-a-page.md)).
 
+Translating is the author's responsibility, for the following reasons:
+
+- **Why four times?** We currently support all of Switzerland's official languages, plus English.
+- **Why not machine auto-translation?** Some content is best not left to machine translation. The statutes are one example — only the German version is fully binding. Auto-translation would also require a set of decisions first: which master source language (EN/DE), what translates the models, whose API key and token budget an LLM would use, what disclaimer to show when AI translations are used, and how to handle sections that need specific wording.
+- **Why in author-written content files and not a localisation framework?** With human-verified translations and something like i18next, each string's counterparts would live in a separate file, and authors or maintainers would have to keep matching strings across files — extra effort on both sides.
+- **Why this tradeoff?** One file per page keeps author flexibility highest and repository maintenance simplest. In practice, the effort on the author's side is to paste the content into Public AI Apertus Chat once per language and paste the results back.
+
 Inside a section you can use ordinary Markdown plus the site's MDX components, which need no import. They are documented with examples in [the component reference](../reference/components.md). Keep components in mind per language: a callout written only in German will only appear in the German section, so repeat the block in every language you want it in.
 
 ## Step 5: Link the page from somewhere

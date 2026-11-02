@@ -266,7 +266,9 @@
   },
   "pages": {
     "excluded": [
-      "sandbox"
+      "sandbox",
+      "newsletter-confirmation",
+      "newsletter-validation"
     ],
     "redirects": [
       {
@@ -504,7 +506,8 @@
     "allowlist": [
       "www.youtube-nocookie.com",
       "player.vimeo.com",
-      "www.openstreetmap.org"
+      "www.openstreetmap.org",
+      "player.vod2.infomaniak.com"
     ]
   },
   "contact": {
