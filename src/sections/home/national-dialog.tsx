@@ -37,37 +37,29 @@ const CTA: Record<Locale, string> = {
   rm: "Dapli davart il dialog davart l'IA",
 };
 
-const MAP_ALT: Record<Locale, string> = {
-  de: "Schweizerkarte mit Stimmen aus dem KI-Dialog in allen Landessprachen",
-  en: "Map of Switzerland with voices from the AI dialogue in all national languages",
-  fr: "Carte de la Suisse avec les voix du dialogue sur l'IA dans toutes les langues nationales",
-  it: "Carta della Svizzera con le voci del dialogo sull'IA in tutte le lingue nazionali",
-  rm: "Charta da la Svizra cun las vuschs dal dialog davart l'IA en tut las linguas naziunalas",
-};
-
 const STEPS: Record<Locale, { title: string; body: string }[]> = {
   de: [
-    { title: "Mitreden", body: "Teile online, was du von KI erwartest. Mitmachen kann jede und jeder, auch ohne Mitgliedschaft." },
+    { title: "Mitreden", body: "Teile online, was du von KI erwartest." },
     { title: "Zusammentragen", body: "Wir bündeln die Beiträge aus allen Landesteilen und Sprachregionen." },
     { title: "Einbringen", body: "Die Ergebnisse tragen wir in Politik, Verwaltung und Forschung." },
   ],
   en: [
-    { title: "Speak up", body: "Share online what you expect from AI. Anyone can take part, no membership required." },
+    { title: "Speak up", body: "Share online what you expect from AI." },
     { title: "Bring together", body: "We pool the contributions from all parts of the country and every language region." },
     { title: "Carry forward", body: "We bring the results into politics, public administration and research." },
   ],
   fr: [
-    { title: "S'exprimer", body: "Partage en ligne ce que tu attends de l'IA. Tout le monde peut participer, même sans être membre." },
+    { title: "S'exprimer", body: "Partage en ligne ce que tu attends de l'IA." },
     { title: "Rassembler", body: "Nous réunissons les contributions de toutes les régions du pays et de toutes les régions linguistiques." },
     { title: "Faire entendre", body: "Nous portons les résultats auprès de la politique, de l'administration et de la recherche." },
   ],
   it: [
-    { title: "Dire la tua", body: "Condividi online che cosa ti aspetti dall'IA. Tutti possono partecipare, anche senza essere soci." },
+    { title: "Dire la tua", body: "Condividi online che cosa ti aspetti dall'IA." },
     { title: "Raccogliere", body: "Riuniamo i contributi da tutte le regioni del Paese e da tutte le regioni linguistiche." },
     { title: "Portare avanti", body: "Portiamo i risultati nella politica, nell'amministrazione e nella ricerca." },
   ],
   rm: [
-    { title: "Discurrer cun", body: "Parta online tge che ti spetgas da l'IA. Tuts pon participar, er senza commembranza." },
+    { title: "Discurrer cun", body: "Parta online tge che ti spetgas da l'IA." },
     { title: "Rimnar", body: "Nus unin las contribuziuns da tut las parts dal pajais e da tut las regiuns linguisticas." },
     { title: "Purtar vinavant", body: "Nus purtain ils resultats en la politica, l'administraziun e la perscrutaziun." },
   ],
@@ -85,12 +77,6 @@ export default function NationalDialog({ locale }: { locale: Locale }) {
             {CTA[locale]} →
           </a>
         </div>
-        <img
-          src="/assets/images/swiss-map.png"
-          alt={MAP_ALT[locale]}
-          className="home-dialog__image"
-          loading="lazy"
-        />
       </div>
       <div className="home-steps">
         {STEPS[locale].map((step, index) => (

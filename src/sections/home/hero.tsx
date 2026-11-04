@@ -45,6 +45,21 @@ const CTA_MEMBER: Record<Locale, string> = {
   rm: "Daventar commember",
 };
 
+const VOICES_LABEL: Record<Locale, string> = {
+  de: "Stimmen aus dem KI-Dialog",
+  en: "Voices from the AI dialogue",
+  fr: "Voix du dialogue sur l'IA",
+  it: "Voci dal dialogo sull'IA",
+  rm: "Vuschs dal dialog davart l'IA",
+};
+
+const VOICES: { lang: Locale; text: string }[] = [
+  { lang: "de", text: "Ich hoffe, dass eine Schweizer KI Fragen zum Schweizer Kontext präzise beantworten kann." },
+  { lang: "en", text: "I hope that… Switzerland becomes a global leader in responsible, transparent, and ethical AI." },
+  { lang: "rm", text: "Ina IA svizra duai dumagnar nossa plurilinguitad a moda nativa e senza sbagls." },
+  { lang: "it", text: "Spero che… i valori storici federali di privacy e di condivisione federata siano alla base di questo progetto." },
+];
+
 export default function Hero({ locale }: { locale: Locale }) {
   return (
     <section className="home-hero">
@@ -61,12 +76,13 @@ export default function Hero({ locale }: { locale: Locale }) {
           </a>
         </div>
       </div>
-      <img
-        src="/assets/images/hero.jpg"
-        alt={KICKER[locale]}
-        className="home-hero__image"
-        loading="eager"
-      />
+      <figure className="home-hero__voices" aria-label={VOICES_LABEL[locale]}>
+        {VOICES.map((voice) => (
+          <blockquote key={voice.lang} lang={voice.lang} className="home-hero__voice">
+            «{voice.text}»
+          </blockquote>
+        ))}
+      </figure>
     </section>
   );
 }

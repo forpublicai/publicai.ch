@@ -1435,14 +1435,47 @@
     flex-wrap: wrap;
     margin-top: 1.75rem;
   }
-  .home-hero__image {
-    display: block;
-    width: 100%;
-    max-width: 28rem;
-    height: auto;
-    border-radius: var(--radius);
+  .home-hero__voices {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0;
+  }
+  .home-hero__voice {
+    position: relative;
+    max-width: 19rem;
+    margin: 0;
+    padding: 0.875rem 1.125rem;
+    background: var(--background);
     border: 1px solid var(--border);
-    margin-left: auto;
+    border-radius: 1.125rem;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: var(--foreground);
+    box-shadow: 0 6px 20px -12px rgb(0 0 0 / 0.25);
+  }
+  /* Speech-bubble tail */
+  .home-hero__voice::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 1.75rem;
+    width: 12px;
+    height: 12px;
+    background: inherit;
+    border-right: inherit;
+    border-bottom: inherit;
+    transform: rotate(45deg);
+  }
+  .home-hero__voice:nth-child(even) {
+    align-self: flex-end;
+  }
+  .home-hero__voice:nth-child(even)::after {
+    left: auto;
+    right: 1.75rem;
+  }
+  .home-hero__voice:nth-child(2) {
+    border-color: var(--primary);
   }
   .home-section {
     max-width: 72rem;
@@ -1461,11 +1494,10 @@
     margin: 0;
   }
   .home-dialog {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
     padding: 2rem 1.75rem;
+  }
+  .home-dialog__body {
+    max-width: 44rem;
   }
   .home-dialog__lead {
     font-size: 1.0625rem;
@@ -1475,12 +1507,6 @@
   }
   .home-dialog__body .pill {
     margin-top: 1.25rem;
-  }
-  .home-dialog__image {
-    display: block;
-    width: 100%;
-    max-width: 24rem;
-    height: auto;
   }
   .home-steps {
     display: grid;
@@ -2074,9 +2100,8 @@
     .home-hero {
       grid-template-columns: 3fr 2fr;
     }
-    .home-dialog {
-      grid-template-columns: 3fr 2fr;
-    }
+    .home-hero__voice:nth-child(1) { margin-left: 1.5rem; }
+    .home-hero__voice:nth-child(3) { margin-left: -1rem; }
     .home-steps {
       grid-template-columns: 1fr 1fr 1fr;
     }
