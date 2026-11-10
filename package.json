@@ -1,0 +1,52 @@
+{
+  "name": "publicai-ch",
+  "private": true,
+  "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "preview": "yarn node ./scripts/preview-server.mjs",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "isbot": "^5.2.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router": "7.18.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^10.0.1",
+    "@mdx-js/mdx": "^3.1.1",
+    "@playwright/test": "^1.63.0",
+    "@react-router/dev": "7.18.4",
+    "@react-router/node": "7.18.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/hast": "3.0.4",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitest/runner": "^4.1.11",
+    "eslint": "^10.11.0",
+    "playwright": "^1.63.0",
+    "prettier": "^3.9.9",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "4.0.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.70.1",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "vite": "7.3.6",
+    "vitest": "^5.0.2"
+  }
+}

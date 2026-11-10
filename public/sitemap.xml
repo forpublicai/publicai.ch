@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://publicai.ch/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/contact/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/contact/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/contact/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/contact/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/contact/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/contact/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/mission/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/mission/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/mission/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/mission/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/mission/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/mission/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/mission/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/mission/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/mission/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/mission/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/mission/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/mission/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/mission/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/mission/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/mission/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/mission/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/mission/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/mission/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/mission/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/mission/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/mission/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/mission/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/mission/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/mission/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/mission/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/team/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/team/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/team/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/team/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/team/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/team/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/team/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/team/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/team/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/team/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/team/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/team/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/team/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/team/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/team/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/team/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/team/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/team/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/team/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/team/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/team/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/team/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/team/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/team/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/team/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/team/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/team/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/team/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/team/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/team/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/team/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/ai-dialogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/ai-dialogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/ai-dialogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/ai-dialogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/ai-dialogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/legal-notice/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/statutes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/statutes/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/statutes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/statutes/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/statutes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/statutes/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/statutes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/statutes/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/statutes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/statutes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/statutes/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/apertus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/apertus/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/apertus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/apertus/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/apertus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/apertus/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/apertus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/apertus/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/apertus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/apertus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/apertus/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/worldwide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/worldwide/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/worldwide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/worldwide/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/worldwide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/worldwide/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/worldwide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/worldwide/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/worldwide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/worldwide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/worldwide/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-06-15-venture-spotlight-finalist/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-06-15-venture-spotlight-finalist/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-25-our-voice-in-the-ai-dialogue/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/news/2026-08-28-cooperative-founding/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/2026-08-28-cooperative-founding/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/2026-08-28-cooperative-founding/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/2026-08-28-cooperative-founding/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/2026-08-28-cooperative-founding/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-08-28-cooperative-founding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-08-28-cooperative-founding/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/news/2026-09-17-businessclass-ost/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/2026-09-17-businessclass-ost/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/2026-09-17-businessclass-ost/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/2026-09-17-businessclass-ost/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/2026-09-17-businessclass-ost/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-17-businessclass-ost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-17-businessclass-ost/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/news/2026-09-24-zurich-hackathon/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/de/news/2026-09-24-zurich-hackathon/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/it/news/2026-09-24-zurich-hackathon/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+  </url>
+  <url>
+    <loc>https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://publicai.ch/de/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://publicai.ch/fr/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://publicai.ch/it/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="rm" href="https://publicai.ch/rm/news/2026-09-24-zurich-hackathon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publicai.ch/news/2026-09-24-zurich-hackathon/"/>
+  </url>
+</urlset>

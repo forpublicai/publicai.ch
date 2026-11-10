@@ -1,45 +1,66 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content via FTP
+name: Validate and deploy website
 
 on:
-  # Runs on pushes targeting the default branch
+  pull_request:
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [main]
   workflow_dispatch:
-    inputs:
-      sync:
-        description: "File synchronization"
-        required: true
-        default: "delta"
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+permissions:
+  contents: read
+
 concurrency:
-  group: "pages"
+  group: website-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    name: "Deploy main"
-    if: ${{ github.ref == 'refs/heads/main' }}
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-      - name: "Confirm"
-        run: "echo Uploading to ${{ secrets.DEPLOY_REMOTE_HOST }}"
-      - name: "Deploy"
-        uses: milanmk/actions-file-deployer@master
+          node-version: 22
+      - name: Enable pinned Yarn
+        run: corepack enable
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Lint
+        run: yarn lint
+      - name: Typecheck
+        run: yarn typecheck
+      - name: Unit tests
+        run: yarn test
+      - name: Build static website
+        run: yarn build
+      - uses: actions/upload-artifact@v4
         with:
-          remote-protocol: "ftp"
+          name: website
+          path: build/client/
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    if: github.repository == 'forpublicai/publicai.ch' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v4
+        with:
+          name: website
+          path: build/client/
+      # Full upload is required because hashed assets are generated, not tracked.
+      # First-deploy removal of obsolete remote files is an admin task; see docs.
+      - name: Upload built website
+        uses: milanmk/actions-file-deployer@b204fec5b826c391b116c40b789df470a4fb6870
+        with:
+          local-path: build/client
+          sync: full
+          remote-protocol: ftp
           remote-host: ${{ secrets.DEPLOY_REMOTE_HOST }}
           remote-user: ${{ secrets.DEPLOY_REMOTE_USER }}
           remote-password: ${{ secrets.DEPLOY_PRIVATE_KEY }}
           remote-port: 21
-          remote-path: "/"
+          remote-path: /

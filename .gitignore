@@ -25,3 +25,20 @@ Thumbs.db
 
 ### Deployment
 .vercel
+
+# Generated build, type definitions, and Yarn state
+build/
+.build/
+.react-router/
+.vite/
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+*.tsbuildinfo
+test-results/
+playwright-report/
+.venv/
+.claude/
+.desloppify/
+*.tmp
