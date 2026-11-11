@@ -54,7 +54,7 @@ jobs:
       # Full upload is required because hashed assets are generated, not tracked.
       # First-deploy removal of obsolete remote files is an admin task; see docs.
       - name: Upload built website
-        uses: milanmk/actions-file-deployer@1
+        uses: milanmk/actions-file-deployer@b204fec5b826c391b116c40b789df470a4fb6870
         with:
           local-path: build/client
           sync: full
