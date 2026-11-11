@@ -58,7 +58,7 @@ The reserved slug `news` links to the generated news index. Theme folders never 
 ### 2. Link to an external address
 
 ```json
-{ "label": { "...five languages..." }, "url": "https://publicai.co" }
+{ "label": { "...five languages..." }, "url": "https://publicai.ch" }
 ```
 
 Any absolute URL works, including `mailto:` addresses. Web addresses open in a new tab with `rel="noopener noreferrer"`; `mailto:` links open the visitor's mail program.

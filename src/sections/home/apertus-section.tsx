@@ -54,7 +54,7 @@ export default function ApertusSection({ locale }: { locale: Locale }) {
           <p className="home-apertus__lead">{LEAD[locale]}</p>
         </div>
         <div className="home-apertus__actions">
-          <a className="pill pill--primary" href="https://publicai.co/" target="_blank" rel="noopener noreferrer">
+          <a className="pill pill--primary" href="https://ask.publicai.ch/" target="_blank" rel="noopener noreferrer">
             {CHAT[locale]} →
           </a>
           <a className="pill pill--outline" href="https://apertus-ai.org/" target="_blank" rel="noopener noreferrer">

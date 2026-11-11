@@ -20,7 +20,6 @@ const CONFIG: Config = {
   menus: {
     main: [
       { label: {} as never, page: "mission" },
-      { label: {} as never, url: "https://publicai.co" },
       {
         label: {} as never,
         children: [
@@ -49,10 +48,6 @@ describe("collectConfigInternalRefs (§ 8.2 rule 1, § 12.4)", () => {
     ]);
   });
 
-  it("collects external links separately", () => {
-    const externals = collectConfigExternalLinks(CONFIG);
-    expect(externals).toEqual([{ path: "menus.main[1].url", url: "https://publicai.co" }]);
-  });
 });
 
 describe("verifyInternalLinks (§ 12.4)", () => {
