@@ -53,33 +53,13 @@
     "utility": [
       {
         "label": {
-          "de": "Public AI Global",
-          "en": "Public AI Global",
-          "fr": "Public AI Global",
-          "it": "Public AI Global",
-          "rm": "Public AI Global"
+          "de": "Public AI Network",
+          "en": "Public AI Network",
+          "fr": "Public AI Network",
+          "it": "Public AI Network",
+          "rm": "Public AI Network"
         },
         "url": "https://publicai.co"
-      },
-      {
-        "label": {
-          "en": "Apertus",
-          "de": "Apertus",
-          "fr": "Apertus",
-          "it": "Apertus",
-          "rm": "Apertus"
-        },
-        "page": "apertus"
-      },
-      {
-        "label": {
-          "en": "Hugging Face",
-          "de": "Hugging Face",
-          "fr": "Hugging Face",
-          "it": "Hugging Face",
-          "rm": "Hugging Face"
-        },
-        "url": "https://huggingface.co/blog/inference-providers-publicai"
       },
       {
         "label": {
@@ -174,13 +154,13 @@
         "items": [
           {
             "label": {
-              "de": "Chat (Basic)",
-              "en": "Chat (Basic)",
-              "fr": "Chat (Basic)",
-              "it": "Chat (Basic)",
-              "rm": "Chat (Basic)"
+              "de": "Demo Chat",
+              "en": "Demo Chat",
+              "fr": "Demo Chat",
+              "it": "Demo Chat",
+              "rm": "Demo Chat"
             },
-            "url": "https://chat.publicai.co"
+            "url": "https://publicai.co"
           },
           {
             "label": {
@@ -507,7 +487,8 @@
       "www.youtube-nocookie.com",
       "player.vimeo.com",
       "www.openstreetmap.org",
-      "player.vod2.infomaniak.com"
+      "player.vod2.infomaniak.com",
+      "map.geo.admin.ch"
     ]
   },
   "contact": {
