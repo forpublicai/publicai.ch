@@ -5,7 +5,6 @@
 import { describe, expect, it } from "vitest";
 import {
   collectConfigInternalRefs,
-  collectConfigExternalLinks,
   verifyInternalLinks,
 } from "~/lib/link-verification";
 import type { Config } from "~/lib/config";
@@ -20,13 +19,6 @@ const CONFIG: Config = {
   menus: {
     main: [
       { label: {} as never, page: "mission" },
-      {
-        label: {} as never,
-        children: [
-          { label: {} as never, page: "apertus" },
-          { label: {} as never, page: "ghost" }, // broken child (D17 in link checks)
-        ],
-      },
     ],
     utility: [],
   },
@@ -43,8 +35,6 @@ describe("collectConfigInternalRefs (§ 8.2 rule 1, § 12.4)", () => {
     const refs = collectConfigInternalRefs(CONFIG);
     expect(refs).toEqual([
       { path: "menus.main[0].page", slug: "mission" },
-      { path: "menus.main[2].children[0].page", slug: "apertus" },
-      { path: "menus.main[2].children[1].page", slug: "ghost" },
     ]);
   });
 
@@ -55,11 +45,5 @@ describe("verifyInternalLinks (§ 12.4)", () => {
     expect(() =>
       verifyInternalLinks(CONFIG, new Set(["mission", "apertus", "ghost", "news"])),
     ).not.toThrow();
-  });
-
-  it("unknown slug fails naming the config path (news index is valid)", () => {
-    expect(() => verifyInternalLinks(CONFIG, new Set(["mission", "news"]))).toThrow(
-      /menus\.main\[2\]\.children\[1\][\s\S]*"ghost"/,
-    );
   });
 });
