@@ -67,7 +67,7 @@ export default function Hero({ locale }: { locale: Locale }) {
         <p className="block-heading">{KICKER[locale]}</p>
         <h1 className="page-heading">{HEADING[locale]}</h1>
         <p className="home-hero__lead">{LEAD[locale]}</p>
-        <div className="home-hero__actions">
+        <div className="home-hero__actions hidden">
           <a className="pill pill--primary" href={localeHref("/members", locale)}>
             {CTA_MEMBER[locale]} →
           </a>

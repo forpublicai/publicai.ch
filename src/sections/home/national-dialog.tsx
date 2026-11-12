@@ -78,7 +78,7 @@ export default function NationalDialog({ locale }: { locale: Locale }) {
           </a>
         </div>
       </div>
-      <div className="home-steps">
+      <div className="home-steps hidden">
         {STEPS[locale].map((step, index) => (
           <div key={step.title} className="home-steps__item">
             <div className="home-steps__number">{String(index + 1).padStart(2, "0")}</div>

@@ -91,7 +91,7 @@ const BENEFITS_FULL: Record<Locale, { strong?: string; strongAfter?: string; bod
 export default function ShareOffer({ locale }: { locale: Locale }) {
   return (
     <section className="home-section">
-      <div className="home-offer">
+      <div className="home-offer hidden">
         <div className="home-offer__copy">
           <p className="block-heading">{KICKER[locale]}</p>
           <h2 className="home-section-heading">{HEADING[locale]}</h2>
