@@ -1440,7 +1440,7 @@
     flex-direction: column;
     gap: 1.25rem;
     margin: 0;
-    background: url(assets/images/hero.jpg) no-repeat 50% 50%;
+    background: url(/assets/images/hero.jpg) no-repeat 50% 50%;
     background-size: auto 90%;
   }
   .home-hero__voice {
