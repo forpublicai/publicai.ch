@@ -1023,6 +1023,77 @@
     margin-top: 0.75rem;
   }
 
+  /* Progress dashboard (/progress): scorecard pills, inline figures and
+   * static monthly bar charts rendered from src/data/progress.json. */
+  .progress-figure {
+    font-variant-numeric: tabular-nums;
+  }
+  .progress-table {
+    margin: 1.5rem 0;
+  }
+  .progress-num {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .progress-na {
+    color: var(--muted-foreground);
+  }
+  .progress-pill {
+    display: inline-block;
+    padding: 0.05rem 0.6rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+  .progress-pill--ok {
+    color: #1f7a3d;
+  }
+  .progress-pill--warn {
+    color: #8a5a00;
+  }
+  .progress-pill--missing {
+    color: var(--primary-text);
+  }
+  .progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .progress-chart {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    min-width: 0;
+  }
+  .progress-chart__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .progress-chart svg {
+    display: block;
+    overflow: visible;
+  }
+  .progress-chart__bar {
+    fill: var(--primary);
+  }
+  .progress-chart__bar--partial {
+    fill-opacity: 0.4;
+  }
+  .progress-chart__axis {
+    stroke: var(--border);
+  }
+  .progress-chart__value,
+  .progress-chart__tick {
+    fill: var(--muted-foreground);
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+  }
+
   /* Figure. */
   .figure {
     margin: 2rem 0;
