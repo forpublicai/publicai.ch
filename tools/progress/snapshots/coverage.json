@@ -1,0 +1,94 @@
+{
+ "rows": [
+  {
+   "metric": "publicai.co visitors",
+   "key": "visitors_co",
+   "status": "Counted",
+   "have": "Unique visitors from Vercel Web Analytics (project publicai-landing, production), full history from launch day.",
+   "next": "Snapshot of 17 Nov 2026. Can be made live on the Vercel connector, or refreshed monthly by a scheduled task."
+  },
+  {
+   "metric": "publicai.ch visitors",
+   "key": "visitors_ch",
+   "status": "Not connected",
+   "have": "There is no Infomaniak connector, and the site ships no analytics script.",
+   "next": "Export monthly visitor stats from the Infomaniak hosting panel as CSV, or add a cookieless analytics script to the site."
+  },
+  {
+   "metric": "chat.publicai.co sign-ups",
+   "key": "users",
+   "status": "Counted",
+   "have": "New accounts per window from Open WebUI's admin API (user list sorted by sign-up date). Since launch is everyone who signed up from 2 Sep 2025: 59,478 accounts in total at the time of the pull.",
+   "next": "Refreshed by openwebui_stats.py, which reads only counts. Can run on a schedule."
+  },
+  {
+   "metric": "chat.publicai.co active users",
+   "key": "active_users",
+   "status": "Counted",
+   "have": "People who sent at least one message in the window, from Open WebUI's analytics API.",
+   "next": "Same script as sign-ups."
+  },
+  {
+   "metric": "Chat messages",
+   "key": "chat_messages",
+   "status": "Counted",
+   "have": "Messages sent in chat.publicai.co in the window, from Open WebUI's analytics API.",
+   "next": "Same script as sign-ups."
+  },
+  {
+   "metric": "Tokens served (LiteLLM)",
+   "key": "tokens",
+   "status": "Counted",
+   "have": "Daily tokens by team and model from LiteLLM's admin export (CSV, 17 Nov 2026), from 30 Aug 2025. Model names grouped into families by litellm_usage.py.",
+   "next": "Switch to the LiteLLM API once the viewer key works (every authenticated request currently returns a server error). litellm_usage.py already has an --api mode for it."
+  },
+  {
+   "metric": "API requests (LiteLLM)",
+   "key": "llm_requests",
+   "status": "Counted",
+   "have": "Requests per day from the same LiteLLM export, including failed ones.",
+   "next": "Same source as the row above."
+  },
+  {
+   "metric": "Emails to hello@publicai.co",
+   "key": "hello",
+   "status": "Counted",
+   "have": "Every thread addressed to hello@ in Josh's Gmail since launch. This is all inbound mail, including press, partnerships and vendor pitches, not only support.",
+   "next": "Can be refreshed by a scheduled task that reruns the Gmail search."
+  },
+  {
+   "metric": "Emails to support@publicai.co",
+   "key": "support",
+   "status": "Partial",
+   "have": "Only threads where Josh was also copied. Joseph's support@ inbox is not included, so the real number is higher.",
+   "next": "Joseph runs the same search on support@ and shares the dates, or grants read access."
+  },
+  {
+   "metric": "GitHub issues opened",
+   "key": "issues",
+   "status": "Counted",
+   "have": "Issues opened in forpublicai repositories since launch: 84 of the org's 97.",
+   "next": "Snapshot today. A GitHub connector would make it live."
+  },
+  {
+   "metric": "GitHub issues still open",
+   "key": "issues_open",
+   "status": "Counted",
+   "have": "Of the issues opened in each window, how many are open today.",
+   "next": "Same source as the row above."
+  },
+  {
+   "metric": "dialogue.publicai.ch participation",
+   "key": "dialogue",
+   "status": "Not connected",
+   "have": "The site could not be reached from this session. Meeting notes from 27 Apr 2026 say the Swiss dialogue survey was paused and would be restructured, with CIP taking ownership.",
+   "next": "Export submissions by date from the dialogue backend (forpublicai/swiss-national-ai-dialogue)."
+  }
+ ],
+ "meta": [
+  {
+   "label": "Written by",
+   "value": "Claude, from what this session could reach on 16 and 17 Nov 2026"
+  }
+ ]
+}

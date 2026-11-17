@@ -248,7 +248,8 @@
     "excluded": [
       "sandbox",
       "newsletter-confirmation",
-      "newsletter-validation"
+      "newsletter-validation",
+      "progress"
     ],
     "redirects": [
       {

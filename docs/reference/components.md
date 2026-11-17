@@ -229,3 +229,17 @@ with site-absolute paths.
   { language: "Deutsch", image: "/assets/ai-dialog/poster-de-preview.jpg", pdf: "/assets/ai-dialog/SNAD_German%20Version.pdf", alt: "Plakat zum nationalen KI-Dialog auf Deutsch" },
 ]} />
 ```
+
+## Progress components
+
+`ProgressFigure`, `ProgressScorecard`, `ProgressTable`, `ProgressChart` and `ProgressGrid` render the progress dashboard at `/progress` (`content/cooperative/progress.mdx`). They read `src/data/progress.json`, which `tools/progress/build_progress.py` writes; see `tools/progress/README.md`. All labels are props, so each locale section supplies its own wording.
+
+| Component           | Props                                                                 | Renders                                                       |
+| ------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `ProgressFigure`    | `name`, `format?`                                                     | One number from `figures`, inline in a sentence               |
+| `ProgressScorecard` | `columns`, `label`, `empty`                                           | The scorecard table, one row per metric                       |
+| `ProgressTable`     | `table`, `columns`, `label`                                           | A precomputed table: `llm_windows`, `llm_family`, `llm_team`, `repos`, `coverage` |
+| `ProgressChart`     | `series`, `title`, `unit`, `format?`, `partialLabel`                  | Static monthly bar chart; the as-of month is drawn lighter    |
+| `ProgressGrid`      | children                                                              | Responsive grid for charts                                    |
+
+`columns` is a list of `{ key, label, format? }`. Formats: `int`, `big` (B/M), `kilo` (k/M), `dec`, `pct`, `usd`, `text`, `status` (pill).
