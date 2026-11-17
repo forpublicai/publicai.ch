@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Overpass+Mono:wght@400;600&display=swap");
 
 @import "tailwindcss";
 
@@ -1023,8 +1023,10 @@
     margin-top: 0.75rem;
   }
 
-  /* Progress dashboard (/progress): scorecard pills, inline figures and
-   * static monthly bar charts rendered from src/data/progress.json. */
+  /* Progress dashboard (/progress): static tables and bar charts rendered
+   * from src/data/progress.json, styled to the Public AI design system:
+   * black text only, flat 5% cards, Overpass Mono for figures and labels,
+   * and red reserved for the chart bars. */
   .progress-figure {
     font-variant-numeric: tabular-nums;
   }
@@ -1032,28 +1034,34 @@
     margin: 1.5rem 0;
   }
   .progress-num {
+    font-family: "Overpass Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875rem;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
   .progress-na {
-    color: var(--muted-foreground);
+    font-family: "Overpass Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.8125rem;
+    color: var(--foreground);
   }
   .progress-pill {
     display: inline-block;
-    padding: 0.05rem 0.6rem;
+    padding: 0.1rem 0.7rem;
     border: 1px solid currentColor;
-    border-radius: 999px;
-    font-size: 0.8125rem;
+    border-radius: 1000px;
+    font-family: "Overpass Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
     white-space: nowrap;
-  }
-  .progress-pill--ok {
-    color: #1f7a3d;
+    color: var(--foreground);
   }
   .progress-pill--warn {
-    color: #8a5a00;
+    color: #8a5f3e; /* design-system oak, darkened to 4.5:1 for small text */
   }
   .progress-pill--missing {
-    color: var(--primary-text);
+    border-color: transparent;
+    background: #f6f2ea; /* design-system parchment */
   }
   .progress-grid {
     display: grid;
@@ -1063,16 +1071,21 @@
   }
   .progress-chart {
     margin: 0;
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--card);
+    padding: 2rem;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.05);
     min-width: 0;
+  }
+  @media (max-width: 640px) {
+    .progress-chart {
+      padding: 1.25rem;
+    }
   }
   .progress-chart__title {
     font-size: 0.9375rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
   }
   .progress-chart svg {
     display: block;
@@ -1085,11 +1098,12 @@
     fill-opacity: 0.4;
   }
   .progress-chart__axis {
-    stroke: var(--border);
+    stroke: rgba(0, 0, 0, 0.2);
   }
   .progress-chart__value,
   .progress-chart__tick {
-    fill: var(--muted-foreground);
+    fill: var(--foreground);
+    font-family: "Overpass Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
     font-size: 15px;
     font-variant-numeric: tabular-nums;
   }
