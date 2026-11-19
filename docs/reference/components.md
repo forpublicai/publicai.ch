@@ -232,7 +232,7 @@ with site-absolute paths.
 
 ## Progress components
 
-`ProgressFigure`, `ProgressScorecard`, `ProgressTable`, `ProgressChart` and `ProgressGrid` render the progress dashboard at `/progress` (`content/cooperative/progress.mdx`). They read `src/data/progress.json`, which `tools/progress/build_progress.py` writes; see `tools/progress/README.md`. All labels are props, so each locale section supplies its own wording.
+The `Progress*` components render the progress dashboard at `/progress` (`content/cooperative/progress.mdx`). They, their CSS and their data (`progress/data/progress.json`) come from the shared [forpublicai/progress](https://github.com/forpublicai/progress) repo, vendored as a git subtree at `progress/`; `src/components/mdx/progress.tsx` re-exports them. Don't edit files under `progress/` here: change them in that repo, then run `git subtree pull --prefix=progress https://github.com/forpublicai/progress main --squash`. All labels are props, so each locale section supplies its own wording.
 
 | Component           | Props                                                                 | Renders                                                       |
 | ------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -241,5 +241,7 @@ with site-absolute paths.
 | `ProgressTable`     | `table`, `columns`, `label`                                           | A precomputed table: `llm_windows`, `llm_family`, `llm_team`, `repos`, `coverage` |
 | `ProgressChart`     | `series`, `title`, `unit`, `format?`, `partialLabel`                  | Static monthly bar chart; the as-of month is drawn lighter    |
 | `ProgressGrid`      | children                                                              | Responsive grid for charts                                    |
+| `ProgressPillars`   | `d30Label`, `avgLabel`, `launchLabel`, `notConnected`, `coverageLabel`, `labels?` | The three pillars (products, movement, idea) with their topline stats |
+| `ProgressTimeline`  | `label`                                                               | Dated milestones, newest first                                |
 
 `columns` is a list of `{ key, label, format? }`. Formats: `int`, `big` (B/M), `kilo` (k/M), `dec`, `pct`, `usd`, `text`, `status` (pill).
