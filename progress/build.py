@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build src/data/progress.json, the data behind the /progress page.
+"""Build data/progress.json, the data behind every site's /progress page.
 
-Reads the snapshots in tools/progress/snapshots/ and the LiteLLM usage file
-written by litellm_usage.py, and precomputes every figure the page shows:
-window totals, monthly series and breakdown tables. The page renders this
-file at build time, so it needs no API access.
+Reads metrics.json (the list of metrics and pillars), snapshots/ (pulled
+counts) and records/ (hand-kept lists), and precomputes every figure the
+page shows: pillar toplines, window totals, monthly series and tables.
+Sites render this file at build time, so they need no API access.
 
-  python3 tools/progress/build_progress.py --as-of 2026-11-16
+  python3 build.py --as-of 2026-11-16
 
 Windows: last 30 days and past 12 months end on --as-of (inclusive);
 since launch starts on 2 Sep 2025.
@@ -19,11 +19,13 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SNAP = os.path.join(HERE, "snapshots")
+REC = os.path.join(HERE, "records")
 LAUNCH = "2025-09-02"
+SERIES_FOR = {"users": "signups", "visitors_co": "visitors"}
 
 
-def load(name):
-    with open(os.path.join(SNAP, name), encoding="utf-8") as fh:
+def load(name, folder=SNAP):
+    with open(os.path.join(folder, name), encoding="utf-8") as fh:
         return json.load(fh)
 
 
@@ -48,8 +50,8 @@ def months(first, last):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--as-of", required=True)
-    ap.add_argument("--litellm", default=os.path.join(HERE, "raw", "litellm_usage.json"))
-    ap.add_argument("--out", default=os.path.join(HERE, "..", "..", "src", "data", "progress.json"))
+    ap.add_argument("--litellm", default=os.path.join(SNAP, "litellm_daily.json"))
+    ap.add_argument("--out", default=os.path.join(HERE, "data", "progress.json"))
     a = ap.parse_args()
 
     as_of = dt.date.fromisoformat(a.as_of)
@@ -73,7 +75,10 @@ def main():
     owui = load("openwebui_stats.json")
     owui_windows = {r["window"]: r for r in owui["windows"]}
     owui_key = {"d30": "Last 30 days", "y1": "Past 12 months", "launch": "Since launch"}
-    coverage = rows_of(load("coverage.json"))
+    spec = load("metrics.json", HERE)
+    coverage = spec["metrics"]
+    pubs = [r["date"] for r in rows_of(load("publications.json"))]
+    records = {n: rows_of(load(f"{n}.json", REC)) for n in ("milestones", "events", "partners", "mentions", "audience")}
     llm = litellm_rows(a.litellm)
 
     def llm_sum(field, start):
@@ -90,12 +95,19 @@ def main():
         "support": {k: count(support, s) for k, s in windows.items()},
         "issues": {k: count([i["created"] for i in issues], s) for k, s in windows.items()},
         "issues_open": {k: count([i["created"] for i in issues if i["state"] == "open"], s) for k, s in windows.items()},
+        "publications": {k: count(pubs, s) for k, s in windows.items()},
     }
+    if records["partners"]:
+        values["partners"] = {k: count([p["joined"] for p in records["partners"]], s) for k, s in windows.items()}
+    if records["events"]:
+        values["events"] = {k: count([e["date"] for e in records["events"]], s) for k, s in windows.items()}
+    if records["mentions"]:
+        values["notable_mentions"] = {k: count([m["date"] for m in records["mentions"]], s) for k, s in windows.items()}
     big = {"tokens"}
     scorecard = []
     for c in coverage:
         v = values.get(c["key"], {})
-        scorecard.append({"metric": c["metric"], "status": c["status"],
+        scorecard.append({"key": c["key"], "pillar": c["pillar"], "metric": c["metric"], "status": c["status"],
                           "format": "big" if c["key"] in big else "int",
                           **{k: v.get(k) for k in windows}})
 
@@ -108,6 +120,8 @@ def main():
         by_month["support"][d[:7]] += 1
     for i in issues:
         by_month["issues"][i["created"][:7]] += 1
+    for d in pubs:
+        by_month["publications"][d[:7]] += 1
     for r in co_monthly:
         by_month["visitors"][r["month"]] = r["visitors"]
     for r in owui["months"]:
@@ -177,19 +191,40 @@ def main():
         "total": len(coverage),
     }
 
+    # Pillars: 1-2 topline metrics each, with the past-year monthly average.
+    by_key = {r["key"]: r for r in scorecard}
+    pillars = []
+    for p in spec["pillars"]:
+        tops = []
+        for key in p["topline"]:
+            r = by_key[key]
+            # Average of the full months in the past year, from the monthly series.
+            # Window totals of unique counts (active users) can't be divided by 12.
+            ser = series.get(SERIES_FOR.get(key, key))
+            full = [x["value"] for x in ser or [] if y1[:7] < x["month"] < last_month]
+            tops.append({"key": key, "metric": r["metric"], "status": r["status"], "format": r["format"],
+                         "d30": r.get("d30"), "y1_avg": round(sum(full) / len(full)) if full else None,
+                         "launch": r.get("launch")})
+        pillars.append({"id": p["id"], "label": p["label"], "question": p["question"], "topline": tops,
+                        "connected": sum(1 for c in coverage if c["pillar"] == p["id"] and c["status"] != "Not connected"),
+                        "total": sum(1 for c in coverage if c["pillar"] == p["id"])})
+
     out = {
         "asOf": a.as_of,
         "launch": LAUNCH,
         "windows": {"d30": [d30, end], "y1": [y1, end], "launch": [LAUNCH, end]},
         "figures": figures,
+        "pillars": pillars,
         "scorecard": scorecard,
+        "milestones": sorted(records["milestones"], key=lambda m: m["date"]),
         "series": series,
         "tables": {
             "llm_windows": llm_windows,
             "llm_family": breakdown("family"),
             "llm_team": breakdown("team"),
             "repos": repo_rows,
-            "coverage": [{"metric": c["metric"], "status": c["status"], "have": c["have"], "next": c["next"]}
+            "coverage": [{"pillar": c["pillar"], "metric": c["metric"], "status": c["status"], "source": c["source"],
+                          "have": c["have"], "next": c["next"]}
                          for c in coverage],
         },
     }
