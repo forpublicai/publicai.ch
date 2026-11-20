@@ -7,7 +7,9 @@
 import { useLocation } from "react-router";
 import type { MetaFunction } from "react-router";
 import { localeFromPath } from "~/lib/locale";
-import Hero from "~/sections/home/hero";
+import { getConfig } from "~/lib/get-config";
+import { homeMetaTags } from "~/lib/seo";
+import Hero, { HEADING, KICKER } from "~/sections/home/hero";
 import NationalDialog from "~/sections/home/national-dialog";
 import ShareOffer from "~/sections/home/share-offer";
 import WhyCooperative from "~/sections/home/why-cooperative";
@@ -16,9 +18,12 @@ import ApertusSection from "~/sections/home/apertus-section";
 import Newsletter from "~/sections/home/newsletter";
 import Faq from "~/sections/home/faq";
 
-export const meta: MetaFunction = () => [
-  { title: "Public AI Switzerland" },
-];
+// Title, description and social card; the description reuses the hero's
+// localised kicker and heading.
+export const meta: MetaFunction = ({ location }) => {
+  const locale = localeFromPath(location.pathname);
+  return homeMetaTags(locale, getConfig(), `${KICKER[locale]}. ${HEADING[locale]}.`) as never;
+};
 
 export default function Home() {
   const locale = localeFromPath(useLocation().pathname);

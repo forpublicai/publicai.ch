@@ -76,7 +76,6 @@ export function pageMetaTags(
   pathFor?: (page: PageLike, l: Locale) => string,
 ): MetaTag[] {
   const tags: MetaTag[] = [];
-  const base = config.site.canonicalBase.replace(/\/$/, "");
   const canonical = pageCanonical(page, locale, config, pathFor);
   const title = `${titleFor(page.frontmatter, locale)} — ${config.site.name.en}`;
   const description = descriptionFor(page.frontmatter, locale);
@@ -102,23 +101,62 @@ export function pageMetaTags(
   for (const other of LOCALES.filter((l) => l !== locale && page.localesPresent.includes(l))) {
     tags.push({ property: "og:locale:alternate", content: OG_LOCALE[other] });
   }
-  // Social card: ogImage, else the news hero image. X, Slack and LinkedIn
-  // show a large preview only with an absolute image URL.
-  const image = page.frontmatter.ogImage ?? page.frontmatter.heroImage;
-  const imageUrl = image && (image.startsWith("/") ? `${base}${image}` : image);
-  const alt = page.frontmatter.ogImageAlt;
-  if (imageUrl) {
-    tags.push({ property: "og:image", content: imageUrl });
-    if (alt) tags.push({ property: "og:image:alt", content: alt });
-  }
-  tags.push({ name: "twitter:card", content: imageUrl ? "summary_large_image" : "summary" });
-  tags.push({ name: "twitter:title", content: titleFor(page.frontmatter, locale) });
-  tags.push({ name: "twitter:description", content: description });
-  if (imageUrl) {
-    tags.push({ name: "twitter:image", content: imageUrl });
-    if (alt) tags.push({ name: "twitter:image:alt", content: alt });
-  }
+  // Social card: ogImage, else the news hero image, else the site card.
+  const own = page.frontmatter.ogImage ?? page.frontmatter.heroImage;
+  tags.push(
+    ...socialCardTags(
+      config,
+      titleFor(page.frontmatter, locale),
+      description,
+      own,
+      own ? page.frontmatter.ogImageAlt : config.site.name.en,
+    ),
+  );
   return tags;
+}
+
+// The site-wide social card, used where a page sets no image of its own.
+export const DEFAULT_OG_IMAGE = "/assets/social/default.png";
+
+// og:image and twitter:* tags. X, Slack and LinkedIn show a large preview
+// only with an absolute image URL, so site paths get the canonical base.
+export function socialCardTags(
+  config: Config,
+  title: string,
+  description: string,
+  image: string = DEFAULT_OG_IMAGE,
+  alt?: string,
+): MetaTag[] {
+  const base = config.site.canonicalBase.replace(/\/$/, "");
+  const url = image.startsWith("/") ? `${base}${image}` : image;
+  const tags: MetaTag[] = [{ property: "og:image", content: url }];
+  if (alt) tags.push({ property: "og:image:alt", content: alt });
+  tags.push(
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: url },
+  );
+  if (alt) tags.push({ name: "twitter:image:alt", content: alt });
+  return tags;
+}
+
+// Home page: the only page without frontmatter. Title stays the bare site
+// name; the description is the hero kicker and heading, so it is localised.
+export function homeMetaTags(locale: Locale, config: Config, description: string): MetaTag[] {
+  const base = config.site.canonicalBase.replace(/\/$/, "");
+  const name = config.site.name[locale];
+  return [
+    { title: name },
+    { name: "description", content: description },
+    { property: "og:title", content: name },
+    { property: "og:description", content: description },
+    { property: "og:url", content: locale === "en" ? `${base}/` : `${base}/${locale}/` },
+    { property: "og:site_name", content: name },
+    { property: "og:type", content: "website" },
+    { property: "og:locale", content: OG_LOCALE[locale] },
+    ...socialCardTags(config, name, description, DEFAULT_OG_IMAGE, config.site.name.en),
+  ];
 }
 
 // OG locale codes (facebook formats: language_REGION).

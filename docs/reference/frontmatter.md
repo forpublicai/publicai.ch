@@ -26,7 +26,7 @@ Source of truth: the page model in `src/lib/mdx-page-model.ts`.
 | `description`| string, non-empty  | yes      | SEO description and link preview text; 50 to 160 characters recommended.         |
 | `draft`      | boolean            | no (default `false`) | `true`: no routes, no sitemap entry, no reachability requirement; has no route in `yarn dev` either. |
 | `noindex`    | boolean            | no (default `false`) | `true`: page stays routable but carries a robots noindex and is left out of the sitemap. |
-| `ogImage`    | string, non-empty  | no       | Social card for link previews (`og:image`, `twitter:image`): a site-absolute path or an absolute URL, 1200x630. Pages without one fall back to `heroImage`, then to a small text-only card. |
+| `ogImage`    | string, non-empty  | no       | Social card for link previews (`og:image`, `twitter:image`): a site-absolute path or an absolute URL, 1200x630. Pages without one fall back to `heroImage`, then to the site card `/assets/social/default.png`. |
 | `ogImageAlt` | string, non-empty  | no       | Alt text for the social card.                                                     |
 | `updatedAt`  | `YYYY-MM-DD`       | no       | Feeds the sitemap `lastmod`; recommended for legal pages.                        |
 
