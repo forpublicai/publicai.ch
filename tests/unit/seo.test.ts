@@ -70,6 +70,31 @@ describe("pageMetaTags", () => {
   });
 });
 
+describe("pageMetaTags social card", () => {
+  const content = (tags: ReturnType<typeof pageMetaTags>, key: string) =>
+    tags.find((t) => t.property === key || t.name === key)?.content;
+
+  it("absolute og:image and a large Twitter card from ogImage", () => {
+    const p = page({
+      slug: "progress",
+      frontmatter: { title: "P", description: "D", draft: false, noindex: true, ogImage: "/assets/progress/card.png", ogImageAlt: "Alt" },
+    });
+    const tags = pageMetaTags(p, "en", BASE_CONFIG);
+    expect(content(tags, "og:image")).toBe("https://publicai.ch/assets/progress/card.png");
+    expect(content(tags, "og:image:alt")).toBe("Alt");
+    expect(content(tags, "twitter:card")).toBe("summary_large_image");
+    expect(content(tags, "twitter:image")).toBe("https://publicai.ch/assets/progress/card.png");
+  });
+
+  it("falls back to heroImage, and to a small card without any image", () => {
+    const hero = page({ slug: "n", frontmatter: { title: "N", description: "D", draft: false, noindex: false, heroImage: "https://cdn.example/h.jpg" } });
+    expect(content(pageMetaTags(hero, "en", BASE_CONFIG), "og:image")).toBe("https://cdn.example/h.jpg");
+    const bare = pageMetaTags(page({ slug: "b" }), "en", BASE_CONFIG);
+    expect(content(bare, "og:image")).toBeUndefined();
+    expect(content(bare, "twitter:card")).toBe("summary");
+  });
+});
+
 describe("sitemapUrls (§ 12.3)", () => {
   it("includes only published, non-excluded pages in locales they exist; hreflang entries", () => {
     const config = {

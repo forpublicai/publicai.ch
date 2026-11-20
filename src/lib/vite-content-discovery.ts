@@ -71,6 +71,8 @@ type SerializedPage = {
     category?: string;
     author?: string;
     heroImage?: string;
+    ogImage?: string;
+    ogImageAlt?: string;
     externalUrl?: string;
   };
   localesPresent: string[];

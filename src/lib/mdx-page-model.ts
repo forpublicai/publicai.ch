@@ -103,6 +103,10 @@ const FrontmatterSchema = z
     category: z.string().min(1).optional(),
     author: z.string().min(1).optional(),
     heroImage: z.string().min(1).optional(),
+    // Social card (og:image / twitter:image): a site-absolute path or an
+    // absolute URL, 1200x630. Falls back to heroImage.
+    ogImage: z.string().min(1).optional(),
+    ogImageAlt: z.string().min(1).optional(),
     externalUrl: z.string().regex(ABSOLUTE_URL_RE).optional(),
     // Per-locale titles (user decision 2026-09-30): optional overrides per
     // locale; resolution falls back to the locale-neutral `title` via the

@@ -102,7 +102,22 @@ export function pageMetaTags(
   for (const other of LOCALES.filter((l) => l !== locale && page.localesPresent.includes(l))) {
     tags.push({ property: "og:locale:alternate", content: OG_LOCALE[other] });
   }
-  void base;
+  // Social card: ogImage, else the news hero image. X, Slack and LinkedIn
+  // show a large preview only with an absolute image URL.
+  const image = page.frontmatter.ogImage ?? page.frontmatter.heroImage;
+  const imageUrl = image && (image.startsWith("/") ? `${base}${image}` : image);
+  const alt = page.frontmatter.ogImageAlt;
+  if (imageUrl) {
+    tags.push({ property: "og:image", content: imageUrl });
+    if (alt) tags.push({ property: "og:image:alt", content: alt });
+  }
+  tags.push({ name: "twitter:card", content: imageUrl ? "summary_large_image" : "summary" });
+  tags.push({ name: "twitter:title", content: titleFor(page.frontmatter, locale) });
+  tags.push({ name: "twitter:description", content: description });
+  if (imageUrl) {
+    tags.push({ name: "twitter:image", content: imageUrl });
+    if (alt) tags.push({ name: "twitter:image:alt", content: alt });
+  }
   return tags;
 }
 
