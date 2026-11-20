@@ -31,7 +31,7 @@ const LOCALES = ["en", "de", "fr", "it", "rm"] as const;
 // every registered component directly. The specifier is computed
 // relative to each MDX file because acorn rejects bare `~` aliases in imports.
 const REGISTRY_EXPORTS =
-  "Accordion, Box, Callout, CTA, Divider, Embed, Figure, Lead, LinkRow, PosterGrid, ProgressChart, ProgressFigure, ProgressGrid, ProgressPillars, ProgressScorecard, ProgressTable, ProgressTimeline, StatGrid, TeamGrid";
+  "Accordion, Box, Callout, CTA, Divider, Embed, Figure, Lead, LinkRow, PosterGrid, ProgressBars, ProgressChart, ProgressFigure, ProgressGrid, ProgressPillars, ProgressScorecard, ProgressTable, ProgressTimeline, StatGrid, TeamGrid";
 function componentImportsFor(fileId: string): string {
   const registryAbs = resolve(process.cwd(), "src/components/mdx/index");
   const spec = relative(dirname(fileId), registryAbs).split(sep).join("/");

@@ -139,6 +139,26 @@ Active users sent at least one message in the month. Counts come from Open WebUI
   />
 </ProgressGrid>
 
+### Where chat users are
+
+chat.publicai.co has registered users in <ProgressFigure name="countries_launch" /> countries, and people in <ProgressFigure name="countries_30" /> of them were active in the last 30 days. <ProgressFigure name="country_outside_ch_pct" />% of users with a known country are outside Switzerland.
+
+<ProgressBars table="countries" labelKey="name" valueKey="users" shareKey="share" title="Registered chat users by country" />
+
+<ProgressTable
+  table="countries"
+  label="Chat users by country"
+  columns={[
+    { key: "name", label: "Country", format: "text" },
+    { key: "users", label: "Registered", format: "int" },
+    { key: "share", label: "Share", format: "pct" },
+    { key: "new_30", label: "New, last 30 days", format: "int" },
+    { key: "active_30", label: "Active, last 30 days", format: "int" },
+  ]}
+/>
+
+The country comes from the timezone each user’s browser reported, mapped with the tz database. It is where their clock is set, not their nationality or exact location. <ProgressFigure name="country_known_pct" />% of users have a timezone; the rest are counted as not set.
+
 ### publicai.co and email
 
 <ProgressGrid>
