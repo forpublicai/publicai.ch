@@ -17,6 +17,8 @@ declare module "virtual:content-manifest" {
         category?: string;
         author?: string;
         heroImage?: string;
+        ogImage?: string;
+        ogImageAlt?: string;
         externalUrl?: string;
       };
       localesPresent: string[];

@@ -5,7 +5,7 @@
 import type { Locale } from "~/lib/config";
 import { localeHref } from "~/lib/locale";
 
-const KICKER: Record<Locale, string> = {
+export const KICKER: Record<Locale, string> = {
   de: "Die weltweit erste Genossenschaft für KI",
   en: "The world's first cooperative for AI",
   fr: "La première coopérative d'IA au monde",
@@ -13,7 +13,7 @@ const KICKER: Record<Locale, string> = {
   rm: "L'emprima cooperativa dal mund per l'IA",
 };
 
-const HEADING: Record<Locale, string> = {
+export const HEADING: Record<Locale, string> = {
   de: "Die Schweiz redet mit, wenn es um KI geht",
   en: "Switzerland has a say when it comes to AI",
   fr: "La Suisse a son mot à dire sur l'IA",

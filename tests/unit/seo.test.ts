@@ -6,6 +6,7 @@ import {
   pageCanonical,
   pageAlternates,
   pageMetaTags,
+  homeMetaTags,
   sitemapUrls,
   robotsTxt,
 } from "~/lib/seo";
@@ -67,6 +68,43 @@ describe("pageMetaTags", () => {
     expect(flat).toContain("og:title");
     const noindexPage = page({ slug: "x", frontmatter: { title: "X", description: "D", draft: false, noindex: true } });
     expect(pageMetaTags(noindexPage, "en", BASE_CONFIG).map((t) => t.name)).toContain("robots");
+  });
+});
+
+describe("pageMetaTags social card", () => {
+  const content = (tags: ReturnType<typeof pageMetaTags>, key: string) =>
+    tags.find((t) => t.property === key || t.name === key)?.content;
+
+  it("absolute og:image and a large Twitter card from ogImage", () => {
+    const p = page({
+      slug: "progress",
+      frontmatter: { title: "P", description: "D", draft: false, noindex: true, ogImage: "/assets/progress/card.png", ogImageAlt: "Alt" },
+    });
+    const tags = pageMetaTags(p, "en", BASE_CONFIG);
+    expect(content(tags, "og:image")).toBe("https://publicai.ch/assets/progress/card.png");
+    expect(content(tags, "og:image:alt")).toBe("Alt");
+    expect(content(tags, "twitter:card")).toBe("summary_large_image");
+    expect(content(tags, "twitter:image")).toBe("https://publicai.ch/assets/progress/card.png");
+  });
+
+  it("falls back to heroImage, then to the site card", () => {
+    const hero = page({ slug: "n", frontmatter: { title: "N", description: "D", draft: false, noindex: false, heroImage: "https://cdn.example/h.jpg" } });
+    expect(content(pageMetaTags(hero, "en", BASE_CONFIG), "og:image")).toBe("https://cdn.example/h.jpg");
+    const bare = pageMetaTags(page({ slug: "b" }), "en", BASE_CONFIG);
+    expect(content(bare, "og:image")).toBe("https://publicai.ch/assets/social/default.png");
+    expect(content(bare, "twitter:card")).toBe("summary_large_image");
+  });
+});
+
+describe("homeMetaTags", () => {
+  it("localised title, description and URL, with the site card", () => {
+    const config = { ...BASE_CONFIG, site: { ...BASE_CONFIG.site, name: { en: "Public AI Switzerland", de: "Public AI Schweiz" } } } as unknown as Config;
+    const tags = homeMetaTags("de", config, "Beschreibung");
+    const get = (k: string) => tags.find((t) => t.property === k || t.name === k)?.content;
+    expect(tags[0]).toEqual({ title: "Public AI Schweiz" });
+    expect(get("description")).toBe("Beschreibung");
+    expect(get("og:url")).toBe("https://publicai.ch/de/");
+    expect(get("og:image")).toBe("https://publicai.ch/assets/social/default.png");
   });
 });
 

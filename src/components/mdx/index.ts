@@ -15,6 +15,7 @@ import { Lead } from "~/components/mdx/lead";
 import { LinkRow } from "~/components/mdx/link-row";
 import { PosterGrid } from "~/components/mdx/poster-grid";
 import {
+  ProgressBars,
   ProgressChart,
   ProgressFigure,
   ProgressGrid,
@@ -39,6 +40,7 @@ export {
   Lead,
   LinkRow,
   PosterGrid,
+  ProgressBars,
   ProgressChart,
   ProgressFigure,
   ProgressGrid,

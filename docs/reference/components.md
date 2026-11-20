@@ -237,8 +237,9 @@ The `Progress*` components render the progress dashboard at `/progress` (`conten
 | Component           | Props                                                                 | Renders                                                       |
 | ------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
 | `ProgressFigure`    | `name`, `format?`                                                     | One number from `figures`, inline in a sentence               |
-| `ProgressScorecard` | `columns`, `label`, `empty`                                           | The scorecard table, one row per metric                       |
-| `ProgressTable`     | `table`, `columns`, `label`                                           | A precomputed table: `llm_windows`, `llm_family`, `llm_team`, `repos`, `coverage` |
+| `ProgressScorecard` | `columns`, `label`, `empty`, `pillar?`                                | The scorecard table, one row per metric; `pillar` keeps one pillar's rows |
+| `ProgressTable`     | `table`, `columns`, `label`, `pillar?`                                | A precomputed table: `llm_windows`, `llm_family`, `llm_team`, `repos`, `countries`, `coverage` |
+| `ProgressBars`      | `table`, `labelKey`, `valueKey`, `shareKey?`, `title`, `format?`      | Ranked horizontal bars from a table, e.g. `countries`         |
 | `ProgressChart`     | `series`, `title`, `unit`, `format?`, `partialLabel`                  | Static monthly bar chart; the as-of month is drawn lighter    |
 | `ProgressGrid`      | children                                                              | Responsive grid for charts                                    |
 | `ProgressPillars`   | `d30Label`, `avgLabel`, `launchLabel`, `notConnected`, `coverageLabel`, `labels?` | The three pillars (products, movement, idea) with their topline stats |
