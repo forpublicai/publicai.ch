@@ -151,6 +151,23 @@
   .mdx-body a:not(.cta):hover::after {
     transform: scaleX(1);
   }
+  /* Plain Markdown links (no class) carry a quiet resting underline so
+   * they are recognisable without hover (touch devices, WCAG 1.4.1).
+   * On hover it fades out while the grow-in underline above takes over.
+   * Component anchors (cards, posters, CTAs) always carry a class and
+   * are unaffected. */
+  .mdx-body a:not([class]) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, currentColor 50%, transparent);
+    transition:
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      text-decoration-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mdx-body a:not([class]):not([data-footnote-ref]):not([data-footnote-backref]):hover {
+    text-decoration-color: transparent;
+  }
   /* Menu links: desktop main nav, desktop utility list, and both of
    * their dropdown panels. Mobile panel links stay plain (block list). */
   .site-header__nav-list a,
