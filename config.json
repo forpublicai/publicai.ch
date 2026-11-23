@@ -318,23 +318,43 @@
       },
       {
         "from": "/news/zurich-hackathon/",
-        "to": "/news/2026-09-24-zurich-hackathon/"
+        "to": "/news/2026-09-24-zurich-hackathon-clausurus/"
       },
       {
         "from": "/de/news/zurich-hackathon/",
-        "to": "/de/news/2026-09-24-zurich-hackathon/"
+        "to": "/de/news/2026-09-24-zurich-hackathon-clausurus/"
       },
       {
         "from": "/fr/news/zurich-hackathon/",
-        "to": "/fr/news/2026-09-24-zurich-hackathon/"
+        "to": "/fr/news/2026-09-24-zurich-hackathon-clausurus/"
       },
       {
         "from": "/it/news/zurich-hackathon/",
-        "to": "/it/news/2026-09-24-zurich-hackathon/"
+        "to": "/it/news/2026-09-24-zurich-hackathon-clausurus/"
       },
       {
         "from": "/rm/news/zurich-hackathon/",
-        "to": "/rm/news/2026-09-24-zurich-hackathon/"
+        "to": "/rm/news/2026-09-24-zurich-hackathon-clausurus/"
+      },
+      {
+        "from": "/news/2026-09-24-zurich-hackathon/",
+        "to": "/news/2026-09-24-zurich-hackathon-clausurus/"
+      },
+      {
+        "from": "/de/news/2026-09-24-zurich-hackathon/",
+        "to": "/de/news/2026-09-24-zurich-hackathon-clausurus/"
+      },
+      {
+        "from": "/fr/news/2026-09-24-zurich-hackathon/",
+        "to": "/fr/news/2026-09-24-zurich-hackathon-clausurus/"
+      },
+      {
+        "from": "/it/news/2026-09-24-zurich-hackathon/",
+        "to": "/it/news/2026-09-24-zurich-hackathon-clausurus/"
+      },
+      {
+        "from": "/rm/news/2026-09-24-zurich-hackathon/",
+        "to": "/rm/news/2026-09-24-zurich-hackathon-clausurus/"
       },
       {
         "from": "/ki-dialog/",
