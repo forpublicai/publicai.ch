@@ -1,0 +1,171 @@
+---
+title: "Hacking Swiss bureaucracy using Apertus"
+description: "Arturo Sanchez built a map that guides newcomers through commune, canton and Confederation, powered by the Swiss open model Apertus."
+date: 2026-11-23
+category: "Community"
+author: juerg-stuker
+title_de: "Die Schweizer Bürokratie hacken – mit Apertus"
+description_de: "Arturo Sanchez hat eine Anwendung gebaut, die Menschen durch die Interaktion mit Gemeinde, Kanton und Bund führt – mit dem offenen Schweizer Modell Apertus."
+title_en: "Hacking Swiss bureaucracy using Apertus"
+description_en: "Arturo Sanchez has built an app that guides people through interactions with local, cantonal, and federal authorities using the open Swiss model Apertus."
+title_fr: "Hacker la bureaucratie suisse avec Apertus"
+description_fr: "Arturo Sanchez a développé une application qui aide les citoyens à interagir avec leur commune, leur canton et la Confédération, grâce au modèle suisse ouvert Apertus."
+description_it: "Arturo Sanchez ha sviluppato un’applicazione che guida gli utenti nelle interazioni con il comune, il cantone e la Confederazione, avvalendosi del modello svizzero aperto Apertus."
+description_rm: "Arturo Sanchez ha construì in'applicaziun che guida las persunas tras l'interacziun cun la vischnanca, il chantun ed il confederaziun – cun il model svizzer avert Apertus."
+---
+
+<!-- locale: de -->
+
+<Lead>Wer in die Schweiz zieht, trifft auf drei Ebenen: Gemeinde, Kanton und Bund. Arturo Sanchez hat an einem Hackathon ein Werkzeug gebaut, das daraus eine übersichtliche Karte macht – mit dem offenen Schweizer Sprachmodell Apertus.</Lead>
+
+## Die Idee
+
+Arturo ist Physiker und Software-Ingenieur. Er stammt aus Venezuela, hat viele Jahre am CERN gearbeitet und war dort an der Entdeckung des Higgs-Bosons beteiligt. Heute leitet er die IT eines EPFL-Spin-offs. Wie viele, die in die Schweiz kommen, kennt er die Frage: Was muss ich wo erledigen?
+
+Statt einer langen Textantwort zeichnet sein Werkzeug einen Weg in Schritten. Man beschreibt die eigene Situation – etwa «Ich wohne in Nyon, habe eine Stelle und möchte nebenbei ein Café eröffnen» – und erhält eine Karte der nötigen Schritte.
+
+## So funktioniert es
+
+- **Nachfragen statt Textwand:** Das Werkzeug stellt klärende Fragen, bevor es antwortet.
+- **Verzweigungen:** Ändert sich ein wichtiges Detail, etwa der Kanton oder die Bewilligungsart, verzweigt sich die Karte.
+- **Quellen statt Erfindungen:** Antworten stützen sich auf einen Katalog von rund 14 offiziellen Quellen, etwa ch.ch und kantonale Seiten. Findet das Werkzeug keine Referenz, sagt es das, statt etwas zu erfinden.
+- **Mehrsprachig:** Getestet auf Deutsch und Französisch.
+- **Zum Mitnehmen:** Der Plan lässt sich als Markdown oder PDF exportieren und auf die Gemeinde mitnehmen. Dort hilft am Ende immer noch ein Mensch weiter – aber mit einer viel besseren Ausgangslage.
+
+Technisch nutzt das Werkzeug [Apertus](/apertus) mit 70 Milliarden Parametern, inklusive Tool Calling. Das Frontend ist eine statische Webseite, das kleine Backend läuft in einem GitHub Codespace.
+
+## Wie es weitergeht
+
+Der Quellenkatalog deckt bisher vor allem die Westschweiz ab. Als Nächstes möchte Arturo weitere Regionen ergänzen, etwa das Tessin, den Katalog in eine eigene Datei auslagern und prüfen, wie verschiedene Modelle mit denselben Quellen antworten.
+
+Der wichtigste Teil der Arbeit ist das Sammeln guter Quellen. Kennst du offizielle Informationen deiner Gemeinde oder deines Kantons, die fehlen? Oder siehst du eine Anwendung in deiner Community?
+
+Du findest das [komplette Projekt auf GitHub](https://github.com/artfisica/zh-ai-weeks-build-a-public-ai-service-proposal) und hier ein Video dazu.
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03uqehmg" title="Public AI for every commune" ratio="16/9" />
+
+
+<!-- locale: en -->
+
+<Lead>Anyone moving to Switzerland meets three layers of government: commune, canton and Confederation. At a hackathon, Arturo Sanchez built a tool that turns them into a clear map, powered by the Swiss open language model Apertus.</Lead>
+
+## The idea
+
+Arturo is a physicist and software engineer. Originally from Venezuela, he spent many years at CERN, where he was part of the discovery of the Higgs boson. Today he leads IT at an EPFL spin-off. Like many newcomers to Switzerland, he knows the question well: what do I need to do, and where?
+
+Instead of a long wall of text, his tool draws a step-by-step path. You describe your situation – for example, “I live in Nyon, I have a job and I’d like to open a coffee shop on the side” – and get a map of the steps involved.
+
+## How it works
+
+- **Questions, not a wall of text:** The tool asks clarifying questions before it answers.
+- **Branches:** When a key detail changes, such as the canton or the type of permit, the map branches.
+- **Sources, not inventions:** Answers draw on a catalogue of around 14 official sources, including ch.ch and cantonal websites. When the tool finds no reference, it says so rather than making something up.
+- **Multilingual:** Tested in German and French.
+- **Take it with you:** The plan can be exported as Markdown or PDF and brought to an appointment at the commune. A person there still has the final word – but you arrive much better prepared.
+
+Under the hood, the tool uses [Apertus](/apertus) 1.5 with 70 billion parameters, including tool calling. The front end is a static website; the small back end runs in a GitHub Codespace.
+
+## What’s next
+
+So far the source catalogue mainly covers French-speaking Switzerland. Next, Arturo wants to add other regions such as Ticino, move the catalogue into a separate file, and explore how different models answer using the same sources.
+
+The most important part of the work is collecting good sources. Do you know official information from your commune or canton that is missing? Or do you see a use for the tool in your community?
+
+You'll find the [complete project on GitHub](https://github.com/artfisica/zh-ai-weeks-build-a-public-ai-service-proposal) and here's a video about it.
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03uqehmg" title="Public AI for every commune" ratio="16/9" />
+
+
+<!-- locale: fr -->
+
+<Lead>Quiconque s’installe en Suisse rencontre trois niveaux institutionnels : la commune, le canton et la Confédération. Lors d’un hackathon, Arturo Sanchez a créé un outil qui en fait une carte claire, grâce au modèle de langage ouvert suisse Apertus.</Lead>
+
+## L’idée
+
+Arturo est physicien et ingénieur logiciel. Originaire du Venezuela, il a travaillé de nombreuses années au CERN, où il a participé à la découverte du boson de Higgs. Aujourd’hui, il dirige l’informatique d’une spin-off de l’EPFL. Comme beaucoup de personnes arrivant en Suisse, il connaît bien la question : que dois-je faire, et où ?
+
+Au lieu d’un long pavé de texte, son outil dessine un parcours étape par étape. On décrit sa situation – par exemple « J’habite à Nyon, j’ai un emploi et j’aimerais ouvrir un café à côté » – et l’on obtient une carte des démarches.
+
+## Comment ça marche
+
+- **Des questions plutôt qu’un pavé de texte :** l’outil pose des questions de clarification avant de répondre.
+- **Des embranchements :** si un détail important change, comme le canton ou le type de permis, la carte se ramifie.
+- **Des sources plutôt que des inventions :** les réponses s’appuient sur un catalogue d’environ 14 sources officielles, dont ch.ch et des sites cantonaux. Si l’outil ne trouve pas de référence, il le dit au lieu d’inventer.
+- **Multilingue :** testé en allemand et en français.
+- **À emporter :** le plan peut être exporté en Markdown ou en PDF et apporté à la commune. Une personne y aura toujours le dernier mot – mais vous arrivez bien mieux préparé·e.
+
+Sur le plan technique, l’outil utilise [Apertus](/apertus) 1.5 avec 70 milliards de paramètres, y compris l’appel d’outils (tool calling). Le front-end est un site statique ; le petit back-end tourne dans un GitHub Codespace.
+
+## La suite
+
+Pour l’instant, le catalogue de sources couvre surtout la Suisse romande. Arturo souhaite maintenant ajouter d’autres régions comme le Tessin, déplacer le catalogue dans un fichier séparé et comparer les réponses de différents modèles à partir des mêmes sources.
+
+La partie la plus importante du travail consiste à rassembler de bonnes sources. Tu connais des informations officielles de ta commune ou de ton canton qui manquent ? Ou tu vois une utilité pour l’outil dans ta communauté ?
+
+Tu trouveras le [projet complet sur GitHub](https://github.com/artfisica/zh-ai-weeks-build-a-public-ai-service-proposal) et ici une vidéo à ce sujet.
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03uqehmg" title="Public AI for every commune" ratio="16/9" />
+
+
+<!-- locale: it -->
+
+<Lead>Chi si trasferisce in Svizzera incontra tre livelli istituzionali: comune, cantone e Confederazione. Durante un hackathon, Arturo Sanchez ha creato uno strumento che li trasforma in una mappa chiara, grazie al modello linguistico aperto svizzero Apertus.</Lead>
+
+## L’idea
+
+Arturo è fisico e ingegnere del software. Originario del Venezuela, ha lavorato per molti anni al CERN, dove ha partecipato alla scoperta del bosone di Higgs. Oggi dirige l’informatica di uno spin-off dell’EPFL. Come molte persone appena arrivate in Svizzera, conosce bene la domanda: cosa devo fare, e dove?
+
+Invece di un lungo muro di testo, il suo strumento disegna un percorso passo dopo passo. Si descrive la propria situazione – per esempio «Abito a Nyon, ho un lavoro e vorrei aprire un caffè a lato» – e si ottiene una mappa dei passi necessari.
+
+## Come funziona
+
+- **Domande invece di un muro di testo:** lo strumento pone domande di chiarimento prima di rispondere.
+- **Diramazioni:** se cambia un dettaglio importante, come il cantone o il tipo di permesso, la mappa si dirama.
+- **Fonti invece di invenzioni:** le risposte si basano su un catalogo di circa 14 fonti ufficiali, tra cui ch.ch e siti cantonali. Se lo strumento non trova un riferimento, lo dice invece di inventare.
+- **Multilingue:** testato in tedesco e francese.
+- **Da portare con sé:** il piano si può esportare in Markdown o PDF e portare in comune. Lì l’ultima parola spetta sempre a una persona – ma ci si arriva molto meglio preparati.
+
+Dal punto di vista tecnico, lo strumento usa [Apertus](/apertus) 1.5 con 70 miliardi di parametri, compreso il tool calling. Il front-end è un sito statico; il piccolo back-end gira in un GitHub Codespace.
+
+## I prossimi passi
+
+Finora il catalogo di fonti copre soprattutto la Svizzera romanda. Ora Arturo vuole aggiungere altre regioni come il Ticino, spostare il catalogo in un file separato ed esplorare come rispondono modelli diversi a partire dalle stesse fonti.
+
+La parte più importante del lavoro è raccogliere buone fonti. Conosci informazioni ufficiali del tuo comune o cantone che mancano? Oppure vedi un’utilità per lo strumento nella tua comunità?
+
+Qui trovi il [progetto completo su GitHub](https://github.com/artfisica/zh-ai-weeks-build-a-public-ai-service-proposal) e qui un video al riguardo.
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03uqehmg" title="Public AI for every commune" ratio="16/9" />
+
+
+<!-- locale: rm -->
+
+<Lead>Tgi che sa transferescha en Svizra s’inscuntra cun trais nivels: vischnanca, chantun e Confederaziun. Durant in hackathon ha Arturo Sanchez construì in instrument che fa ord quai ina charta survesaivla – cun il model linguistic avert svizzer Apertus.</Lead>
+
+## L’idea
+
+Arturo è fisicher ed inschigner da software. El deriva da la Venezuela, ha lavurà blers onns al CERN ed ha participà là a la scuverta dal boson da Higgs. Oz maina el l’informatica d’in spin-off da l’EPFL. Sco blers che arrivan en Svizra enconuscha el la dumonda: Tge stoss jau far, e nua?
+
+Empè d’ina lunga resposta en text dissegna ses instrument ina via pass per pass. Ins descriva l’atgna situaziun – per exempel «Jau abitesch a Nyon, hai ina plazza e vuless avrir sper quai in café» – ed obtegna ina charta dals pass necessaris.
+
+## Uschia funcziunescha quai
+
+- **Dumondas empè d’in mir da text:** L’instrument fa dumondas da scleriment avant che respunder.
+- **Ramificaziuns:** Sch’in detagl impurtant sa mida, sco il chantun u il tip da permissiun, sa ramifitgescha la charta.
+- **Funtaunas empè d’invenziuns:** Las respostas sa basan sin in catalog da var 14 funtaunas uffizialas, tranter auter ch.ch e paginas chantunalas. Sche l’instrument na chatta nagina referenza, di el quai empè d’inventar insatge.
+- **Plurilings:** Testà per tudestg e franzos.
+- **Da prender cun sai:** Il plan po vegnir exportà sco Markdown u PDF e prendì cun sai en vischnanca. Là ha adina anc ina persuna l’ultim pled – ma ins arriva bler meglier preparà.
+
+Tecnicamain utilisescha l’instrument [Apertus](/apertus) 1.5 cun 70 milliardas parameters, inclus tool calling. Il front-end è ina pagina d’internet statica; il pitschen back-end lavura en in GitHub Codespace.
+
+## Co vinavant
+
+Fin ussa cuvra il catalog da funtaunas surtut la Svizra romanda. Sco proxim vul Arturo agiuntar autras regiuns sco il Tessin, metter il catalog en ina datoteca separada ed examinar co che differents models respundan cun las medemas funtaunas.
+
+La part la pli impurtanta da la lavur è da rimnar bunas funtaunas. Enconuschas ti infurmaziuns uffizialas da tia vischnanca u da tes chantun che mancan? U vesas ti in’applicaziun en tia communitad?
+
+
+Il[project cumplain sin GitHub](https://github.com/artfisica/zh-ai-weeks-build-a-public-ai-service-proposal) ed in video quatras.
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03uqehmg" title="Public AI for every commune" ratio="16/9" />
+
