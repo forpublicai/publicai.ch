@@ -140,6 +140,21 @@ Image with figure semantics: a `<figure>` element, an optional caption, lazy loa
 <Figure src="/assets/images/swiss-map.png" alt="Karte der Schweiz" caption="Der Dialog in allen Kantonen" />
 ```
 
+## FigureRow
+
+Two to four images side by side, each with figure semantics, a required alt
+text and an optional caption. Each image links to its full-size file (click
+to enlarge, opens in a new tab). Equal columns from 40rem; stacked on small
+screens. `figures` is a list of `{ src, alt, caption? }` with site-absolute
+paths; the build verifies each image exists.
+
+```mdx
+<FigureRow figures={[
+  { src: "/assets/images/news/app-start.jpg", alt: "Start page with a map of Switzerland", caption: "Pick a canton." },
+  { src: "/assets/images/news/app-detail.jpg", alt: "Overview of one canton by topic", caption: "A week of notices." },
+]} />
+```
+
 ## LinkRow
 
 A horizontal row of compact action links. Items use CTA-style props (without `variant`; rows render in the outline style).

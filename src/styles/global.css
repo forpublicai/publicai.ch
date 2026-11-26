@@ -1058,6 +1058,55 @@
     color: var(--muted-foreground);
   }
 
+  /* FigureRow: 2–4 images side by side, each linking to its full-size
+   * file. One column on small screens, equal columns from 40rem. */
+  .figure-row {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  @media (min-width: 40rem) {
+    .figure-row {
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+  .figure-row__item {
+    margin: 0;
+  }
+  .figure-row__link {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: zoom-in;
+  }
+  .mdx-body .figure-row__link::after {
+    content: none;
+  }
+  .mdx-body .figure-row__link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    transition: transform 150ms ease;
+  }
+  .figure-row__link:hover img {
+    transform: scale(1.02);
+  }
+  .figure-row__link:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  .figure-row__item figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+
   /* Embed (sandboxed iframe). */
   .embed {
     margin: 2rem 0;
