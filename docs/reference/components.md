@@ -120,7 +120,7 @@ The single embed component: a sandboxed, lazy-loaded iframe.
 | `height` | number  | no (default `400`)  | Pixel height of the iframe                                     |
 | `ratio`  | string  | no                  | Aspect ratio (e.g. `"16/9"`) for a responsive frame instead of a fixed height; intended for videos |
 
-The iframe is sandboxed, loads lazily, sends no referrer, and allows fullscreen. Allowlisted hosts in the seed config: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`, `player.vod2.infomaniak.com`.
+The iframe is sandboxed, loads lazily, sends only the site origin as referrer (YouTube needs one to play), and allows fullscreen. Allowlisted hosts in the seed config: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`.
 
 ```mdx
 <Embed url="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Erklärvideo" />

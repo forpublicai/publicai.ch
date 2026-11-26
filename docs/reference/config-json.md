@@ -81,7 +81,7 @@ The repository's own `config.json` is the live example of everything in this ref
 
 | Key         | Type            | Notes                                                                                              |
 | ----------- | ---------------- | ----------------------------------------------------------------------------------------------------- |
-| `allowlist` | Array of hosts   | The only hosts the `Embed` component may embed (seeded: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`, `player.vod2.infomaniak.com`). An unlisted host fails the build naming the URL. |
+| `allowlist` | Array of hosts   | The only hosts the `Embed` component may embed (seeded: `www.youtube-nocookie.com`, `player.vimeo.com`, `www.openstreetmap.org`). An unlisted host fails the build naming the URL. |
 
 ### `contact`
 
