@@ -1100,6 +1100,78 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+  /* FigureRow overlay: native modal <dialog> filling the viewport; the
+   * image is centred and scaled to fit. Clicks on the dark area close it. */
+  .figure-lightbox {
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 3.5rem 1rem 1.5rem;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: zoom-out;
+  }
+  .figure-lightbox[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .figure-lightbox::backdrop {
+    background: rgb(0 0 0 / 0.85);
+  }
+  .figure-lightbox__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    cursor: default;
+  }
+  .mdx-body .figure-lightbox__figure img,
+  .figure-lightbox__figure img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100dvh - 8rem);
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 0.25rem;
+    object-fit: contain;
+  }
+  .figure-lightbox__figure figcaption {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 0.85);
+  }
+  .figure-lightbox__close {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.15);
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .figure-lightbox__close:hover {
+    background: rgb(255 255 255 / 0.3);
+  }
+  .figure-lightbox__close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
   .figure-row__item figcaption {
     margin-top: 0.5rem;
     text-align: center;

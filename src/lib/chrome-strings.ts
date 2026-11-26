@@ -75,6 +75,17 @@ export const chromeStrings = {
   // de/fr/it/rm labels come from the config.json menu seed ("Aktuelles",
   // "Actualités", "Novità", "Novitads"). Index headline/lead are NEW DRAFTS
   // (the mockup's news-index copy is DE-only) — flagged for review.
+  // FigureRow image overlay (NEW DRAFTS).
+  figure: {
+    close: {
+      en: "Close image",
+      de: "Bild schliessen",
+      fr: "Fermer l’image",
+      it: "Chiudi l’immagine",
+      rm: "Serrar il maletg",
+    },
+  },
+
   news: {
     availableIn: {
       en: "Available in {language}",
