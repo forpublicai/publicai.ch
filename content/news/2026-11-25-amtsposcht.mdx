@@ -1,0 +1,199 @@
+---
+title: "Amtsposcht: asking Apertus what the official gazette says"
+description: "At a Swiss {ai} Weeks hackathon, a team built Amtsposcht: explore official gazette notices by canton and ask about them, powered by Apertus."
+date: 2026-11-25
+category: "Community"
+author: juerg-stuker
+title_de: "Amtsposcht: Apertus fragen, was im Amtsblatt steht"
+description_de: "An einem Hackathon der Swiss {ai} Weeks entstand Amtsposcht: Amtsblatt-Meldungen nach Kanton erkunden und Fragen dazu stellen – mit Apertus."
+title_en: "Amtsposcht: asking Apertus what the official gazette says"
+description_en: "At a Swiss {ai} Weeks hackathon, a team built Amtsposcht: explore official gazette notices by canton and ask about them, powered by Apertus."
+title_fr: "Amtsposcht : demander à Apertus ce que dit la feuille officielle"
+description_fr: "Lors d’un hackathon des Swiss {ai} Weeks est né Amtsposcht : explorer les publications officielles par canton et les interroger, grâce à Apertus."
+title_it: "Amtsposcht: chiedere ad Apertus cosa dice il foglio ufficiale"
+description_it: "A un hackathon delle Swiss {ai} Weeks è nato Amtsposcht: esplorare le pubblicazioni ufficiali per cantone e porre domande, grazie ad Apertus."
+title_rm: "Amtsposcht: dumandar Apertus tge che stat en il fegl uffizial"
+description_rm: "Ad in hackathon da las Swiss {ai} Weeks è naschì Amtsposcht: explorar publicaziuns uffizialas tenor chantun e far dumondas – cun Apertus."
+---
+
+<!-- locale: de -->
+
+<Lead>Jede Gründung, Änderung oder Löschung einer Firma, jeder Konkurs und jede Baubewilligung in der Schweiz wird in einem Amtsblatt publiziert. An einem Hackathon der Swiss \{ai\} Weeks haben Michael Burch, Elias Panner und Elia Seeberger Amtsposcht gebaut – ein Werkzeug, mit dem man diese Meldungen nach Kanton erkunden und Fragen dazu stellen kann, mit dem offenen Schweizer Sprachmodell Apertus.</Lead>
+
+<FigureRow figures={[
+  { src: "/assets/images/news/amtsposcht-cantons.jpg", alt: "Startseite von Amtsposcht mit einer Schweizer Karte der 26 Kantone und einer Kantonsauswahl", caption: "Einen Kanton auf der Karte wählen." },
+  { src: "/assets/images/news/amtsposcht-canton-zurich.jpg", alt: "Übersicht für den Kanton Zürich: 1680 Meldungen der letzten 7 Tage, aufgeteilt nach Themen wie Neueintragungen, Konkurse und Baubewilligungen", caption: "Die Meldungen einer Woche im Kanton Zürich, nach Thema." },
+  { src: "/assets/images/news/amtsposcht-chat-source.jpg", alt: "Chat auf Französisch mit der Frage nach Firmengründungen im Kanton Zug, daneben das amtliche PDF der zitierten Meldung", caption: "Antwort mit nummerierten Quellen, das amtliche PDF daneben." },
+]} />
+
+## Die Idee
+
+Elias ist Doktorand an der Universität St. Gallen und forscht zu agentischer KI. Michael hat an derselben Universität einen MSc in Informatik gemacht und ist Founding Engineer bei Scait in Rotkreuz. Das Team hat sich an KI-Networking-Anlässen kennengelernt und über die Swiss \{ai\} Weeks zusammengefunden.
+
+Ausgangspunkt ist ein öffentliches Register, das schwer zu nutzen ist. Allein im Kanton Zürich erscheinen rund 14’500 amtliche Meldungen pro Jahr. Das Archiv des [Schweizerischen Handelsamtsblatts (SHAB)](https://www.shab.ch/#!/search/publications) umfasst 2,8 Millionen Publikationen, und 2025 wurden in der Schweiz 55’654 neue Unternehmen eingetragen. Alles ist öffentlich – doch die Meldung zu finden, die einen selbst betrifft, ist eine andere Geschichte.
+
+Mit Amtsposcht fragt man, statt zu suchen: «Wie viele Firmen wurden letzte Woche im Kanton Zug gegründet?» Die Antwort in der Demo: 61, jede mit einem Link zur Meldung. Wer lieber navigiert, findet für jeden Kanton eine dynamisch erstellte Übersichtsseite.
+
+## So funktioniert es
+
+- **Nach Kanton erkunden:** Auf der Schweizer Karte einen Kanton wählen und sehen, was in den letzten sieben Tagen im SHAB und im kantonalen Amtsblatt erschienen ist. Für den Kanton Zürich zeigte die Demo 1’680 Meldungen in einer Woche.
+- **Nach Thema sortiert:** Neueintragungen, Mutationen, Löschungen, Konkurse, Baubewilligungen, Verkehr und Umwelt, Gesetzgebung und Beschlüsse.
+- **In normaler Sprache fragen:** Der Chat fasst zusammen, was publiziert wurde – etwa die Baubewilligungen der Woche – und listet die einzelnen Meldungen auf.
+- **Direkt zur Quelle:** Jede Antwort ist nummeriert und verlinkt. Das amtliche PDF öffnet sich neben dem Chat, mit einem Link zum Original im Amtsblattportal.
+- **Mehrsprachig:** Fragen und Antworten funktionieren in den Landessprachen, auch wenn die Meldung selbst auf Deutsch ist.
+
+Technisch nutzt Amtsposcht [Apertus](/apertus) 1.5 mit Tool Calling. Das Modell durchsucht das SHAB und die kantonalen Amtsblätter live über deren öffentliche Schnittstellen, statt aus dem Gedächtnis zu antworten.
+
+## Wie es weitergeht
+
+Vorerst beschränkt sich Amtsposcht bewusst auf Daten aus Schweizer Amtsblättern. Erweiterungen auf andere Datenquellen und Anbieter sind möglich. Den Nutzen sieht das Team an drei Stellen: auf dem Laufenden bleiben, ohne das Amtsblatt zu lesen, persönliche und geschäftliche Chancen erkennen und die Teilnahme am öffentlichen Leben erleichtern.
+
+Arbeitest du in deiner Gemeinde, deinem Kanton oder deinem Unternehmen mit amtlichen Meldungen? Oder kennst du eine öffentliche Datenquelle, die auf die Karte gehört?
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03ur1pyh" title="Amtsposcht: Apertus fragen, was im Amtsblatt steht" ratio="16/9" />
+
+<!-- locale: en -->
+
+<Lead>Every company founded, changed or deleted, every bankruptcy and every building permit in Switzerland is announced in an official gazette. At a Swiss \{ai\} Weeks hackathon, Michael Burch, Elias Panner and Elia Seeberger built Amtsposcht, a tool that lets you explore these notices by canton and ask questions about them, powered by the Swiss open language model Apertus.</Lead>
+
+<FigureRow figures={[
+  { src: "/assets/images/news/amtsposcht-cantons.jpg", alt: "Amtsposcht start page with a map of Switzerland's 26 cantons and a canton selector", caption: "Pick a canton on the map." },
+  { src: "/assets/images/news/amtsposcht-canton-zurich.jpg", alt: "Overview for the Canton of Zurich: 1,680 notices from the last 7 days, broken down by topic such as new registrations, bankruptcies and building permits", caption: "A week of notices in the Canton of Zurich, by topic." },
+  { src: "/assets/images/news/amtsposcht-chat-source.jpg", alt: "Chat in French asking how many companies were founded in the canton of Zug, with the official PDF of the cited notice alongside", caption: "An answer with numbered sources, the official PDF alongside." },
+]} />
+
+## The idea
+
+Elias is a PhD candidate at the University of St. Gallen, where he works on agentic AI. Michael holds an MSc in Computer Science from the same university and is founding engineer at Scait in Rotkreuz. The team met at AI networking events and came together through Swiss \{ai\} Weeks.
+
+Their starting point is a public record that is hard to use. Zurich alone sees around 14,500 official notices a year. The archive of the [Swiss Official Gazette of Commerce (SHAB)](https://www.shab.ch/#!/search/publications) holds 2.8 million publications, and 55,654 new businesses were registered in Switzerland in 2025. All of it is public, but finding the notice that matters to you is another story.
+
+With Amtsposcht you ask instead of search: “How many companies were founded in the canton of Zug last week?” The answer in the demo: 61, each with a link to the notice. And landing pages for each canton are dynamically built, for people who prefer to navigate.
+
+## How it works
+
+- **Explore by canton:** Pick a canton on the map of Switzerland and see what appeared in the SHAB and the cantonal official gazette over the last seven days. For the Canton of Zurich, the demo showed 1,680 notices in one week.
+- **Sorted by topic:** New registrations, register changes, deletions, bankruptcies, building permits, transport and environment, legislation and decisions.
+- **Ask in plain language:** The chat summarises what was published, for example the week’s building permits, and lists the individual notices.
+- **Straight to the source:** Every answer is numbered and linked. The official PDF opens next to the chat, with a link to the original on the gazette portal.
+- **Multilingual:** Questions and answers work across the national languages, even when the notice itself is in German.
+
+Under the hood, Amtsposcht uses [Apertus](/apertus) 1.5 with tool calling. The model searches the SHAB and the cantonal gazettes live through their public interfaces, rather than answering from memory.
+
+## What’s next
+
+For now, Amtsposcht is deliberately limited to Swiss gazette data. Extensions to other data sources and vendors are possible. The team sees the benefit in three places: staying up to date without reading the gazette, spotting personal and business opportunities, and making it easier to take part in public life.
+
+Do you work with official notices in your commune, your canton or your company? Or do you know a public data source that belongs on the map?
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03ur1pyh" title="Amtsposcht: asking Apertus what the official gazette says" ratio="16/9" />
+
+<!-- locale: fr -->
+
+<Lead>Chaque création, modification ou radiation d’entreprise, chaque faillite et chaque permis de construire en Suisse est publié dans une feuille officielle. Lors d’un hackathon des Swiss \{ai\} Weeks, Michael Burch, Elias Panner et Elia Seeberger ont créé Amtsposcht, un outil qui permet d’explorer ces publications par canton et de poser des questions à leur sujet, grâce au modèle de langage ouvert suisse Apertus.</Lead>
+
+<FigureRow figures={[
+  { src: "/assets/images/news/amtsposcht-cantons.jpg", alt: "Page d’accueil d’Amtsposcht avec une carte des 26 cantons suisses et un sélecteur de canton", caption: "Choisir un canton sur la carte." },
+  { src: "/assets/images/news/amtsposcht-canton-zurich.jpg", alt: "Vue d’ensemble du canton de Zurich : 1680 publications des 7 derniers jours, réparties par thème, comme les nouvelles inscriptions, les faillites et les permis de construire", caption: "Une semaine de publications dans le canton de Zurich, par thème." },
+  { src: "/assets/images/news/amtsposcht-chat-source.jpg", alt: "Chat en français demandant combien d’entreprises ont été créées dans le canton de Zoug, avec le PDF officiel de la publication citée à côté", caption: "Une réponse avec des sources numérotées, le PDF officiel à côté." },
+]} />
+
+## L’idée
+
+Elias est doctorant à l’Université de Saint-Gall, où il travaille sur l’IA agentique. Michael est titulaire d’un MSc en informatique de la même université et founding engineer chez Scait à Rotkreuz. L’équipe s’est rencontrée lors d’événements de networking autour de l’IA et s’est formée grâce aux Swiss \{ai\} Weeks.
+
+Leur point de départ : un registre public difficile à exploiter. Le seul canton de Zurich compte environ 14 500 publications officielles par an. Les archives de la [Feuille officielle suisse du commerce (FOSC)](https://www.shab.ch/#!/search/publications) contiennent 2,8 millions de publications, et 55 654 nouvelles entreprises ont été inscrites en Suisse en 2025. Tout est public, mais trouver la publication qui te concerne, c’est une autre histoire.
+
+Avec Amtsposcht, on pose une question au lieu de chercher : « Combien d’entreprises ont été créées dans le canton de Zoug la semaine dernière ? » La réponse dans la démo : 61, chacune avec un lien vers la publication. Et pour celles et ceux qui préfèrent naviguer, chaque canton dispose d’une page d’accueil générée dynamiquement.
+
+## Comment ça marche
+
+- **Explorer par canton :** choisir un canton sur la carte de la Suisse et voir ce qui a paru dans la FOSC et la feuille officielle cantonale au cours des sept derniers jours. Pour le canton de Zurich, la démo affichait 1 680 publications en une semaine.
+- **Trié par thème :** nouvelles inscriptions, modifications, radiations, faillites, permis de construire, transports et environnement, législation et décisions.
+- **Demander en langage courant :** le chat résume ce qui a été publié, par exemple les permis de construire de la semaine, et liste les publications individuelles.
+- **Directement à la source :** chaque réponse est numérotée et liée. Le PDF officiel s’ouvre à côté du chat, avec un lien vers l’original sur le portail de la feuille officielle.
+- **Multilingue :** questions et réponses fonctionnent dans les langues nationales, même lorsque la publication elle-même est en allemand.
+
+Sur le plan technique, Amtsposcht utilise [Apertus](/apertus) 1.5 avec l’appel d’outils (tool calling). Le modèle interroge en direct la FOSC et les feuilles officielles cantonales via leurs interfaces publiques, au lieu de répondre de mémoire.
+
+## La suite
+
+Pour l’instant, Amtsposcht se limite volontairement aux données des feuilles officielles suisses. Des extensions à d’autres sources de données et fournisseurs sont possibles. L’équipe en voit l’utilité à trois niveaux : rester informé·e sans lire la feuille officielle, repérer des opportunités personnelles et professionnelles, et faciliter la participation à la vie publique.
+
+Tu travailles avec des publications officielles dans ta commune, ton canton ou ton entreprise ? Ou tu connais une source de données publique qui a sa place sur la carte ?
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03ur1pyh" title="Amtsposcht : demander à Apertus ce que dit la feuille officielle" ratio="16/9" />
+
+<!-- locale: it -->
+
+<Lead>Ogni costituzione, modifica o cancellazione di un’azienda, ogni fallimento e ogni licenza edilizia in Svizzera viene pubblicata in un foglio ufficiale. A un hackathon delle Swiss \{ai\} Weeks, Michael Burch, Elias Panner ed Elia Seeberger hanno creato Amtsposcht, uno strumento che permette di esplorare queste pubblicazioni per cantone e di porre domande al riguardo, grazie al modello linguistico aperto svizzero Apertus.</Lead>
+
+<FigureRow figures={[
+  { src: "/assets/images/news/amtsposcht-cantons.jpg", alt: "Pagina iniziale di Amtsposcht con una mappa dei 26 cantoni svizzeri e un selettore di cantone", caption: "Scegliere un cantone sulla mappa." },
+  { src: "/assets/images/news/amtsposcht-canton-zurich.jpg", alt: "Panoramica del Canton Zurigo: 1680 pubblicazioni degli ultimi 7 giorni, suddivise per tema, come nuove iscrizioni, fallimenti e licenze edilizie", caption: "Una settimana di pubblicazioni nel Canton Zurigo, per tema." },
+  { src: "/assets/images/news/amtsposcht-chat-source.jpg", alt: "Chat in francese che chiede quante aziende sono state fondate nel Canton Zugo, con accanto il PDF ufficiale della pubblicazione citata", caption: "Una risposta con fonti numerate, accanto il PDF ufficiale." },
+]} />
+
+## L’idea
+
+Elias è dottorando all’Università di San Gallo, dove si occupa di IA agentica. Michael ha conseguito un MSc in informatica nella stessa università ed è founding engineer presso Scait a Rotkreuz. Il team si è conosciuto a eventi di networking sull’IA e si è formato grazie alle Swiss \{ai\} Weeks.
+
+Il punto di partenza è un registro pubblico difficile da usare. Solo nel Canton Zurigo si contano circa 14 500 pubblicazioni ufficiali all’anno. L’archivio del [Foglio ufficiale svizzero di commercio (FUSC)](https://www.shab.ch/#!/search/publications) conta 2,8 milioni di pubblicazioni e nel 2025 in Svizzera sono state iscritte 55 654 nuove imprese. È tutto pubblico, ma trovare la pubblicazione che ti riguarda è un’altra storia.
+
+Con Amtsposcht si chiede invece di cercare: «Quante aziende sono state fondate nel Canton Zugo la settimana scorsa?» La risposta nella demo: 61, ciascuna con un link alla pubblicazione. E per chi preferisce navigare, ogni cantone ha una pagina generata dinamicamente.
+
+## Come funziona
+
+- **Esplorare per cantone:** scegliere un cantone sulla mappa della Svizzera e vedere cosa è apparso nel FUSC e nel foglio ufficiale cantonale negli ultimi sette giorni. Per il Canton Zurigo, la demo mostrava 1680 pubblicazioni in una settimana.
+- **Ordinato per tema:** nuove iscrizioni, modifiche, cancellazioni, fallimenti, licenze edilizie, trasporti e ambiente, legislazione e decisioni.
+- **Chiedere in linguaggio semplice:** la chat riassume cosa è stato pubblicato, per esempio le licenze edilizie della settimana, ed elenca le singole pubblicazioni.
+- **Direttamente alla fonte:** ogni risposta è numerata e collegata. Il PDF ufficiale si apre accanto alla chat, con un link all’originale sul portale del foglio ufficiale.
+- **Multilingue:** domande e risposte funzionano nelle lingue nazionali, anche quando la pubblicazione stessa è in tedesco.
+
+Dal punto di vista tecnico, Amtsposcht usa [Apertus](/apertus) 1.5 con tool calling. Il modello consulta in tempo reale il FUSC e i fogli ufficiali cantonali tramite le loro interfacce pubbliche, invece di rispondere a memoria.
+
+## I prossimi passi
+
+Per ora Amtsposcht si limita volutamente ai dati dei fogli ufficiali svizzeri. Sono possibili estensioni ad altre fonti di dati e fornitori. Il team ne vede l’utilità in tre ambiti: restare aggiornati senza leggere il foglio ufficiale, individuare opportunità personali e professionali e facilitare la partecipazione alla vita pubblica.
+
+Lavori con pubblicazioni ufficiali nel tuo comune, nel tuo cantone o nella tua azienda? Oppure conosci una fonte di dati pubblica che merita un posto sulla mappa?
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03ur1pyh" title="Amtsposcht: chiedere ad Apertus cosa dice il foglio ufficiale" ratio="16/9" />
+
+
+<!-- locale: rm -->
+
+<Lead>Mintga fundaziun, midada u stizzada d’ina firma, mintga concurs e mintga permissiun da construcziun en Svizra vegn publitgada en in fegl uffizial. Ad in hackathon da las Swiss \{ai\} Weeks han Michael Burch, Elias Panner ed Elia Seeberger construì Amtsposcht – in instrument che permetta dad explorar questas communicaziuns tenor chantun e da far dumondas davart quellas, cun il model linguistic avert svizzer Apertus.</Lead>
+
+<FigureRow figures={[
+  { src: "/assets/images/news/amtsposcht-cantons.jpg", alt: "Pagina da partenza dad Amtsposcht cun ina charta dals 26 chantuns svizzers ed ina selecziun da chantun", caption: "Tscherner in chantun sin la charta." },
+  { src: "/assets/images/news/amtsposcht-canton-zurich.jpg", alt: "Survista dal chantun Turitg: 1680 communicaziuns dals ultims 7 dis, repartidas tenor tema, sco novas inscripziuns, concurs e permissiuns da construcziun", caption: "In’emna communicaziuns en il chantun Turitg, tenor tema." },
+  { src: "/assets/images/news/amtsposcht-chat-source.jpg", alt: "Chat per franzos che dumonda quantas firmas èn vegnidas fundadas en il chantun Zug, sper quai il PDF uffizial da la communicaziun citada", caption: "Ina resposta cun funtaunas numeradas, sper quai il PDF uffizial." },
+]} />
+
+## L’idea
+
+Elias è doctorand a l’Universitad da Son Gagl e perscrutescha davart IA agentica. Michael ha fatg in MSc en informatica a la medema universitad ed è founding engineer tar Scait a Rotkreuz. Il team è s’enconuschì ad occurrenzas da networking davart IA ed è sa chattà tras las Swiss \{ai\} Weeks.
+
+Il punct da partenza è in register public ch’è grev dad utilisar. Mo il chantun Turitg ha var 14’500 communicaziuns uffizialas l’onn. L’archiv dal [Fegl uffizial svizzer da commerzi (SHAB)](https://www.shab.ch/#!/search/publications) cumpiglia 2,8 milliuns publicaziuns, e l’onn 2025 èn vegnidas registradas en Svizra 55’654 novas interpresas. Tut è public – ma chattar la communicaziun che pertutga tai è in’autra istorgia.
+
+Cun Amtsposcht dumondas ti empè da tschertgar: «Quantas firmas èn vegnidas fundadas l’emna passada en il chantun Zug?» La resposta en la demo: 61, mintgina cun in link a la communicaziun. Tgi che navighescha pli gugent, chatta per mintga chantun ina pagina generada dinamicamain.
+
+## Uschia funcziunescha quai
+
+- **Explorar tenor chantun:** Tscherner in chantun sin la charta da la Svizra e vesair tge ch’è cumparì ils ultims set dis en il SHAB ed en il fegl uffizial chantunal. Per il chantun Turitg mussava la demo 1’680 communicaziuns en in’emna.
+- **Zavrà tenor tema:** Novas inscripziuns, midadas, stizzadas, concurs, permissiuns da construcziun, traffic ed ambient, legislaziun e decisiuns.
+- **Dumandar en lingua normala:** Il chat resumescha tge ch’è vegnì publitgà – per exempel las permissiuns da construcziun da l’emna – e glista las singulas communicaziuns.
+- **Directamain a la funtauna:** Mintga resposta è numerada e colliada. Il PDF uffizial s’avra sper il chat, cun in link a l’original sin il portal dal fegl uffizial.
+- **Plurilings:** Dumondas e respostas funcziunan en las linguas naziunalas, er sche la communicaziun sezza è per tudestg.
+
+Tecnicamain utilisescha Amtsposcht [Apertus](/apertus) 1.5 cun tool calling. Il model tschertga live en il SHAB ed en ils fegls uffizials chantunals sur lur interfatschas publicas, empè da respunder ord la memoria.
+
+## Co vinavant
+
+Per il mument sa limitescha Amtsposcht intenziunadamain a datas da fegls uffizials svizzers. Extensiuns ad autras funtaunas da datas e purschiders èn pussaivlas. Il team vesa il niz en trais lieus: restar infurmà senza leger il fegl uffizial, scuvrir schanzas persunalas e commerzialas e facilitar la participaziun a la vita publica.
+
+Lavuras ti cun communicaziuns uffizialas en tia vischnanca, tes chantun u tia interpresa? U enconuschas ti ina funtauna da datas publica che tutga sin la charta?
+
+<Embed url="https://player.vod2.infomaniak.com/embed/1jijk03ur1pyh" title="Amtsposcht: dumandar Apertus tge che stat en il fegl uffizial" ratio="16/9" />
+

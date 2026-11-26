@@ -11,6 +11,7 @@ import { CTA } from "~/components/mdx/cta";
 import { Divider } from "~/components/mdx/divider";
 import { Embed } from "~/components/mdx/embed";
 import { Figure } from "~/components/mdx/figure";
+import { FigureRow } from "~/components/mdx/figure-row";
 import { Lead } from "~/components/mdx/lead";
 import { LinkRow } from "~/components/mdx/link-row";
 import { PosterGrid } from "~/components/mdx/poster-grid";
@@ -37,6 +38,7 @@ export {
   Divider,
   Embed,
   Figure,
+  FigureRow,
   Lead,
   LinkRow,
   PosterGrid,
