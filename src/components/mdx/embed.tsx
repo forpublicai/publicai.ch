@@ -1,5 +1,6 @@
 // Embed (MDX-callable, / constraint): the single embed component.
-// Sandboxed, lazy, no-referrer iframe; host MUST be in config.embeds
+// Sandboxed, lazy iframe that sends only the site origin as referrer
+// (YouTube refuses to play without one); host MUST be in config.embeds
 //.allowlist — enforced at build time by the renderer (un-allowlisted hosts
 // fail loudly,). height optional (default 9:16-friendly 400px);
 // `ratio` (e.g. "16/9") makes the frame responsive instead, for videos.
@@ -45,7 +46,7 @@ export function Embed({
         allow="fullscreen; picture-in-picture"
         allowFullScreen
         loading="lazy"
-        referrerPolicy="no-referrer"
+        referrerPolicy="strict-origin-when-cross-origin"
         sandbox="allow-scripts allow-same-origin allow-popups"
       />
     </div>
