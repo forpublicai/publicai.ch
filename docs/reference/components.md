@@ -143,9 +143,11 @@ Image with figure semantics: a `<figure>` element, an optional caption, lazy loa
 ## FigureRow
 
 Two to four images side by side, each with figure semantics, a required alt
-text and an optional caption. Each image links to its full-size file (click
-to enlarge, opens in a new tab). Equal columns from 40rem; stacked on small
-screens. `figures` is a list of `{ src, alt, caption? }` with site-absolute
+text and an optional caption. Clicking an image opens it full size in an
+overlay on the same page; ESC, the close button or a click on the dark
+backdrop closes it. Each image is still a link to its file, so a
+Ctrl/Cmd-click opens it in a new tab. Equal columns from 40rem; stacked on
+small screens. `figures` is a list of `{ src, alt, caption? }` with site-absolute
 paths; the build verifies each image exists.
 
 ```mdx
