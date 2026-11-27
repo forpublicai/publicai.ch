@@ -64,3 +64,10 @@ jobs:
           remote-password: ${{ secrets.DEPLOY_PRIVATE_KEY }}
           remote-port: 21
           remote-path: /
+      # The upload action exits 0 even when files fail to upload (e.g. quota
+      # exceeded), so check that every built file is actually live.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Verify live site matches the build
+        run: node scripts/verify-deploy.mjs
