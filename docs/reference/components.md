@@ -137,7 +137,7 @@ Image with figure semantics: a `<figure>` element, an optional caption, lazy loa
 | `caption` | string | no       | Rendered as `<figcaption>`                                |
 
 ```mdx
-<Figure src="/assets/images/swiss-map.png" alt="Karte der Schweiz" caption="Der Dialog in allen Kantonen" />
+<Figure src="/assets/images/swiss-map.webp" alt="Karte der Schweiz" caption="Der Dialog in allen Kantonen" />
 ```
 
 ## FigureRow
